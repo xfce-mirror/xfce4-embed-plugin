@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright (c) 2011 John Doo <john@foo.org>
+ *  Copyright (c) 2011 David Schneider <dnschneid@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __SAMPLE_H__
-#define __SAMPLE_H__
+#ifndef __EMBED_H__
+#define __EMBED_H__
 
 G_BEGIN_DECLS
 
@@ -28,23 +28,40 @@ typedef struct
     XfcePanelPlugin *plugin;
 
     /* panel widgets */
-    GtkWidget       *ebox;
     GtkWidget       *hvbox;
+    GtkWidget       *separator;
     GtkWidget       *label;
+    GtkWidget       *socket;
+    GtkWidget       *popout_menu;
+    GtkWidget       *embed_menu;
 
-    /* sample settings */
-    gchar           *setting1;
-    gint             setting2;
-    gboolean         setting3;
+    /* panel data */
+    GdkNativeWindow  plug;
+    gint             plug_width;
+    gint             plug_height;
+    gboolean         plug_is_gtkplug;
+
+    guint            search_timer;
+    gboolean         disable_search;
+
+    /* embed settings */
+    gchar           *proc_name;
+    gchar           *window_name;
+    gchar           *label_fmt;
+    gint             poll_delay;
+    gint             min_size;
+    gboolean         expand;
 }
-SamplePlugin;
+EmbedPlugin;
 
+/* Special values for EmbedPlugin::min_size */
+#define EMBED_MIN_SIZE_MATCH_WINDOW 0
 
 
 void
-sample_save (XfcePanelPlugin *plugin,
-             SamplePlugin    *sample);
+embed_save (XfcePanelPlugin *plugin,
+             EmbedPlugin    *embed);
 
 G_END_DECLS
 
-#endif /* !__SAMPLE_H__ */
+#endif /* !__EMBED_H__ */

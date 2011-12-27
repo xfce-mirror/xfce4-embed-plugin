@@ -1,0 +1,8 @@
+Window detection and embedding (avoid excessive polling)
+Resizing, fixed/dynamic
+    * Fixed dimension (px)
+    * Set to window size
+    * Expand to available panel space
+Launching with parameters, delayed relaunch
+    * Including %s or something with the GtkSocket id
+Option windows

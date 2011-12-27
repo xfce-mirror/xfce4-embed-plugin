@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright (c) 2006-2007 John Doo <john@foo.org>
+ *  Copyright (c) 2011 David Schneider <dnschneid@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,17 +17,17 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __SAMPLE_DIALOGS_H__
-#define __SAMPLE_DIALOGS_H__
+#ifndef __EMBED_DIALOGS_H__
+#define __EMBED_DIALOGS_H__
 
 G_BEGIN_DECLS
 
 void
-sample_configure    (XfcePanelPlugin *plugin,
-                     SamplePlugin    *sample);
+embed_configure    (XfcePanelPlugin *plugin,
+                     EmbedPlugin     *embed);
 
 void
-sample_about        (XfcePanelPlugin *plugin);
+embed_about        (XfcePanelPlugin *plugin);
 
 G_END_DECLS
 

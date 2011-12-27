@@ -1,27 +1,27 @@
 dnl $Id$
 dnl
-dnl xfce4-sample-plugin - A sample plugin for the Xfce panel
+dnl xfce4-embed-plugin - A window-embedding plugin for the Xfce panel
 dnl
-dnl 2011 John Doo <john@foo.org>
+dnl 2011 David Schneider <dnschneid@gmail.com>
 dnl
 
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([sample_version_major], [0])
-m4_define([sample_version_minor], [0])
-m4_define([sample_version_micro], [2])
-m4_define([sample_version_nano],  []) dnl leave this empty to have no nano version
-m4_define([sample_version_build], [@REVISION@])
-m4_define([sample_version_tag], [git])
-m4_define([sample_version], [sample_version_major().sample_version_minor().sample_version_micro()ifelse(sample_version_nano(), [], [], [.sample_version_nano()])ifelse(sample_version_tag(), [git], [sample_version_tag()-sample_version_build()], [sample_version_tag()])])
+m4_define([embed_version_major], [0])
+m4_define([embed_version_minor], [0])
+m4_define([embed_version_micro], [2])
+m4_define([embed_version_nano],  []) dnl leave this empty to have no nano version
+m4_define([embed_version_build], [@REVISION@])
+m4_define([embed_version_tag], [git])
+m4_define([embed_version], [embed_version_major().embed_version_minor().embed_version_micro()ifelse(embed_version_nano(), [], [], [.embed_version_nano()])ifelse(embed_version_tag(), [git], [embed_version_tag()-embed_version_build()], [embed_version_tag()])])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2011
         The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-sample-plugin], [sample_version], [http://bugzilla.xfce.org/], [xfce4-sample-plugin])
+AC_INIT([xfce4-embed-plugin], [embed_version], [http://bugzilla.xfce.org/], [xfce4-embed-plugin])
 AC_PREREQ([2.50])
 AC_REVISION([xfce4_panel_version_build])
 
@@ -97,7 +97,6 @@ AC_SUBST([PLATFORM_LDFLAGS])
 AC_OUTPUT([
 Makefile
 icons/Makefile
-icons/48x48/Makefile
 icons/scalable/Makefile
 panel-plugin/Makefile
 po/Makefile.in
