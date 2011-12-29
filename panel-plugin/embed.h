@@ -29,7 +29,6 @@ typedef struct
 
     /* panel widgets */
     GtkWidget       *hvbox;
-    GtkWidget       *separator;
     GtkWidget       *label;
     GtkWidget       *socket;
     GtkWidget       *popout_menu;
