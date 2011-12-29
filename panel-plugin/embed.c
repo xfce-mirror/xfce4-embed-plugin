@@ -36,6 +36,7 @@
 /* default settings */
 #define DEFAULT_PROC_NAME    NULL
 #define DEFAULT_WINDOW_REGEX NULL
+#define DEFAULT_WINDOW_CLASS NULL
 #define DEFAULT_LABEL_FMT    NULL
 #define DEFAULT_POLL_DELAY   500
 #define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
@@ -84,6 +85,8 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
       xfce_rc_write_entry   (rc, "proc_name",   embed->proc_name);
     if (embed->window_regex)
       xfce_rc_write_entry   (rc, "window_regex", embed->window_regex);
+    if (embed->window_class)
+      xfce_rc_write_entry   (rc, "window_class", embed->window_class);
     if (embed->label_fmt)
       xfce_rc_write_entry   (rc, "label_fmt",   embed->label_fmt);
     xfce_rc_write_int_entry (rc, "poll_delay",  embed->poll_delay);
@@ -118,6 +121,8 @@ embed_read (EmbedPlugin *embed)
                               "proc_name", DEFAULT_PROC_NAME));
       embed->window_regex = g_strdup (xfce_rc_read_entry (rc,
                               "window_regex", DEFAULT_WINDOW_REGEX));
+      embed->window_class = g_strdup (xfce_rc_read_entry (rc,
+                              "window_class", DEFAULT_WINDOW_CLASS));
       embed->label_fmt = g_strdup (xfce_rc_read_entry (rc,
                               "label_fmt", DEFAULT_LABEL_FMT));
       embed->poll_delay = xfce_rc_read_int_entry (rc,
@@ -138,6 +143,7 @@ embed_read (EmbedPlugin *embed)
 
   embed->proc_name   = g_strdup (DEFAULT_PROC_NAME);
   embed->window_regex = g_strdup (DEFAULT_WINDOW_REGEX);
+  embed->window_class = g_strdup (DEFAULT_WINDOW_CLASS);
   embed->label_fmt   = g_strdup (DEFAULT_LABEL_FMT);
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
@@ -224,6 +230,7 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   /* cleanup the settings */
   g_free (embed->proc_name);
   g_free (embed->window_regex);
+  g_free (embed->window_class);
   g_free (embed->label_fmt);
 
   /* Close the X11 display */
@@ -306,23 +313,40 @@ embed_search (EmbedPlugin *embed)
 
   DBG (".");
   
-  /* TODO: search! */
   if ((client_list = get_client_list(embed->disp, &client_list_size))) {
     for (i = 0; i < client_list_size / sizeof(Window); i++) {
-      gchar *title, *class, *proc;
-      guint width, height;
+      gchar *str;
+      gboolean match;
+      match = TRUE;
 
-      
-      title = get_window_title (embed->disp, client_list[i]);
-      class = get_window_class (embed->disp, client_list[i]);
-      proc  = get_client_proc  (embed->disp, client_list[i]);
-      get_window_size (embed->disp, client_list[i], &width, &height);
+      if (match && embed->proc_name && embed->proc_name[0]) {
+        str = get_client_proc (embed->disp, client_list[i]);
+        match = !g_strcmp0 (embed->proc_name, str);
+        g_free (str);
+      }
+      if (match && embed->window_class && embed->window_class[0]) {
+        str = get_window_class (embed->disp, client_list[i]);
+        match = !g_strcmp0 (embed->window_class, str);
+        g_free (str);
+      }
+      if (match && embed->window_regex && embed->window_regex[0]
+          && embed->window_regex_comp) {
+        str = get_window_title (embed->disp, client_list[i]);
+        match = g_regex_match (embed->window_regex_comp, str, 0, NULL);
+        g_free (str);
+      }
 
-      DBG("%s: %s, %s, %ux%u", proc, title, class, width, height);
-
-      g_free(title);
-      g_free(class);
-      g_free(proc);
+      if (match) {
+        embed->plug_is_gtkplug = FALSE;
+        embed->plug = client_list[i];
+        get_window_size (embed->disp, client_list[i],
+                         &embed->plug_width, &embed->plug_height);
+        DBG ("found window 0x%X of geometry %dx%d",
+             embed->plug, embed->plug_width, embed->plug_height);
+        /* TODO: reparent */
+        embed_update_label (embed);
+        break;
+      }
     }
     g_free(client_list);
   }
@@ -338,6 +362,16 @@ embed_start_search (GtkSocket *socket, EmbedPlugin *embed)
 {
   if (embed->disable_search)
     return;
+  /* Make sure there's a non-empty search criteria */
+  if (!(
+        (embed->proc_name && embed->proc_name[0]) ||
+        (embed->window_regex && embed->window_regex[0]
+         && embed->window_regex_comp) ||
+        (embed->window_class && embed->window_class[0])
+       )) {
+    DBG ("no search criteria specified");
+    return;
+  }
   /* TODO: handle the case where we want to launch an application that will
    * generate a plug */
   if (embed_search (embed))

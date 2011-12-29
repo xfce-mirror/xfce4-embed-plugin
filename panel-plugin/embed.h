@@ -51,6 +51,7 @@ typedef struct
     /* embed settings */
     gchar           *proc_name;
     gchar           *window_regex;
+    gchar           *window_class;
     gchar           *label_fmt;
     gint             poll_delay;
     gint             min_size;
