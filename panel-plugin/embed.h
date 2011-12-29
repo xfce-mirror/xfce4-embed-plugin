@@ -41,12 +41,16 @@ typedef struct
     gint             plug_height;
     gboolean         plug_is_gtkplug;
 
+    Display         *disp;
+
     guint            search_timer;
     gboolean         disable_search;
 
+    GRegex          *window_regex_comp;
+
     /* embed settings */
     gchar           *proc_name;
-    gchar           *window_name;
+    gchar           *window_regex;
     gchar           *label_fmt;
     gint             poll_delay;
     gint             min_size;

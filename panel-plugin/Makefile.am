@@ -17,7 +17,9 @@ xfce4_embed_plugin_SOURCES = \
 	embed.c \
 	embed.h \
 	embed-dialogs.c \
-	embed-dialogs.h
+	embed-dialogs.h \
+	ewmh.c \
+	ewmh.h
 
 xfce4_embed_plugin_CFLAGS = \
 	$(LIBXFCE4UTIL_CFLAGS) \

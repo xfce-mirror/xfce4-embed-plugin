@@ -29,16 +29,17 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-hvbox.h>
 
+#include "ewmh.h"
 #include "embed.h"
 #include "embed-dialogs.h"
 
 /* default settings */
-#define DEFAULT_PROC_NAME   NULL
-#define DEFAULT_WINDOW_NAME NULL
-#define DEFAULT_LABEL_FMT   NULL
-#define DEFAULT_POLL_DELAY  500
-#define DEFAULT_MIN_SIZE    EMBED_MIN_SIZE_MATCH_WINDOW
-#define DEFAULT_EXPAND      TRUE
+#define DEFAULT_PROC_NAME    NULL
+#define DEFAULT_WINDOW_REGEX NULL
+#define DEFAULT_LABEL_FMT    NULL
+#define DEFAULT_POLL_DELAY   500
+#define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
+#define DEFAULT_EXPAND       TRUE
 
 
 
@@ -81,8 +82,8 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     DBG(".");
     if (embed->proc_name)
       xfce_rc_write_entry   (rc, "proc_name",   embed->proc_name);
-    if (embed->window_name)
-      xfce_rc_write_entry   (rc, "window_name", embed->window_name);
+    if (embed->window_regex)
+      xfce_rc_write_entry   (rc, "window_regex", embed->window_regex);
     if (embed->label_fmt)
       xfce_rc_write_entry   (rc, "label_fmt",   embed->label_fmt);
     xfce_rc_write_int_entry (rc, "poll_delay",  embed->poll_delay);
@@ -115,8 +116,8 @@ embed_read (EmbedPlugin *embed)
       /* read the settings */
       embed->proc_name = g_strdup (xfce_rc_read_entry (rc,
                               "proc_name", DEFAULT_PROC_NAME));
-      embed->window_name = g_strdup (xfce_rc_read_entry (rc,
-                              "window_name", DEFAULT_WINDOW_NAME));
+      embed->window_regex = g_strdup (xfce_rc_read_entry (rc,
+                              "window_regex", DEFAULT_WINDOW_REGEX));
       embed->label_fmt = g_strdup (xfce_rc_read_entry (rc,
                               "label_fmt", DEFAULT_LABEL_FMT));
       embed->poll_delay = xfce_rc_read_int_entry (rc,
@@ -136,7 +137,7 @@ embed_read (EmbedPlugin *embed)
   DBG ("Applying default settings");
 
   embed->proc_name   = g_strdup (DEFAULT_PROC_NAME);
-  embed->window_name = g_strdup (DEFAULT_WINDOW_NAME);
+  embed->window_regex = g_strdup (DEFAULT_WINDOW_REGEX);
   embed->label_fmt   = g_strdup (DEFAULT_LABEL_FMT);
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
@@ -165,6 +166,14 @@ embed_new (XfcePanelPlugin *plugin)
 
   /* read the user settings */
   embed_read (embed);
+
+  /* Compile the window name regex */
+  if (embed->window_regex)
+    embed->window_regex_comp = g_regex_new (embed->window_regex,
+                                            G_REGEX_OPTIMIZE, 0, NULL);
+
+  /* Open X11 display */
+  embed->disp = XOpenDisplay(NULL);
 
   /* get the current orientation */
   orientation = xfce_panel_plugin_get_orientation (plugin);
@@ -214,8 +223,15 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   /* cleanup the settings */
   g_free (embed->proc_name);
-  g_free (embed->window_name);
+  g_free (embed->window_regex);
   g_free (embed->label_fmt);
+
+  /* Close the X11 display */
+  XCloseDisplay(embed->disp);
+
+  /* Release the compiled regex */
+  if (embed->window_regex_comp)
+    g_regex_unref (embed->window_regex_comp);
 
   /* free the plugin structure */
   panel_slice_free (EmbedPlugin, embed);
@@ -284,8 +300,32 @@ embed_update_label (EmbedPlugin *embed)
 static gboolean
 embed_search (EmbedPlugin *embed)
 {
+  Window *client_list;
+  gulong client_list_size;
+  gulong i;
+
   DBG (".");
+  
   /* TODO: search! */
+  if ((client_list = get_client_list(embed->disp, &client_list_size))) {
+    for (i = 0; i < client_list_size / sizeof(Window); i++) {
+      gchar *title, *class, *proc;
+      guint width, height;
+
+      
+      title = get_window_title (embed->disp, client_list[i]);
+      class = get_window_class (embed->disp, client_list[i]);
+      proc  = get_client_proc  (embed->disp, client_list[i]);
+      get_window_size (embed->disp, client_list[i], &width, &height);
+
+      DBG("%s: %s, %s, %ux%u", proc, title, class, width, height);
+
+      g_free(title);
+      g_free(class);
+      g_free(proc);
+    }
+    g_free(client_list);
+  }
 
   /* Return TRUE if we haven't found a plug yet, so that the function is called
    * again. */
