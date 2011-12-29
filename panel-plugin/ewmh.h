@@ -28,7 +28,10 @@ gchar  *get_window_title (Display *disp, Window win);
 gchar  *get_window_class (Display *disp, Window win);
 void    get_window_size  (Display *disp, Window win, gint *width, gint *height);
 
-void    make_window_toplevel (Display *disp, Window win);
+void make_window_toplevel (Display *disp, Window win, gint width, gint height);
+void reparent_window (Display *disp, Window win, Window parent,
+		      gint width, gint height);
+void resize_window (Display *disp, Window win, gint width, gint height);
 
 G_END_DECLS
 

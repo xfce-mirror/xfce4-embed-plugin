@@ -211,8 +211,21 @@ void get_window_size (Display *disp, Window win, gint *width, gint *height)
 }
 
 
-void make_window_toplevel (Display *disp, Window win)
+void make_window_toplevel (Display *disp, Window win, gint width, gint height)
 {
-    XReparentWindow (disp, win, DefaultRootWindow (disp), 0, 0);
-    XFlush (disp);
+    reparent_window (disp, win, DefaultRootWindow (disp), width, height);
+}
+
+void reparent_window (Display *disp, Window win, Window parent,
+                      gint width, gint height)
+{
+    XReparentWindow (disp, win, parent, 0, 0);
+    resize_window (disp, win, width, height);
+}
+
+void resize_window (Display *disp, Window win, gint width, gint height)
+{
+    if (width > 0 && height > 0)
+        XResizeWindow (disp, win, (guint)width, (guint)height);
+    XSync (disp, False);
 }

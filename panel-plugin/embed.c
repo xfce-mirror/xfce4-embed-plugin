@@ -53,6 +53,8 @@ static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed);
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size);
+static void
+embed_add_fake_socket (EmbedPlugin *embed);
 
 
 /* register the plugin */
@@ -91,6 +93,7 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
       xfce_rc_write_entry   (rc, "label_fmt",   embed->label_fmt);
     xfce_rc_write_int_entry (rc, "poll_delay",  embed->poll_delay);
     xfce_rc_write_int_entry (rc, "min_size",    embed->min_size);
+    xfce_rc_write_bool_entry(rc, "expand",      embed->expand);
 
     /* close the rc file */
     xfce_rc_close (rc);
@@ -129,6 +132,8 @@ embed_read (EmbedPlugin *embed)
                               "poll_delay", DEFAULT_POLL_DELAY);
       embed->min_size = xfce_rc_read_int_entry (rc,
                               "min_size", DEFAULT_MIN_SIZE);
+      embed->expand = xfce_rc_read_bool_entry (rc,
+                              "expand", DEFAULT_EXPAND);
 
       /* cleanup */
       xfce_rc_close (rc);
@@ -147,6 +152,7 @@ embed_read (EmbedPlugin *embed)
   embed->label_fmt   = g_strdup (DEFAULT_LABEL_FMT);
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
+  embed->expand      = DEFAULT_EXPAND;
 }
 
 
@@ -176,6 +182,9 @@ embed_new (XfcePanelPlugin *plugin)
 
   /* read the user settings */
   embed_read (embed);
+
+  /* set expand */
+  xfce_panel_plugin_set_expand (plugin, embed->expand);
 
   /* Compile the window name regex */
   if (embed->window_regex)
@@ -317,6 +326,7 @@ embed_update_label (EmbedPlugin *embed)
 }
 
 
+
 static gboolean
 embed_search (EmbedPlugin *embed)
 {
@@ -350,15 +360,14 @@ embed_search (EmbedPlugin *embed)
       }
 
       if (match) {
+        gtk_widget_destroy (embed->socket);
         embed->plug_is_gtkplug = FALSE;
         embed->plug = client_list[i];
         get_window_size (embed->disp, client_list[i],
                          &embed->plug_width, &embed->plug_height);
         DBG ("found window 0x%X of geometry %dx%d",
              embed->plug, embed->plug_width, embed->plug_height);
-        embed_update_label (embed);
-        embed_size_changed_simple (embed);
-        gtk_socket_steal (GTK_SOCKET (embed->socket), embed->plug);
+        embed_add_fake_socket (embed);
         break;
       }
     }
@@ -405,7 +414,7 @@ embed_embed_menu (GtkMenuItem *embed_menu, EmbedPlugin *embed)
 
 
 static void
-embed_plug_added (GtkSocket *socket, EmbedPlugin *embed)
+embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 {
   DBG(".");
 
@@ -444,7 +453,7 @@ embed_add_socket_and_resize (EmbedPlugin *embed)
 
 
 static gboolean
-embed_plug_removed (GtkSocket *socket, EmbedPlugin *embed)
+embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 {
   DBG(".");
 
@@ -459,6 +468,19 @@ embed_plug_removed (GtkSocket *socket, EmbedPlugin *embed)
   g_idle_add ((GSourceFunc)embed_add_socket_and_resize, embed);
   /* Returning false will destroy the socket */
   return FALSE;
+}
+
+
+
+static void
+embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
+                     EmbedPlugin *embed)
+{
+  if (!embed->plug || embed->plug_is_gtkplug)
+    return;
+  DBG (".");
+  resize_window (embed->disp, embed->plug,
+                 allocation->width, allocation->height);
 }
 
 
@@ -487,6 +509,21 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
 
 
 static void
+embed_add_fake_socket (EmbedPlugin *embed)
+{
+  embed->socket = gtk_drawing_area_new ();
+  gtk_widget_show (embed->socket);
+  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
+  g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
+                    G_CALLBACK (embed_size_allocate), embed);
+  reparent_window (embed->disp, embed->plug,
+                   gdk_x11_drawable_get_xid (gtk_widget_get_window (embed->socket)), 0, 0);
+  embed_plug_added (embed->socket, embed);
+}
+
+
+
+static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 {
   GtkWidget *socket;
@@ -496,15 +533,14 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
   if (!embed->plug_is_gtkplug) {
     /* Since we're not hosting a gtkplug, we should reparent the window so we
      * don't break the program we were hosting. */
-    /* Unfortunately, gtksocket auto-destroys its plugs, and just reparenting
-     * doesn't prevent that. More drastic measures will be needed. */
-    /* make_window_toplevel (embed->disp, embed->plug); */
+    make_window_toplevel (embed->disp, embed->plug,
+                          embed->plug_width, embed->plug_height);
   }
   /* Don't enable searching for a new window. */
   embed->disable_search = TRUE;
   /* destroy socket and make a new one. destroy does not trigger plug_removed */
   socket = embed->socket;
-  embed_plug_removed (GTK_SOCKET (embed->socket), embed);
+  embed_plug_removed (embed->socket, embed);
   gtk_widget_destroy (socket);
 }
 
