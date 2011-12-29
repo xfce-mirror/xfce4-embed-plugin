@@ -94,6 +94,26 @@ static gchar *get_property (Display *disp, Window win, Atom xa_prop_type,
     return ret;
 }
 
+static void client_msg(Display *disp, Window win, gchar *msg, gulong data0) {
+    XEvent event;
+    glong mask = SubstructureRedirectMask | SubstructureNotifyMask;
+
+    event.xclient.type = ClientMessage;
+    event.xclient.serial = 0;
+    event.xclient.send_event = True;
+    event.xclient.message_type = XInternAtom(disp, msg, False);
+    event.xclient.window = win;
+    event.xclient.format = 32;
+    event.xclient.data.l[0] = data0;
+    event.xclient.data.l[1] = 0;
+    event.xclient.data.l[2] = 0;
+    event.xclient.data.l[3] = 0;
+    event.xclient.data.l[4] = 0;
+
+    if (!XSendEvent(disp, DefaultRootWindow(disp), False, mask, &event))
+        DBG("Cannot send %s event.", msg);
+    XSync (disp, False);
+}
 
 Window *get_client_list (Display *disp, gulong *size)
 {
@@ -228,4 +248,23 @@ void resize_window (Display *disp, Window win, gint width, gint height)
     if (width > 0 && height > 0)
         XResizeWindow (disp, win, (guint)width, (guint)height);
     XSync (disp, False);
+}
+
+void show_window (Display *disp, Window win)
+{
+    gulong *cur_desktop = NULL;
+    Window root = DefaultRootWindow(disp);
+
+    if (! (cur_desktop = (unsigned long *)get_property(disp, root,
+            XA_CARDINAL, "_NET_CURRENT_DESKTOP", NULL))) {
+        if (! (cur_desktop = (unsigned long *)get_property(disp, root,
+                XA_CARDINAL, "_WIN_WORKSPACE", NULL))) {
+            DBG("Cannot get current desktop properties. "
+                "(_NET_CURRENT_DESKTOP or _WIN_WORKSPACE property)");
+            return;
+        }
+    }
+
+    client_msg(disp, win, "_NET_WM_DESKTOP", *cur_desktop);
+    g_free(cur_desktop);
 }

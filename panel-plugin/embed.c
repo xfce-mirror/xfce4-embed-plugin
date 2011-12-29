@@ -516,8 +516,9 @@ embed_add_fake_socket (EmbedPlugin *embed)
   gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
+  show_window (embed->disp, embed->plug);
   reparent_window (embed->disp, embed->plug,
-                   gdk_x11_drawable_get_xid (gtk_widget_get_window (embed->socket)), 0, 0);
+      gdk_x11_drawable_get_xid (gtk_widget_get_window (embed->socket)), 0, 0);
   embed_plug_added (embed->socket, embed);
 }
 
