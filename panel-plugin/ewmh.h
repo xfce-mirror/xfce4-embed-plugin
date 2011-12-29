@@ -28,6 +28,8 @@ gchar  *get_window_title (Display *disp, Window win);
 gchar  *get_window_class (Display *disp, Window win);
 void    get_window_size  (Display *disp, Window win, gint *width, gint *height);
 
+void    make_window_toplevel (Display *disp, Window win);
+
 G_END_DECLS
 
 #endif /* !__EWMH_H__ */

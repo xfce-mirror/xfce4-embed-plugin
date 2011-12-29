@@ -149,10 +149,14 @@ embed_read (EmbedPlugin *embed)
   embed->min_size    = DEFAULT_MIN_SIZE;
 }
 
+
+
 static void
 embed_update_separator (EmbedPlugin* embed, GtkOrientation orientation)
 {
 }
+
+
 
 static EmbedPlugin *
 embed_new (XfcePanelPlugin *plugin)
@@ -215,6 +219,8 @@ static void
 embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
   GtkWidget *dialog;
+
+  DBG(".");
 
   /* Don't hold onto the embedded window */
   embed_popout (GTK_MENU_ITEM(embed->popout_menu), embed);
@@ -291,6 +297,13 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 }
 
 
+static void
+embed_size_changed_simple (EmbedPlugin *embed)
+{
+  embed_size_changed (embed->plugin,
+                      xfce_panel_plugin_get_size(embed->plugin), embed);
+}
+
 
 static void
 embed_update_label (EmbedPlugin *embed)
@@ -343,8 +356,9 @@ embed_search (EmbedPlugin *embed)
                          &embed->plug_width, &embed->plug_height);
         DBG ("found window 0x%X of geometry %dx%d",
              embed->plug, embed->plug_width, embed->plug_height);
-        /* TODO: reparent */
         embed_update_label (embed);
+        embed_size_changed_simple (embed);
+        gtk_socket_steal (GTK_SOCKET (embed->socket), embed->plug);
         break;
       }
     }
@@ -414,8 +428,7 @@ embed_plug_added (GtkSocket *socket, EmbedPlugin *embed)
   embed_update_label (embed);
 
   /* Update the size of the panel. */
-  embed_size_changed (embed->plugin,
-                      xfce_panel_plugin_get_size(embed->plugin), embed);
+  embed_size_changed_simple (embed);
 }
 
 
@@ -433,6 +446,8 @@ embed_add_socket_and_resize (EmbedPlugin *embed)
 static gboolean
 embed_plug_removed (GtkSocket *socket, EmbedPlugin *embed)
 {
+  DBG(".");
+
   g_assert (embed->socket);
 
   gtk_widget_hide(embed->popout_menu);
@@ -451,8 +466,6 @@ embed_plug_removed (GtkSocket *socket, EmbedPlugin *embed)
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size)
 {
-  /* Should call embed_size_changed after adding a socket so that its size is
-   * updated */
   if (embed->socket)
     return;
 
@@ -468,8 +481,7 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
                     G_CALLBACK (embed_start_search), embed);
 
   if (update_size)
-    embed_size_changed (embed->plugin,
-                        xfce_panel_plugin_get_size(embed->plugin), embed);
+    embed_size_changed_simple (embed);
 }
 
 
@@ -478,15 +490,19 @@ static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 {
   GtkWidget *socket;
+
+  DBG(".");
+
   if (!embed->plug_is_gtkplug) {
     /* Since we're not hosting a gtkplug, we should reparent the window so we
      * don't break the program we were hosting. */
-    /* TODO: reparent */
+    /* Unfortunately, gtksocket auto-destroys its plugs, and just reparenting
+     * doesn't prevent that. More drastic measures will be needed. */
+    /* make_window_toplevel (embed->disp, embed->plug); */
   }
   /* Don't enable searching for a new window. */
   embed->disable_search = TRUE;
   /* destroy socket and make a new one. destroy does not trigger plug_removed */
-  DBG("destroy");
   socket = embed->socket;
   embed_plug_removed (GTK_SOCKET (embed->socket), embed);
   gtk_widget_destroy (socket);

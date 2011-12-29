@@ -209,3 +209,10 @@ void get_window_size (Display *disp, Window win, gint *width, gint *height)
     XGetGeometry (disp, win, &root, &relx, &rely,
                   (guint *)width, (guint *)height, &bw, &depth);
 }
+
+
+void make_window_toplevel (Display *disp, Window win)
+{
+    XReparentWindow (disp, win, DefaultRootWindow (disp), 0, 0);
+    XFlush (disp);
+}
