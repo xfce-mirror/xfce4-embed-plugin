@@ -38,7 +38,7 @@
 #define DEFAULT_WINDOW_REGEX NULL
 #define DEFAULT_WINDOW_CLASS NULL
 #define DEFAULT_LABEL_FMT    NULL
-#define DEFAULT_POLL_DELAY   500
+#define DEFAULT_POLL_DELAY   0
 #define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
 #define DEFAULT_EXPAND       TRUE
 
@@ -51,6 +51,8 @@ static void
 embed_update_label (EmbedPlugin *embed);
 static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed);
+static void
+embed_destroyed (EmbedPlugin *embed);
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size);
 static void
@@ -82,18 +84,18 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   if (G_LIKELY (rc != NULL)) {
     /* save the settings */
-    DBG(".");
+    DBG (".");
     if (embed->proc_name)
-      xfce_rc_write_entry   (rc, "proc_name",   embed->proc_name);
+      xfce_rc_write_entry    (rc, "proc_name",   embed->proc_name);
     if (embed->window_regex)
-      xfce_rc_write_entry   (rc, "window_regex", embed->window_regex);
+      xfce_rc_write_entry    (rc, "window_regex", embed->window_regex);
     if (embed->window_class)
-      xfce_rc_write_entry   (rc, "window_class", embed->window_class);
+      xfce_rc_write_entry    (rc, "window_class", embed->window_class);
     if (embed->label_fmt)
-      xfce_rc_write_entry   (rc, "label_fmt",   embed->label_fmt);
-    xfce_rc_write_int_entry (rc, "poll_delay",  embed->poll_delay);
-    xfce_rc_write_int_entry (rc, "min_size",    embed->min_size);
-    xfce_rc_write_bool_entry(rc, "expand",      embed->expand);
+      xfce_rc_write_entry    (rc, "label_fmt",   embed->label_fmt);
+    xfce_rc_write_int_entry  (rc, "poll_delay",  embed->poll_delay);
+    xfce_rc_write_int_entry  (rc, "min_size",    embed->min_size);
+    xfce_rc_write_bool_entry (rc, "expand",      embed->expand);
 
     /* close the rc file */
     xfce_rc_close (rc);
@@ -192,7 +194,7 @@ embed_new (XfcePanelPlugin *plugin)
                                             G_REGEX_OPTIMIZE, 0, NULL);
 
   /* Open X11 display */
-  embed->disp = XOpenDisplay(NULL);
+  embed->disp = XOpenDisplay (NULL);
 
   /* get the current orientation */
   orientation = xfce_panel_plugin_get_orientation (plugin);
@@ -217,7 +219,7 @@ embed_new (XfcePanelPlugin *plugin)
 
   /* embed menu item, shown by default. */
   embed->embed_menu = gtk_image_menu_item_new_with_mnemonic (_("_Embed"));
-  gtk_widget_show(embed->embed_menu);
+  gtk_widget_show (embed->embed_menu);
 
   return embed;
 }
@@ -229,10 +231,10 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
   GtkWidget *dialog;
 
-  DBG(".");
+  DBG (".");
 
   /* Don't hold onto the embedded window */
-  embed_popout (GTK_MENU_ITEM(embed->popout_menu), embed);
+  embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
 
   /* check if the dialog is still open. if so, destroy it */
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
@@ -249,7 +251,7 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   g_free (embed->label_fmt);
 
   /* Close the X11 display */
-  XCloseDisplay(embed->disp);
+  XCloseDisplay (embed->disp);
 
   /* Release the compiled regex */
   if (embed->window_regex_comp)
@@ -306,23 +308,38 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 }
 
 
+
 static void
 embed_size_changed_simple (EmbedPlugin *embed)
 {
   embed_size_changed (embed->plugin,
-                      xfce_panel_plugin_get_size(embed->plugin), embed);
+                      xfce_panel_plugin_get_size (embed->plugin), embed);
 }
+
 
 
 static void
 embed_update_label (EmbedPlugin *embed)
 {
-  if (embed->label_fmt && *embed->label_fmt)
+  if (embed->label_fmt && *embed->label_fmt) {
+    gchar *titlepos;
+    if (embed->plug &&
+        (titlepos = strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))) {
+      gchar *title, *label;
+      title = get_window_title (embed->disp, embed->plug);
+      label = g_strdup_printf ("%.*s%s%s",
+          (gint)(titlepos - embed->label_fmt), embed->label_fmt,
+          title, titlepos + strlen (EMBED_LABEL_FMT_TITLE));
+      gtk_label_set_text (GTK_LABEL (embed->label), label);
+      g_free (title);
+      g_free (label);
+    } else {
+      gtk_label_set_text (GTK_LABEL (embed->label), embed->label_fmt);
+    }
     gtk_widget_show (embed->label);
-  else
+  } else {
     gtk_widget_hide (embed->label);
-  /* TODO: parse label_fmt and generate label text */
-  gtk_label_set_text(GTK_LABEL (embed->label), embed->label_fmt);
+  }
 }
 
 
@@ -336,8 +353,8 @@ embed_search (EmbedPlugin *embed)
 
   DBG (".");
   
-  if ((client_list = get_client_list(embed->disp, &client_list_size))) {
-    for (i = 0; i < client_list_size / sizeof(Window); i++) {
+  if ((client_list = get_client_list (embed->disp, &client_list_size))) {
+    for (i = 0; i < client_list_size / sizeof (Window); i++) {
       gchar *str;
       gboolean match;
       match = TRUE;
@@ -371,7 +388,7 @@ embed_search (EmbedPlugin *embed)
         break;
       }
     }
-    g_free(client_list);
+    g_free (client_list);
   }
 
   /* Return TRUE if we haven't found a plug yet, so that the function is called
@@ -380,11 +397,14 @@ embed_search (EmbedPlugin *embed)
 }
 
 
+
 static void
-embed_start_search (GtkSocket *socket, EmbedPlugin *embed)
+embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
 {
-  if (embed->disable_search)
+  if (embed->disable_search) {
+    DBG ("search disabled");
     return;
+  }
   /* Make sure there's a non-empty search criteria */
   if (!(
         (embed->proc_name && embed->proc_name[0]) ||
@@ -397,41 +417,99 @@ embed_start_search (GtkSocket *socket, EmbedPlugin *embed)
   }
   /* TODO: handle the case where we want to launch an application that will
    * generate a plug */
-  if (embed_search (embed))
-    embed->search_timer = g_timeout_add(embed->poll_delay,
-                                        (GSourceFunc)embed_search, embed);
+  if (embed_search (embed)) {
+    embed->monitor_saw_net_client_list = FALSE;
+    /* Watch for property changes (primarily the window list ones) on the root
+     * window.
+     * Note that gdk_x11_get_default_xdisplay () is not the same as the display
+     * stored in embed->disp.  embed->disp will be valid through the destruction
+     * of the plugin, but GDK expects its own xdisplay to access the internal
+     * hashmaps */
+    XSelectInput (gdk_x11_get_default_xdisplay (),
+                  gdk_x11_get_default_root_xwindow (), PropertyChangeMask);
+    if (embed->poll_delay > 0)
+      embed->search_timer = g_timeout_add (embed->poll_delay,
+                                          (GSourceFunc)embed_search, embed);
+  }
 }
+
+
+
+static void
+embed_stop_search (EmbedPlugin *embed)
+{
+  XSelectInput (gdk_x11_get_default_xdisplay (),
+                gdk_x11_get_default_root_xwindow (), 0);
+  if (embed->search_timer) {
+    g_source_remove (embed->search_timer);
+    embed->search_timer = 0;
+  }
+}
+
 
 
 static void
 embed_embed_menu (GtkMenuItem *embed_menu, EmbedPlugin *embed)
 {
   embed->disable_search = FALSE;
-  if (embed->search_timer)
-    g_source_remove (embed->search_timer);
-  embed_start_search (GTK_SOCKET (embed->socket), embed);
+  embed_stop_search (embed);
+  embed_start_search (embed->socket, embed);
 }
+
+
+
+static GdkFilterReturn
+embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
+{
+  if (xevent->type == PropertyNotify) {
+    if (xevent->atom == XInternAtom (xevent->display, "_NET_WM_NAME", False)) {
+      embed->monitor_saw_net_wm_name = TRUE;
+      embed_update_label (embed);
+    } else if (!embed->monitor_saw_net_wm_name &&
+        xevent->atom == XInternAtom (xevent->display, "WM_NAME", False)) {
+      embed_update_label (embed);
+    }
+  } else if (xevent->type == UnmapNotify || xevent->type == DestroyNotify) {
+    DBG ("destroyed");
+    embed_destroyed (embed);
+  }
+  return GDK_FILTER_CONTINUE;
+}
+
 
 
 static void
 embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 {
-  DBG(".");
+  DBG (".");
 
-  gtk_widget_hide(embed->embed_menu);
-  gtk_widget_show(embed->popout_menu);
+  gtk_widget_hide (embed->embed_menu);
+  gtk_widget_show (embed->popout_menu);
 
-  /* Stop searching */
-  if (embed->search_timer) {
-    g_source_remove (embed->search_timer);
-    embed->search_timer = 0;
-  }
+  embed_stop_search (embed);
 
   /* If we just got plugged by a gtkplug, set the "known" width and height to -1
    * so that the socket will completely pass through the minimum size request if
    * the user so desires */
   if (embed->plug_is_gtkplug)
     embed->plug_width = embed->plug_height = -1;
+
+  /* Monitor the plug for destruction, along with title changes if we need it
+   * for the label. */
+  if (embed->plug) {
+    embed->plug_window = gdk_x11_window_foreign_new_for_display (
+        gdk_display_get_default (), embed->plug);
+    if (embed->plug_window) {
+      glong monitor_mask = StructureNotifyMask;
+      if (embed->label_fmt && strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))
+        monitor_mask |= PropertyChangeMask;
+      embed->monitor_saw_net_wm_name = FALSE;
+      gdk_window_add_filter (embed->plug_window,
+                             (GdkFilterFunc)embed_plug_filter, embed);
+      XSelectInput (gdk_x11_get_default_xdisplay (),
+                    embed->plug, monitor_mask);
+    }
+  }
 
   /* Update the label */
   embed_update_label (embed);
@@ -445,7 +523,7 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 static gboolean
 embed_add_socket_and_resize (EmbedPlugin *embed)
 {
-  DBG(".");
+  DBG (".");
   embed_add_socket (embed, TRUE);
   return FALSE;
 }
@@ -455,13 +533,20 @@ embed_add_socket_and_resize (EmbedPlugin *embed)
 static gboolean
 embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 {
-  DBG(".");
+  DBG (".");
 
   g_assert (embed->socket);
 
-  gtk_widget_hide(embed->popout_menu);
-  gtk_widget_show(embed->embed_menu);
+  gtk_widget_hide (embed->popout_menu);
+  gtk_widget_show (embed->embed_menu);
   embed->socket = NULL;
+  if (embed->plug_window) {
+    XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, 0);
+    gdk_window_remove_filter (embed->plug_window, 
+                              (GdkFilterFunc)embed_plug_filter, embed);
+    g_object_unref (embed->plug_window);
+    embed->plug_window = NULL;
+  }
   embed->plug = 0;
   embed->plug_is_gtkplug = TRUE;
   embed_update_label (embed);
@@ -488,12 +573,9 @@ embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size)
 {
-  if (embed->socket)
-    return;
+  g_assert (embed->socket == NULL);
 
   embed->socket = gtk_socket_new ();
-  gtk_widget_show (embed->socket);
-  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
 
   g_signal_connect (G_OBJECT (embed->socket), "plug-added",
                     G_CALLBACK (embed_plug_added), embed);
@@ -501,6 +583,9 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
                     G_CALLBACK (embed_plug_removed), embed);
   g_signal_connect (G_OBJECT (embed->socket), "realize",
                     G_CALLBACK (embed_start_search), embed);
+
+  gtk_widget_show (embed->socket);
+  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
 
   if (update_size)
     embed_size_changed_simple (embed);
@@ -512,10 +597,12 @@ static void
 embed_add_fake_socket (EmbedPlugin *embed)
 {
   embed->socket = gtk_drawing_area_new ();
-  gtk_widget_show (embed->socket);
-  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
+
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
+
+  gtk_widget_show (embed->socket);
+  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
   show_window (embed->disp, embed->plug);
   reparent_window (embed->disp, embed->plug,
       gdk_x11_drawable_get_xid (gtk_widget_get_window (embed->socket)), 0, 0);
@@ -529,7 +616,7 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 {
   GtkWidget *socket;
 
-  DBG(".");
+  DBG (".");
 
   if (!embed->plug_is_gtkplug) {
     /* Since we're not hosting a gtkplug, we should reparent the window so we
@@ -546,6 +633,36 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 }
 
 
+static void
+embed_destroyed (EmbedPlugin *embed)
+{
+  GtkWidget *socket;
+  if ((socket = embed->socket) == NULL)
+    return;
+  embed_plug_removed (embed->socket, embed);
+  gtk_widget_destroy (socket);
+}
+
+
+
+static GdkFilterReturn
+embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
+{
+  if (xevent->type == PropertyNotify) {
+    if (xevent->atom == XInternAtom (xevent->display,
+                                     "_NET_CLIENT_LIST", False)) {
+      embed->monitor_saw_net_client_list = TRUE;
+      embed_search (embed);
+    } else if (!embed->monitor_saw_net_client_list &&
+        xevent->atom == XInternAtom (xevent->display,
+                                     "_WIN_CLIENT_LIST", False)) {
+      embed_search (embed);
+    }
+  }
+  return GDK_FILTER_REMOVE;
+}
+
+
 
 static void
 embed_construct (XfcePanelPlugin *plugin)
@@ -553,7 +670,7 @@ embed_construct (XfcePanelPlugin *plugin)
   EmbedPlugin *embed;
 
   /* setup translation domain */
-  xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   /* create the plugin */
   embed = embed_new (plugin);
@@ -578,12 +695,14 @@ embed_construct (XfcePanelPlugin *plugin)
                     G_CALLBACK (embed_orientation_changed), embed);
 
   /* Add the "pop out" menu item */
-  xfce_panel_plugin_menu_insert_item (plugin, GTK_MENU_ITEM(embed->popout_menu));
+  xfce_panel_plugin_menu_insert_item (plugin,
+                                      GTK_MENU_ITEM (embed->popout_menu));
   g_signal_connect (G_OBJECT (embed->popout_menu), "activate",
                     G_CALLBACK (embed_popout), embed);
 
   /* Add the "embed" menu item */
-  xfce_panel_plugin_menu_insert_item (plugin, GTK_MENU_ITEM(embed->embed_menu));
+  xfce_panel_plugin_menu_insert_item (plugin,
+                                      GTK_MENU_ITEM (embed->embed_menu));
   g_signal_connect (G_OBJECT (embed->embed_menu), "activate",
                     G_CALLBACK (embed_embed_menu), embed);
 
@@ -596,4 +715,8 @@ embed_construct (XfcePanelPlugin *plugin)
   xfce_panel_plugin_menu_show_about (plugin);
   g_signal_connect (G_OBJECT (plugin), "about",
                     G_CALLBACK (embed_about), NULL);
+
+  /* Register our own event filter to avoid having to poll X11 properties. */
+  gdk_window_add_filter (gdk_get_default_root_window (),
+                         (GdkFilterFunc)embed_root_filter, embed);
 }

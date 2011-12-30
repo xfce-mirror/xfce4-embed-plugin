@@ -36,6 +36,7 @@ typedef struct
 
     /* panel data */
     GdkNativeWindow  plug;
+    GdkWindow       *plug_window;
     gint             plug_width;
     gint             plug_height;
     gboolean         plug_is_gtkplug;
@@ -44,6 +45,8 @@ typedef struct
 
     guint            search_timer;
     gboolean         disable_search;
+    gboolean         monitor_saw_net_client_list;
+    gboolean         monitor_saw_net_wm_name;
 
     GRegex          *window_regex_comp;
 
@@ -61,6 +64,8 @@ EmbedPlugin;
 /* Special values for EmbedPlugin::min_size */
 #define EMBED_MIN_SIZE_MATCH_WINDOW 0
 
+/* Special contents of label_fmt */
+#define EMBED_LABEL_FMT_TITLE "%t"
 
 void
 embed_save (XfcePanelPlugin *plugin,
