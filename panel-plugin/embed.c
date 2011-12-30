@@ -233,18 +233,15 @@ embed_new (XfcePanelPlugin *plugin)
 
 
 
-/* Frees up the EmbedPlugin structure, popping out the embedded window if there
- * still is one embedded. */
+/* Frees up the EmbedPlugin structure.
+ * At this point it seems that GDK no longer provides direct access to the X11
+ * server. */
 static void
 embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
   GtkWidget *dialog;
 
   DBG (".");
-
-  /* Don't hold onto the embedded window, as if it is a normal window, it will
-   * get lost if we don't reparent it. */
-  embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
 
   /* check if the dialog is still open. if so, destroy it */
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
@@ -788,6 +785,17 @@ embed_destroyed (EmbedPlugin *embed)
 }
 
 
+/* Callback for when the plugin is unrealized, usually right before being
+ * destroyed.  We use the opportunity to ditch any normal windows we may have
+ * embedded. */
+static void
+embed_unrealize (GtkWidget *plugin, EmbedPlugin *embed)
+{
+  /* Don't hold onto the embedded window, as if it is a normal window, it will
+   * get lost if we don't reparent it. */
+  embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
+}
+
 
 /* Pop out whatever is embedded and start a new search.
  * Called when the window criteria have been updated. */
@@ -855,6 +863,9 @@ embed_construct (XfcePanelPlugin *plugin)
 
   g_signal_connect (G_OBJECT (plugin), "orientation-changed",
                     G_CALLBACK (embed_orientation_changed), embed);
+
+  g_signal_connect (G_OBJECT (plugin), "unrealize",
+                    G_CALLBACK (embed_unrealize), embed);
 
   /* Add the "pop out" menu item */
   xfce_panel_plugin_menu_insert_item (plugin,
