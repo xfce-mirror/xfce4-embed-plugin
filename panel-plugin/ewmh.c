@@ -65,7 +65,8 @@ static gchar *get_property (Display *disp, Window win, Atom xa_prop_type,
      * APIs, even when long was changed to 64 bits.
      *
      */
-    if (XGetWindowProperty(disp, win, xa_prop_name, 0, MAX_PROPERTY_VALUE_LEN / 4, False,
+    if (XGetWindowProperty(disp, win, xa_prop_name, 0,
+            MAX_PROPERTY_VALUE_LEN / 4, False,
             xa_prop_type, &xa_ret_type, &ret_format,     
             &ret_nitems, &ret_bytes_after, &ret_prop) != Success) {
         DBG("Cannot get %s property.\n", prop_name);
@@ -121,7 +122,7 @@ Window *get_client_list (Display *disp, gulong *size)
 
     if ((client_list = (Window *)get_property(disp, DefaultRootWindow(disp), 
                     XA_WINDOW, "_NET_CLIENT_LIST", size)) == NULL) {
-        if ((client_list = (Window *)get_property(disp, DefaultRootWindow(disp), 
+        if ((client_list = (Window *)get_property(disp, DefaultRootWindow(disp),
                         XA_CARDINAL, "_WIN_CLIENT_LIST", size)) == NULL) {
             DBG("Cannot get client list properties. \n"
                   "(_NET_CLIENT_LIST or _WIN_CLIENT_LIST)\n");

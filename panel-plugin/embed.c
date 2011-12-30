@@ -63,7 +63,7 @@ embed_add_fake_socket (EmbedPlugin *embed);
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (embed_construct);
 
 
-
+/* Save the plugin settings. */
 void
 embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
@@ -104,6 +104,7 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
 
 
+/* Read in the plugin settings. */
 static void
 embed_read (EmbedPlugin *embed)
 {
@@ -159,6 +160,10 @@ embed_read (EmbedPlugin *embed)
 
 
 
+/* Remove any old separator and add a new one, if necessary.
+ * This is used to add a separator widget, although currently as there is no
+ * separator widget, nothing happens.  The function is still called in the
+ * correct places though, so it is trivial to add. */
 static void
 embed_update_separator (EmbedPlugin* embed, GtkOrientation orientation)
 {
@@ -166,6 +171,7 @@ embed_update_separator (EmbedPlugin* embed, GtkOrientation orientation)
 
 
 
+/* Creates a new EmbedPlugin structure and initializes everything. */
 static EmbedPlugin *
 embed_new (XfcePanelPlugin *plugin)
 {
@@ -226,6 +232,8 @@ embed_new (XfcePanelPlugin *plugin)
 
 
 
+/* Frees up the EmbedPlugin structure, popping out the embedded window if there
+ * still is one embedded. */
 static void
 embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
@@ -233,7 +241,8 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   DBG (".");
 
-  /* Don't hold onto the embedded window */
+  /* Don't hold onto the embedded window, as if it is a normal window, it will
+   * get lost if we don't reparent it. */
   embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
 
   /* check if the dialog is still open. if so, destroy it */
@@ -263,6 +272,7 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
 
 
+/* Callback when the orientation of the panel is changed. */
 static void
 embed_orientation_changed (XfcePanelPlugin *plugin,
                            GtkOrientation   orientation,
@@ -275,6 +285,9 @@ embed_orientation_changed (XfcePanelPlugin *plugin,
 
 
 
+/* Callback when the size of the panel is changed.
+ * Updates the requested sizes of the plugin and the socket window.
+ * Also used manually to apply size changes when the plug changes. */
 static gboolean
 embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 {
@@ -285,18 +298,24 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
   orientation = xfce_panel_plugin_get_orientation (plugin);
 
   /* set the socket widget size.
-   * Use the minimum size if set, otherwise if it is set to the window size and
-   * we don't have a window embedded, set to square. */
+   * For the adjustable dimension, use the minimum size if set, otherwise if it
+   * is set to the window size and we don't have a window embedded, set to
+   * square. */
   if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW)
     altsize = size;
   else
     altsize = embed->min_size;
   if (orientation == GTK_ORIENTATION_HORIZONTAL) {
+    /* If requested, use the window size detected earlier. This will be -1 for
+     * true GtkPlugs, which will pass through the window size request. */
     if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->plug)
       altsize = embed->plug_width;
     gtk_widget_set_size_request (GTK_WIDGET (embed->socket), altsize, size);
+    /* Widget altsize should just adapt, since it might include a label and/or
+     * separator. */
     gtk_widget_set_size_request (GTK_WIDGET (plugin), -1, size);
   } else {
+    /* Same for vertical orientation. */
     if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->plug)
       altsize = embed->plug_height;
     gtk_widget_set_size_request (GTK_WIDGET (embed->socket), size, altsize);
@@ -309,6 +328,7 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 
 
 
+/* Convenience function to call embed_size_changed. */
 static void
 embed_size_changed_simple (EmbedPlugin *embed)
 {
@@ -318,15 +338,20 @@ embed_size_changed_simple (EmbedPlugin *embed)
 
 
 
+/* Updates the text of the label, using the label_fmt. */
 static void
 embed_update_label (EmbedPlugin *embed)
 {
+  /* Only show the label if the format is non-empty. */
   if (embed->label_fmt && *embed->label_fmt) {
     gchar *titlepos;
+    /* If we have an embedded plug and the label wants the title, process it. */
     if (embed->plug &&
         (titlepos = strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))) {
       gchar *title, *label;
       title = get_window_title (embed->disp, embed->plug);
+      /* Construct the label, replacing the EMBED_LABEL_FMT_TITLE with the
+       * actual window title. */
       label = g_strdup_printf ("%.*s%s%s",
           (gint)(titlepos - embed->label_fmt), embed->label_fmt,
           title, titlepos + strlen (EMBED_LABEL_FMT_TITLE));
@@ -334,6 +359,7 @@ embed_update_label (EmbedPlugin *embed)
       g_free (title);
       g_free (label);
     } else {
+      /* Othewise just display the format string directly. */
       gtk_label_set_text (GTK_LABEL (embed->label), embed->label_fmt);
     }
     gtk_widget_show (embed->label);
@@ -344,6 +370,11 @@ embed_update_label (EmbedPlugin *embed)
 
 
 
+/* Performs a single pass through the windows managed by the window manager,
+ * searching for the first window that meets all of the criteria.
+ * If one is found, it embeds it.
+ * Returns TRUE if no viable plug is found, so that if this is used as a timer
+ * callback, it will keep polling. */
 static gboolean
 embed_search (EmbedPlugin *embed)
 {
@@ -353,12 +384,17 @@ embed_search (EmbedPlugin *embed)
 
   DBG (".");
   
+  /* Grab a list of windows managed by the window manager.
+   * They will not necessarily be on the current workspace. */
   if ((client_list = get_client_list (embed->disp, &client_list_size))) {
+    /* Loop through each window */
     for (i = 0; i < client_list_size / sizeof (Window); i++) {
       gchar *str;
       gboolean match;
       match = TRUE;
 
+      /* AND-match each specified criteria, starting with the presumably
+       * lightest-weight/most-specific ones first. */
       if (match && embed->proc_name && embed->proc_name[0]) {
         str = get_client_proc (embed->disp, client_list[i]);
         match = !g_strcmp0 (embed->proc_name, str);
@@ -376,14 +412,19 @@ embed_search (EmbedPlugin *embed)
         g_free (str);
       }
 
+      /* If it's a match, make a fake socket and embed the window in it. */
       if (match) {
+        /* Destroy the true GtkSocket, as we will not be needing it. */
         gtk_widget_destroy (embed->socket);
         embed->plug_is_gtkplug = FALSE;
         embed->plug = client_list[i];
+        /* Store the old size of the window for both restoring and for deciding
+         * on the panel size. */
         get_window_size (embed->disp, client_list[i],
                          &embed->plug_width, &embed->plug_height);
         DBG ("found window 0x%X of geometry %dx%d",
              embed->plug, embed->plug_width, embed->plug_height);
+        /* Make the fake socket and embed the window. */
         embed_add_fake_socket (embed);
         break;
       }
@@ -398,6 +439,9 @@ embed_search (EmbedPlugin *embed)
 
 
 
+/* Starts the search for a viable plug. Does one initial search, and then sets
+ * up X11 monitoring and possibly polling if no plug is found right away.
+ * Does not start a search if there are no criteria, as that would be stupid. */
 static void
 embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
 {
@@ -418,13 +462,14 @@ embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
   /* TODO: handle the case where we want to launch an application that will
    * generate a plug */
   if (embed_search (embed)) {
+    /* Reset the _NET_CLIENT_LIST detector */
     embed->monitor_saw_net_client_list = FALSE;
     /* Watch for property changes (primarily the window list ones) on the root
      * window.
      * Note that gdk_x11_get_default_xdisplay () is not the same as the display
      * stored in embed->disp.  embed->disp will be valid through the destruction
-     * of the plugin, but GDK expects its own xdisplay to access the internal
-     * hashmaps */
+     * of the plugin, but GDK expects its own Display reference to access its
+     * internal hashmaps for routing events. */
     XSelectInput (gdk_x11_get_default_xdisplay (),
                   gdk_x11_get_default_root_xwindow (), PropertyChangeMask);
     if (embed->poll_delay > 0)
@@ -435,9 +480,12 @@ embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
 
 
 
+/* Stops the search process, disabling both X11 monitoring and polling. */
 static void
 embed_stop_search (EmbedPlugin *embed)
 {
+  /* Set the event mask to 0 to stop receiving X11 events for the root window.
+   */
   XSelectInput (gdk_x11_get_default_xdisplay (),
                 gdk_x11_get_default_root_xwindow (), 0);
   if (embed->search_timer) {
@@ -448,6 +496,7 @@ embed_stop_search (EmbedPlugin *embed)
 
 
 
+/* Callback for the embed menu button. (Re)starts searching. */
 static void
 embed_embed_menu (GtkMenuItem *embed_menu, EmbedPlugin *embed)
 {
@@ -458,10 +507,16 @@ embed_embed_menu (GtkMenuItem *embed_menu, EmbedPlugin *embed)
 
 
 
+/* X11 event monitor for a plug. Detects window title changes, unmap, and
+ * destroy events. */
 static GdkFilterReturn
 embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 {
   if (xevent->type == PropertyNotify) {
+    /* To avoid double-handling window name changes, if we see a _NET_WM_NAME we
+     * will stop responding to WM_NAME events.
+     * This is reset every time a new window is embedded, in case the window
+     * manager changed. */
     if (xevent->atom == XInternAtom (xevent->display, "_NET_WM_NAME", False)) {
       embed->monitor_saw_net_wm_name = TRUE;
       embed_update_label (embed);
@@ -470,6 +525,7 @@ embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
       embed_update_label (embed);
     }
   } else if (xevent->type == UnmapNotify || xevent->type == DestroyNotify) {
+    /* The plug window was destroyed, and not by us! */
     DBG ("destroyed");
     embed_destroyed (embed);
   }
@@ -478,14 +534,20 @@ embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 
 
 
+/* Callback for when a plug is added.  This is either automatically called by
+ * the GtkSocket, or manually when a fake socket embeds the plug.
+ * Does everything that should happen when a plug is added, including all UI and
+ * monitoring/polling changes. */
 static void
 embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 {
   DBG (".");
 
+  /* Flip the menu items */
   gtk_widget_hide (embed->embed_menu);
   gtk_widget_show (embed->popout_menu);
 
+  /* Stop any searching that is going on */
   embed_stop_search (embed);
 
   /* If we just got plugged by a gtkplug, set the "known" width and height to -1
@@ -497,13 +559,21 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
   /* Monitor the plug for destruction, along with title changes if we need it
    * for the label. */
   if (embed->plug) {
+    /* Construct a GdkWindow wrapper around the plug window.
+     * Throughout here we must use GDK's Display reference, not our own, since
+     * GDK uses this to determine whether to pass on events or not. */
     embed->plug_window = gdk_x11_window_foreign_new_for_display (
         gdk_display_get_default (), embed->plug);
     if (embed->plug_window) {
+      /* Monitor for unmap/destroy events. If the label is based on the title,
+       * also monitor property change events. */
       glong monitor_mask = StructureNotifyMask;
       if (embed->label_fmt && strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))
         monitor_mask |= PropertyChangeMask;
+      /* Reset the _NET_WM_NAME detector. */
       embed->monitor_saw_net_wm_name = FALSE;
+      /* Set up the callback function, and start monitoring for the specified X
+       * events. */
       gdk_window_add_filter (embed->plug_window,
                              (GdkFilterFunc)embed_plug_filter, embed);
       XSelectInput (gdk_x11_get_default_xdisplay (),
@@ -520,16 +590,22 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 
 
 
+/* Callback wrapper function for embed_add_socket. */
 static gboolean
 embed_add_socket_and_resize (EmbedPlugin *embed)
 {
-  DBG (".");
   embed_add_socket (embed, TRUE);
   return FALSE;
 }
 
 
 
+/* Callback for when a plug is removed.  This is either automatically called by
+ * the GtkSocket, or manually when a plug is popped out or destroyed.
+ * Does everything that should happen when a plug is removed, including all UI
+ * and monitoring/polling changes.
+ * Assumes that the GtkSocket is about to be destroyed right after the function
+ * returns, so it adds an idle callback that creates a new one. */
 static gboolean
 embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 {
@@ -537,9 +613,14 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 
   g_assert (embed->socket);
 
+  /* Flip the menu items */
   gtk_widget_hide (embed->popout_menu);
   gtk_widget_show (embed->embed_menu);
+
+  /* Assume the socket will be destroyed after this returns, so get rid of our
+   * reference. */
   embed->socket = NULL;
+  /* Stop monitoring the plug window for changes */
   if (embed->plug_window) {
     XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, 0);
     gdk_window_remove_filter (embed->plug_window, 
@@ -547,9 +628,11 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
     g_object_unref (embed->plug_window);
     embed->plug_window = NULL;
   }
+  /* Reset info */
   embed->plug = 0;
   embed->plug_is_gtkplug = TRUE;
   embed_update_label (embed);
+  /* Create a new socket once this one is destroyed */
   g_idle_add ((GSourceFunc)embed_add_socket_and_resize, embed);
   /* Returning false will destroy the socket */
   return FALSE;
@@ -557,19 +640,26 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 
 
 
+/* Callback for when the size of the socket is determined.
+ * Used to resize the embedded window to match the socket. */
 static void
 embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
                      EmbedPlugin *embed)
 {
   if (!embed->plug || embed->plug_is_gtkplug)
     return;
-  DBG (".");
+  /* Only manually resize if the embedded window is just a normal window. */
   resize_window (embed->disp, embed->plug,
                  allocation->width, allocation->height);
 }
 
 
 
+/* Adds a GtkSocket to the plugin and hooks up the signals, optionally updating
+ * the size of the plugin to match. Generally update_size should be true unless
+ * the plugin is being initialized.
+ * Once the GtkSocket is realized, a search is started. This can be prevented by
+ * setting embed->disable_search to true. */
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size)
 {
@@ -584,33 +674,57 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
   g_signal_connect (G_OBJECT (embed->socket), "realize",
                     G_CALLBACK (embed_start_search), embed);
 
+  /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
   gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
 
+  /* Update the size of the plugin if needed. */
   if (update_size)
     embed_size_changed_simple (embed);
 }
 
 
 
+/* Creates a simple GTK widget (GtkDrawingArea) to dumbly house the embedded
+ * plug window, and reparents the plug window.  This is done because a GtkSocket
+ * will destroy a plug when it is removed, which doesn't play nice when we're
+ * embedding random (unsuspecting) windows.
+ * Assumes the true GtkSocket was already destroyed. */
 static void
 embed_add_fake_socket (EmbedPlugin *embed)
 {
+  /* GtkDrawingArea is pretty much as simple as you can get, and it is not a
+   * container (since containers would destroy their children when destroyed) */
   embed->socket = gtk_drawing_area_new ();
 
+  /* We use the size-allocate signal to keep the size of the plug up-to-date. */
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
 
+  /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
   gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->socket, TRUE, TRUE, 0);
+
+  /* Embed the plug window.
+   * First we have to ensure that it is on the current workspace, otherwise
+   * things tend to break (the window gets separated from the decorations) */
   show_window (embed->disp, embed->plug);
   reparent_window (embed->disp, embed->plug,
       gdk_x11_drawable_get_xid (gtk_widget_get_window (embed->socket)), 0, 0);
+
   embed_plug_added (embed->socket, embed);
 }
 
 
 
+/* Pops out any plugs that are embedded and destroys the socket.
+ * This is called automatically by the popout menu item, and can be called
+ * manually even if no plug is actually embedded at the time.
+ * If the plug is just a normal window, the window will be reparented to the top
+ * level and its size restored.
+ * Since we assume the pop out was manual, we also disable searching for a new
+ * plug to embed until the user intervenes again.
+ */
 static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 {
@@ -633,6 +747,9 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 }
 
 
+/* Callback for when the embedded plug window is ungracefully destroyed, not by
+ * our doing, and not as part of XEmbed.
+ * Calls the removed callback and destroys the socket. */
 static void
 embed_destroyed (EmbedPlugin *embed)
 {
@@ -645,10 +762,16 @@ embed_destroyed (EmbedPlugin *embed)
 
 
 
+/* X11 event monitor for the root window. Detects when windows become managed by
+ * the window manager so that we can scan for matches. */
 static GdkFilterReturn
 embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 {
-  if (xevent->type == PropertyNotify) {
+  if (!embed->plug && xevent->type == PropertyNotify) {
+    /* To avoid double-handling window list changes, if we see a
+     * _NET_CLIENT_LIST we will stop responding to _WIN_CLIENT_LIST events.
+     * This is reset every time a new search is started, in case the window
+     * manager changed. */
     if (xevent->atom == XInternAtom (xevent->display,
                                      "_NET_CLIENT_LIST", False)) {
       embed->monitor_saw_net_client_list = TRUE;
@@ -664,6 +787,7 @@ embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 
 
 
+/* Entry point for the panel plugin. */
 static void
 embed_construct (XfcePanelPlugin *plugin)
 {
@@ -716,7 +840,8 @@ embed_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "about",
                     G_CALLBACK (embed_about), NULL);
 
-  /* Register our own event filter to avoid having to poll X11 properties. */
+  /* Register our own event filter to avoid having to poll X11 properties.
+   * No events will actually trigger until we call XSelectInput elsewhere. */
   gdk_window_add_filter (gdk_get_default_root_window (),
                          (GdkFilterFunc)embed_root_filter, embed);
 }
