@@ -23,11 +23,10 @@
 G_BEGIN_DECLS
 
 void
-embed_configure    (XfcePanelPlugin *plugin,
-                     EmbedPlugin     *embed);
+embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed);
 
 void
-embed_about        (XfcePanelPlugin *plugin);
+embed_about (XfcePanelPlugin *plugin);
 
 G_END_DECLS
 

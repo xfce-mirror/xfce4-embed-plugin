@@ -37,7 +37,7 @@
 #define DEFAULT_PROC_NAME    NULL
 #define DEFAULT_WINDOW_REGEX NULL
 #define DEFAULT_WINDOW_CLASS NULL
-#define DEFAULT_LABEL_FMT    NULL
+#define DEFAULT_LABEL_FMT    _("Embed")
 #define DEFAULT_POLL_DELAY   0
 #define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
 #define DEFAULT_EXPAND       TRUE
@@ -47,8 +47,6 @@
 /* prototypes */
 static void
 embed_construct (XfcePanelPlugin *plugin);
-static void
-embed_update_label (EmbedPlugin *embed);
 static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed);
 static void
@@ -329,7 +327,7 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 
 
 /* Convenience function to call embed_size_changed. */
-static void
+void
 embed_size_changed_simple (EmbedPlugin *embed)
 {
   embed_size_changed (embed->plugin,
@@ -339,7 +337,7 @@ embed_size_changed_simple (EmbedPlugin *embed)
 
 
 /* Updates the text of the label, using the label_fmt. */
-static void
+void
 embed_update_label (EmbedPlugin *embed)
 {
   /* Only show the label if the format is non-empty. */
@@ -414,8 +412,9 @@ embed_search (EmbedPlugin *embed)
 
       /* If it's a match, make a fake socket and embed the window in it. */
       if (match) {
-        /* Destroy the true GtkSocket, as we will not be needing it. */
-        gtk_widget_destroy (embed->socket);
+        /* Destroy the true GtkSocket if it exists, as don't need it. */
+        if (embed->socket)
+          gtk_widget_destroy (embed->socket);
         embed->plug_is_gtkplug = FALSE;
         embed->plug = client_list[i];
         /* Store the old size of the window for both restoring and for deciding
@@ -481,7 +480,7 @@ embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
 
 
 /* Stops the search process, disabling both X11 monitoring and polling. */
-static void
+void
 embed_stop_search (EmbedPlugin *embed)
 {
   /* Set the event mask to 0 to stop receiving X11 events for the root window.
@@ -663,7 +662,10 @@ embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size)
 {
-  g_assert (embed->socket == NULL);
+  if (embed->socket) {
+    DBG ("socket already exists");
+    return;
+  }
 
   embed->socket = gtk_socket_new ();
 
@@ -734,9 +736,15 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 
   if (!embed->plug_is_gtkplug) {
     /* Since we're not hosting a gtkplug, we should reparent the window so we
-     * don't break the program we were hosting. */
+     * don't break the program we were hosting.
+     * We reparent it both using GDK and using X11: GDK is to ensure that the
+     * destruction of the socket doesn't destroy the plug window. X11 is to
+     * ensure that the window is reparented if the panel plugin is closing.
+     * We do X11 first as it also resizes in one fell swoop. */
     make_window_toplevel (embed->disp, embed->plug,
                           embed->plug_width, embed->plug_height);
+    gdk_window_reparent (embed->plug_window,
+                         gdk_get_default_root_window (), 0, 0);
   }
   /* Don't enable searching for a new window. */
   embed->disable_search = TRUE;
@@ -758,6 +766,17 @@ embed_destroyed (EmbedPlugin *embed)
     return;
   embed_plug_removed (embed->socket, embed);
   gtk_widget_destroy (socket);
+}
+
+
+
+/* Pop out whatever is embedded and start a new search.
+ * Called when the window criteria have been updated. */
+void
+embed_search_again (EmbedPlugin *embed)
+{
+  embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
+  embed_embed_menu (GTK_MENU_ITEM (embed->embed_menu), embed);
 }
 
 

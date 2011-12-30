@@ -50,6 +50,8 @@ typedef struct
 
     GRegex          *window_regex_comp;
 
+    gboolean         criteria_updated;
+
     /* embed settings */
     gchar           *proc_name;
     gchar           *window_regex;
@@ -68,8 +70,15 @@ EmbedPlugin;
 #define EMBED_LABEL_FMT_TITLE "%t"
 
 void
-embed_save (XfcePanelPlugin *plugin,
-             EmbedPlugin    *embed);
+embed_search_again (EmbedPlugin *embed);
+void
+embed_stop_search (EmbedPlugin *embed);
+void
+embed_update_label (EmbedPlugin *embed);
+void
+embed_size_changed_simple (EmbedPlugin *embed);
+void
+embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed);
 
 G_END_DECLS
 
