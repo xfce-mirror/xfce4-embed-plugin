@@ -218,23 +218,23 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     ADD2(label, widget);
 
   /* proc_name */
-  ENTRY(_("Process name"), _("Match the window's application's process name\n"
+  ENTRY(_("_Process name"), _("Match the window's application's process name\n"
                              "Leave blank if it is not a criterion"),
         embed->proc_name, embed_proc_name_changed);
 
   /* window_class */
-  ENTRY(_("Window class"), _("Match the window's class\n"
+  ENTRY(_("_Window class"), _("Match the window's class\n"
                              "Leave blank if it is not a criterion"),
         embed->window_class, embed_window_class_changed);
 
   /* window_regex */
-  ENTRY(_("Window title"), _("Match the window's title using a REGEX\n"
+  ENTRY(_("Window _title"), _("Match the window's title using a REGEX\n"
                              "Leave blank if it is not a criterion"),
         embed->window_regex, embed_window_regex_changed);
   embed_entry_set_good (GTK_ENTRY (widget), TRUE);
 
   /* label_fmt */
-  ENTRY(_("Label format"), _("Leave blank to hide the label\n"
+  ENTRY(_("_Label format"), _("Leave blank to hide the label\n"
         EMBED_LABEL_FMT_TITLE " expands to the embedded window's title"),
         embed->label_fmt, embed_label_fmt_changed);
 
