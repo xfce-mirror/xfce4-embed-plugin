@@ -269,3 +269,9 @@ void show_window (Display *disp, Window win)
     client_msg(disp, win, "_NET_WM_DESKTOP", *cur_desktop);
     g_free(cur_desktop);
 }
+
+void focus_window (Display *disp, Window win)
+{
+    XSetInputFocus (disp, win, RevertToNone, CurrentTime);
+    XFlush (disp);
+}

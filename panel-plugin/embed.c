@@ -225,6 +225,9 @@ embed_new (XfcePanelPlugin *plugin)
   embed->embed_menu = gtk_image_menu_item_new_with_mnemonic (_("_Embed"));
   gtk_widget_show (embed->embed_menu);
 
+  /* focus menu item, not shown by default */
+  embed->focus_menu = gtk_image_menu_item_new_with_mnemonic (_("_Focus"));
+
   return embed;
 }
 
@@ -266,6 +269,20 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   /* free the plugin structure */
   panel_slice_free (EmbedPlugin, embed);
+}
+
+
+
+/* Callback for the focus menu button. Activates focus on the plugin. */
+static void
+embed_focus_menu (GtkMenuItem *focus_menu, EmbedPlugin *embed)
+{
+  if (embed->plug_is_gtkplug) {
+    if (embed->socket)
+      xfce_panel_plugin_focus_widget (embed->plugin, embed->socket);
+  } else if (embed->plug) {
+    focus_window (embed->disp, embed->plug);
+  }
 }
 
 
@@ -545,6 +562,7 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
   /* Flip the menu items */
   gtk_widget_hide (embed->embed_menu);
   gtk_widget_show (embed->popout_menu);
+  gtk_widget_show (embed->focus_menu);
 
   /* Stop any searching that is going on */
   embed_stop_search (embed);
@@ -614,6 +632,7 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
 
   /* Flip the menu items */
   gtk_widget_hide (embed->popout_menu);
+  gtk_widget_hide (embed->focus_menu);
   gtk_widget_show (embed->embed_menu);
 
   /* Assume the socket will be destroyed after this returns, so get rid of our
@@ -848,6 +867,13 @@ embed_construct (XfcePanelPlugin *plugin)
                                       GTK_MENU_ITEM (embed->embed_menu));
   g_signal_connect (G_OBJECT (embed->embed_menu), "activate",
                     G_CALLBACK (embed_embed_menu), embed);
+
+  /* Add the "focus" menu item */
+  xfce_panel_plugin_menu_insert_item (plugin,
+                                      GTK_MENU_ITEM (embed->focus_menu));
+  g_signal_connect (G_OBJECT (embed->focus_menu), "activate",
+                    G_CALLBACK (embed_focus_menu), embed);
+
 
   /* show the configure menu item and connect signal */
   xfce_panel_plugin_menu_show_configure (plugin);

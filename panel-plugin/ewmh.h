@@ -33,6 +33,7 @@ void reparent_window (Display *disp, Window win, Window parent,
 		      gint width, gint height);
 void resize_window (Display *disp, Window win, gint width, gint height);
 void show_window (Display *disp, Window win);
+void focus_window (Display *disp, Window win);
 
 G_END_DECLS
 

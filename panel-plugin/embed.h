@@ -33,6 +33,7 @@ typedef struct
     GtkWidget       *socket;
     GtkWidget       *popout_menu;
     GtkWidget       *embed_menu;
+    GtkWidget       *focus_menu;
 
     /* panel data */
     GdkNativeWindow  plug;
