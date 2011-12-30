@@ -891,11 +891,6 @@ embed_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "configure-plugin",
                     G_CALLBACK (embed_configure), embed);
 
-  /* show the about menu item and connect signal */
-  xfce_panel_plugin_menu_show_about (plugin);
-  g_signal_connect (G_OBJECT (plugin), "about",
-                    G_CALLBACK (embed_about), NULL);
-
   /* Register our own event filter to avoid having to poll X11 properties.
    * No events will actually trigger until we call XSelectInput elsewhere. */
   gdk_window_add_filter (gdk_get_default_root_window (),

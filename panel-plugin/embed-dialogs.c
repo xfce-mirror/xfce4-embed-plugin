@@ -284,12 +284,3 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   /* show the entire dialog */
   gtk_widget_show (dialog);
 }
-
-
-
-void
-embed_about (XfcePanelPlugin *plugin)
-{
-  /* about dialog code. you can use the GtkAboutDialog
-   * or the XfceAboutInfo widget */
-}
