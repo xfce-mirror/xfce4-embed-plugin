@@ -36,6 +36,7 @@ typedef struct
     GtkWidget       *focus_menu;
 
     /* panel data */
+    gboolean         has_plug;
     GdkNativeWindow  plug;
     GdkWindow       *plug_window;
     gint             plug_width;

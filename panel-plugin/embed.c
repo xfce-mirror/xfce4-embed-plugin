@@ -291,11 +291,12 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 static void
 embed_focus_menu (GtkMenuItem *focus_menu, EmbedPlugin *embed)
 {
-  if (embed->plug_is_gtkplug) {
-    if (embed->socket)
+  if (embed->has_plug) {
+    if (embed->plug) {
+      focus_window (embed->disp, embed->plug);
+    } else {
       xfce_panel_plugin_focus_widget (embed->plugin, embed->socket);
-  } else if (embed->plug) {
-    focus_window (embed->disp, embed->plug);
+    }
   }
 }
 
@@ -337,7 +338,7 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
   if (orientation == GTK_ORIENTATION_HORIZONTAL) {
     /* If requested, use the window size detected earlier. This will be -1 for
      * true GtkPlugs, which will pass through the window size request. */
-    if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->plug)
+    if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->has_plug)
       altsize = embed->plug_width;
     gtk_widget_set_size_request (GTK_WIDGET (embed->socket), altsize, size);
     /* Widget altsize should just adapt, since it might include a label and/or
@@ -345,7 +346,7 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
     gtk_widget_set_size_request (GTK_WIDGET (plugin), -1, size);
   } else {
     /* Same for vertical orientation. */
-    if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->plug)
+    if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW && embed->has_plug)
       altsize = embed->plug_height;
     gtk_widget_set_size_request (GTK_WIDGET (embed->socket), size, altsize);
     gtk_widget_set_size_request (GTK_WIDGET (plugin), size, -1);
@@ -630,6 +631,7 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
   gtk_widget_hide (embed->embed_menu);
   gtk_widget_show (embed->popout_menu);
   gtk_widget_show (embed->focus_menu);
+  embed->has_plug = TRUE;
 
   /* Stop any searching that is going on */
   embed_stop_search (embed);
@@ -642,27 +644,33 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 
   /* Monitor the plug for destruction, along with title changes if we need it
    * for the label. */
-  if (embed->plug) {
+  if (!embed->plug_is_gtkplug) {
     /* Construct a GdkWindow wrapper around the plug window.
      * Throughout here we must use GDK's Display reference, not our own, since
      * GDK uses this to determine whether to pass on events or not. */
     embed->plug_window = gdk_x11_window_foreign_new_for_display (
         gdk_display_get_default (), embed->plug);
-    if (embed->plug_window) {
-      /* Monitor for unmap/destroy events. If the label is based on the title,
-       * also monitor property change events. */
-      glong monitor_mask = StructureNotifyMask;
-      if (embed->label_fmt && strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))
-        monitor_mask |= PropertyChangeMask;
-      /* Reset the _NET_WM_NAME detector. */
-      embed->monitor_saw_net_wm_name = FALSE;
-      /* Set up the callback function, and start monitoring for the specified X
-       * events. */
-      gdk_window_add_filter (embed->plug_window,
-                             (GdkFilterFunc)embed_plug_filter, embed);
-      XSelectInput (gdk_x11_get_default_xdisplay (),
-                    embed->plug, monitor_mask);
-    }
+  } else {
+    /* Grab the GtkPlug's window. */
+    embed->plug_window = gtk_socket_get_plug_window (GTK_SOCKET (embed->socket));
+    if (embed->plug_window)
+      embed->plug = gdk_x11_drawable_get_xid (GDK_DRAWABLE (embed->plug_window));
+  }
+  if (embed->plug_window && embed->plug) {
+    /* Monitor for unmap/destroy events if it is not a standard GtkPlug. If the
+     * label is based on the title, also monitor property change events. */
+    glong monitor_mask = 0;
+    if (!embed->plug_is_gtkplug)
+      monitor_mask |= StructureNotifyMask;
+    if (embed->label_fmt && strstr (embed->label_fmt, EMBED_LABEL_FMT_TITLE))
+      monitor_mask |= PropertyChangeMask;
+    /* Reset the _NET_WM_NAME detector. */
+    embed->monitor_saw_net_wm_name = FALSE;
+    /* Set up the callback function, and start monitoring for the specified X
+     * events. */
+    gdk_window_add_filter (embed->plug_window,
+                           (GdkFilterFunc)embed_plug_filter, embed);
+    XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, monitor_mask);
   }
 
   /* Update the label */
@@ -701,16 +709,19 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
   gtk_widget_hide (embed->popout_menu);
   gtk_widget_hide (embed->focus_menu);
   gtk_widget_show (embed->embed_menu);
+  embed->has_plug = FALSE;
 
   /* Assume the socket will be destroyed after this returns, so get rid of our
    * reference. */
   embed->socket = NULL;
   /* Stop monitoring the plug window for changes */
   if (embed->plug_window) {
-    XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, 0);
+    if (embed->plug)
+      XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, 0);
     gdk_window_remove_filter (embed->plug_window, 
                               (GdkFilterFunc)embed_plug_filter, embed);
-    g_object_unref (embed->plug_window);
+    if (!embed->plug_is_gtkplug)
+      g_object_unref (embed->plug_window);
     embed->plug_window = NULL;
   }
   /* Reset info */
@@ -841,6 +852,31 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 }
 
 
+
+/* Callback for when the plugin is single/double/triple-clicked.
+ * Single-clicks focus the embedded window.
+ * Double-clicks and triple-clicks toggle embed/popout. */
+static gboolean
+embed_click (GtkWidget *label, GdkEvent *event, EmbedPlugin *embed)
+{
+  /* Only react to left mouse button */
+  if (event->button.button == 1) {
+    if (event->type == GDK_BUTTON_PRESS) {
+      embed_focus_menu (GTK_MENU_ITEM (embed->focus_menu), embed);
+    } else if (event->type == GDK_2BUTTON_PRESS ||
+               event->type == GDK_3BUTTON_PRESS) {
+      if (embed->has_plug)
+        embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
+      else
+        embed_embed_menu (GTK_MENU_ITEM (embed->embed_menu), embed);
+    }
+  }
+  /* Do not eat the event */
+  return FALSE;
+}
+
+
+
 /* Callback for when the embedded plug window is ungracefully destroyed, not by
  * our doing, and not as part of XEmbed.
  * Calls the removed callback and destroys the socket. */
@@ -850,9 +886,12 @@ embed_destroyed (EmbedPlugin *embed)
   GtkWidget *socket;
   if ((socket = embed->socket) == NULL)
     return;
+  /* The window has been destroyed, so don't try to reference it. */
+  embed->plug = 0;
   embed_plug_removed (embed->socket, embed);
   gtk_widget_destroy (socket);
 }
+
 
 
 /* Callback for when the plugin is unrealized, usually right before being
@@ -865,6 +904,7 @@ embed_unrealize (GtkWidget *plugin, EmbedPlugin *embed)
    * get lost if we don't reparent it. */
   embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
 }
+
 
 
 /* Pop out whatever is embedded and start a new search.
@@ -883,7 +923,7 @@ embed_search_again (EmbedPlugin *embed)
 static GdkFilterReturn
 embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 {
-  if (!embed->plug && xevent->type == PropertyNotify) {
+  if (!embed->has_plug && xevent->type == PropertyNotify) {
     /* To avoid double-handling window list changes, if we see a
      * _NET_CLIENT_LIST we will stop responding to _WIN_CLIENT_LIST events.
      * This is reset every time a new search is started, in case the window
@@ -936,6 +976,9 @@ embed_construct (XfcePanelPlugin *plugin)
 
   g_signal_connect (G_OBJECT (plugin), "unrealize",
                     G_CALLBACK (embed_unrealize), embed);
+
+  g_signal_connect (G_OBJECT (plugin), "button-press-event",
+                    G_CALLBACK (embed_click), embed);
 
   /* Add the "pop out" menu item */
   xfce_panel_plugin_menu_insert_item (plugin,

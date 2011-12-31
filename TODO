@@ -1,8 +1,0 @@
-Fake socket no longer necessary?
-    * Doesn't require manual plug size updates
-    * Can create a socket at the start and don't need to replace it until the
-      plug goes away
-    * Still destroys the window on plugin destruction, but normal pop out seems
-      to work.
-    * Might be worth doing for simplicity, but not high priority
-Option to enable click-to-activate keyboard input
