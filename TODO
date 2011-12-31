@@ -1,6 +1,5 @@
 Launching with parameters, delayed relaunch
     * Including %s or something with the GtkSocket id
-Expand checkbox positioning
 Fake socket no longer necessary?
     * Doesn't require manual plug size updates
     * Can create a socket at the start and don't need to replace it until the

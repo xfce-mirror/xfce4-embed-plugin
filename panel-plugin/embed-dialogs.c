@@ -35,8 +35,6 @@
   "http://goodies.xfce.org/projects/panel-plugins/xfce4-embed-plugin"
 
 
-#define SETTINGS_PAD_PX 5
-
 
 static void
 embed_configure_response (GtkWidget *dialog, gint response, EmbedPlugin *embed)
@@ -164,7 +162,7 @@ embed_expand_toggled (GtkToggleButton *toggle, EmbedPlugin *embed)
 void
 embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
-  GtkWidget *dialog, *content, *hbox, *label, *widget;
+  GtkWidget *dialog, *content, *table, *label, *widget;
   const gchar *tooltip;
 
   /* block the plugin menu */
@@ -184,18 +182,14 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   content = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
 
-#define ADD1(widgetA) \
-    gtk_box_pack_start_defaults (GTK_BOX (content), widgetA)
-#define ADD2(widgetA, widgetB) \
-    hbox = gtk_hbox_new (TRUE, SETTINGS_PAD_PX); \
-    gtk_box_pack_start_defaults (GTK_BOX (hbox), widgetA); \
-    gtk_box_pack_start_defaults (GTK_BOX (hbox), widgetB); \
-    gtk_box_pack_start_defaults (GTK_BOX (content), hbox)
+#define ADD(widget, row, column) \
+    gtk_table_attach_defaults (GTK_TABLE (table), widget, \
+                               column, column+1, row, row+1)
 #define TOOLTIP2(widgetA, widgetB, tooltiptext) \
     tooltip = tooltiptext; \
     gtk_widget_set_tooltip_text (widgetA, tooltip); \
-    gtk_widget_set_tooltip_text (widgetB, tooltip);
-#define ENTRY(labeltext, tooltiptext, value, callback) \
+    gtk_widget_set_tooltip_text (widgetB, tooltip)
+#define ENTRY(row, labeltext, tooltiptext, value, callback) \
     label = gtk_label_new_with_mnemonic (labeltext); \
     widget = gtk_entry_new (); \
     if (value) \
@@ -205,8 +199,8 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     TOOLTIP2(label, widget, tooltiptext); \
     gtk_misc_set_alignment (GTK_MISC (label), 1, 0.5f); \
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), widget); \
-    ADD2(label, widget);
-#define SPIN(labeltext, tooltiptext, value, callback) \
+    ADD(label, row, 0); ADD(widget, row, 1)
+#define SPIN(row, labeltext, tooltiptext, value, callback) \
     label = gtk_label_new_with_mnemonic (labeltext); \
     widget = gtk_spin_button_new_with_range (0, G_MAXINT, 1); \
     gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), value); \
@@ -215,37 +209,49 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     TOOLTIP2(label, widget, tooltiptext); \
     gtk_misc_set_alignment (GTK_MISC (label), 1, 0.5f); \
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), widget); \
-    ADD2(label, widget);
+    ADD(label, row, 0); ADD(widget, row, 1)
+#define START_FRAME(title, rows) \
+    table = gtk_table_new (rows, 2, FALSE); \
+    gtk_table_set_col_spacings (GTK_TABLE (table), 12); \
+    gtk_table_set_row_spacings (GTK_TABLE (table), 6); \
+    widget = xfce_gtk_frame_box_new_with_content (title, table); \
+    gtk_box_pack_start_defaults (GTK_BOX (content), widget)
 
+  START_FRAME(_("Selection Criteria"), 3);
   /* proc_name */
-  ENTRY(_("_Process name"), _("Match the window's application's process name\n"
-                             "Leave blank if it is not a criterion"),
+  ENTRY(0, _("_Process name"),
+           _("Match the window's application's process name\n"
+             "Leave blank if it is not a criterion"),
         embed->proc_name, embed_proc_name_changed);
 
   /* window_class */
-  ENTRY(_("_Window class"), _("Match the window's class\n"
-                             "Leave blank if it is not a criterion"),
+  ENTRY(1, _("_Window class"), _("Match the window's class\n"
+                                 "Leave blank if it is not a criterion"),
         embed->window_class, embed_window_class_changed);
 
   /* window_regex */
-  ENTRY(_("Window _title"), _("Match the window's title using a REGEX\n"
-                             "Leave blank if it is not a criterion"),
+  ENTRY(2, _("Window _title"), _("Match the window's title using a REGEX\n"
+                                 "Leave blank if it is not a criterion"),
         embed->window_regex, embed_window_regex_changed);
   embed_entry_set_good (GTK_ENTRY (widget), TRUE);
 
-  /* label_fmt */
-  ENTRY(_("_Label format"), _("Leave blank to hide the label\n"
-        EMBED_LABEL_FMT_TITLE " expands to the embedded window's title"),
-        embed->label_fmt, embed_label_fmt_changed);
 
   /* poll_delay */
   /* No UI element. Generally polling is unnecessary, unless you have a very
    * strange window that you're trying to match that is not uniquely
    * identifiable when it is mapped. */
 
+
+  START_FRAME(_("Display"), 3);
+  /* label_fmt */
+  ENTRY(0, _("_Label format"), _("Leave blank to hide the label\n"
+           EMBED_LABEL_FMT_TITLE " expands to the embedded window's title"),
+        embed->label_fmt, embed_label_fmt_changed);
+
   /* min_size */
-  SPIN(_("Minimum _size (px)"), _("Minimum size of the embedded window\n"
-                                  "Set to 0 to keep the original window size"),
+  SPIN(1, _("Minimum _size (px)"),
+       _("Minimum size of the embedded window\n"
+         "Set to 0 to keep the original window size"),
        embed->min_size, embed_min_size_changed);
 
   /* expand */
@@ -254,13 +260,13 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   g_signal_connect (G_OBJECT (widget), "toggled",
                     G_CALLBACK (embed_expand_toggled), embed);
   gtk_widget_set_tooltip_text (widget, _("Use up all available panel space"));
-  ADD1(widget);
+  ADD(widget, 2, 1);
 
-#undef ADD1
-#undef ADD2
+#undef ADD
 #undef TOOLTIP2
 #undef ENTRY
 #undef SPIN
+#undef START_FRAME
 
   gtk_widget_show_all (content);
 
