@@ -58,6 +58,7 @@ typedef struct
     gchar           *window_regex;
     gchar           *window_class;
     gchar           *label_fmt;
+    gchar           *label_font;
     gint             poll_delay;
     gint             min_size;
     gboolean         expand;
@@ -76,6 +77,8 @@ void
 embed_stop_search (EmbedPlugin *embed);
 void
 embed_update_label (EmbedPlugin *embed);
+void
+embed_update_label_font (EmbedPlugin *embed);
 void
 embed_size_changed_simple (EmbedPlugin *embed);
 void

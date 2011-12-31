@@ -142,6 +142,16 @@ embed_label_fmt_changed (GtkEditable *edit, EmbedPlugin *embed)
 
 
 static void
+embed_label_font_changed (GtkFontButton *font_button, EmbedPlugin *embed)
+{
+  g_free (embed->label_font);
+  embed->label_font = g_strdup (gtk_font_button_get_font_name (font_button));
+  embed_update_label_font (embed);
+}
+
+
+
+static void
 embed_min_size_changed (GtkSpinButton *spin, EmbedPlugin *embed)
 {
   embed->min_size = gtk_spin_button_get_value_as_int (spin);
@@ -200,6 +210,17 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     gtk_misc_set_alignment (GTK_MISC (label), 1, 0.5f); \
     gtk_label_set_mnemonic_widget (GTK_LABEL (label), widget); \
     ADD(label, row, 0); ADD(widget, row, 1)
+#define FONTBUTTON(row, labeltext, tooltiptext, value, callback) \
+    label = gtk_label_new_with_mnemonic (labeltext); \
+    widget = gtk_font_button_new (); \
+    if (value) \
+      gtk_font_button_set_font_name (GTK_FONT_BUTTON (widget), value); \
+    g_signal_connect (G_OBJECT (widget), "font-set", \
+                      G_CALLBACK (callback), embed); \
+    TOOLTIP2(label, widget, tooltiptext); \
+    gtk_misc_set_alignment (GTK_MISC (label), 1, 0.5f); \
+    gtk_label_set_mnemonic_widget (GTK_LABEL (label), widget); \
+    ADD(label, row, 0); ADD(widget, row, 1)
 #define SPIN(row, labeltext, tooltiptext, value, callback) \
     label = gtk_label_new_with_mnemonic (labeltext); \
     widget = gtk_spin_button_new_with_range (0, G_MAXINT, 1); \
@@ -248,8 +269,12 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
            EMBED_LABEL_FMT_TITLE " expands to the embedded window's title"),
         embed->label_fmt, embed_label_fmt_changed);
 
+  /* label font */
+  FONTBUTTON(1, _("Label _font"), _("Choose the label font"),
+        embed->label_font, embed_label_font_changed);
+
   /* min_size */
-  SPIN(1, _("Minimum _size (px)"),
+  SPIN(2, _("Minimum _size (px)"),
        _("Minimum size of the embedded window\n"
          "Set to 0 to keep the original window size"),
        embed->min_size, embed_min_size_changed);
@@ -260,11 +285,12 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   g_signal_connect (G_OBJECT (widget), "toggled",
                     G_CALLBACK (embed_expand_toggled), embed);
   gtk_widget_set_tooltip_text (widget, _("Use up all available panel space"));
-  ADD(widget, 2, 1);
+  ADD(widget, 3, 1);
 
 #undef ADD
 #undef TOOLTIP2
 #undef ENTRY
+#undef FONTBUTTON
 #undef SPIN
 #undef START_FRAME
 

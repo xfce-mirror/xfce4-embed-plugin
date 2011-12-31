@@ -38,6 +38,7 @@
 #define DEFAULT_WINDOW_REGEX NULL
 #define DEFAULT_WINDOW_CLASS NULL
 #define DEFAULT_LABEL_FMT    _("Embed")
+#define DEFAULT_LABEL_FONT   NULL
 #define DEFAULT_POLL_DELAY   0
 #define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
 #define DEFAULT_EXPAND       TRUE
@@ -91,6 +92,8 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
       xfce_rc_write_entry    (rc, "window_class", embed->window_class);
     if (embed->label_fmt)
       xfce_rc_write_entry    (rc, "label_fmt",   embed->label_fmt);
+    if (embed->label_font)
+      xfce_rc_write_entry    (rc, "label_font",  embed->label_font);
     xfce_rc_write_int_entry  (rc, "poll_delay",  embed->poll_delay);
     xfce_rc_write_int_entry  (rc, "min_size",    embed->min_size);
     xfce_rc_write_bool_entry (rc, "expand",      embed->expand);
@@ -129,6 +132,8 @@ embed_read (EmbedPlugin *embed)
                               "window_class", DEFAULT_WINDOW_CLASS));
       embed->label_fmt = g_strdup (xfce_rc_read_entry (rc,
                               "label_fmt", DEFAULT_LABEL_FMT));
+      embed->label_font = g_strdup (xfce_rc_read_entry (rc,
+                              "label_font", DEFAULT_LABEL_FONT));
       embed->poll_delay = xfce_rc_read_int_entry (rc,
                               "poll_delay", DEFAULT_POLL_DELAY);
       embed->min_size = xfce_rc_read_int_entry (rc,
@@ -151,6 +156,7 @@ embed_read (EmbedPlugin *embed)
   embed->window_regex = g_strdup (DEFAULT_WINDOW_REGEX);
   embed->window_class = g_strdup (DEFAULT_WINDOW_CLASS);
   embed->label_fmt   = g_strdup (DEFAULT_LABEL_FMT);
+  embed->label_font  = g_strdup (DEFAULT_LABEL_FONT);
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
   embed->expand      = DEFAULT_EXPAND;
@@ -214,6 +220,7 @@ embed_new (XfcePanelPlugin *plugin)
   embed->label = gtk_label_new (NULL);
   gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->label, FALSE, FALSE, 0);
   embed_update_label (embed);
+  embed_update_label_font (embed);
 
   /* socket */
   embed_add_socket (embed, FALSE);
@@ -256,6 +263,7 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   g_free (embed->window_regex);
   g_free (embed->window_class);
   g_free (embed->label_fmt);
+  g_free (embed->label_font);
 
   /* Close the X11 display */
   XCloseDisplay (embed->disp);
@@ -377,6 +385,24 @@ embed_update_label (EmbedPlugin *embed)
     gtk_widget_show (embed->label);
   } else {
     gtk_widget_hide (embed->label);
+  }
+}
+
+
+
+/* Updates the font of the label, using label_font. */
+void
+embed_update_label_font (EmbedPlugin *embed)
+{
+  PangoFontDescription *font;
+  PangoAttrList *attr_list;
+  if (embed->label_font) {
+    font = pango_font_description_from_string (embed->label_font);
+    attr_list = pango_attr_list_new ();
+    pango_attr_list_insert (attr_list, pango_attr_font_desc_new (font));
+    pango_font_description_free (font);
+    gtk_label_set_attributes (GTK_LABEL (embed->label), attr_list);
+    pango_attr_list_unref (attr_list);
   }
 }
 
