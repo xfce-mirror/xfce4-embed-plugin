@@ -160,6 +160,8 @@ embed_read (EmbedPlugin *embed)
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
   embed->expand      = DEFAULT_EXPAND;
+
+  embed_configure (embed->plugin, embed);
 }
 
 
