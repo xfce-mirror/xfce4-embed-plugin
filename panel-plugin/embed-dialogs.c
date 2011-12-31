@@ -94,12 +94,12 @@ embed_entry_set_good (GtkEntry *edit, gboolean good)
 {
   if (good) {
     gtk_entry_set_icon_tooltip_text (edit, GTK_ENTRY_ICON_SECONDARY,
-                                     _("The REGEX is valid"));
+                                     _("Input is valid"));
     gtk_entry_set_icon_from_stock (edit, GTK_ENTRY_ICON_SECONDARY,
                                    GTK_STOCK_YES);
   } else {
     gtk_entry_set_icon_tooltip_text (edit, GTK_ENTRY_ICON_SECONDARY,
-                                     _("The REGEX is invalid"));
+                                     _("Input is invalid"));
     gtk_entry_set_icon_from_stock (edit, GTK_ENTRY_ICON_SECONDARY,
                                    GTK_STOCK_NO);
   }
@@ -127,6 +127,31 @@ embed_window_regex_changed (GtkEditable *edit, EmbedPlugin *embed)
   } else {
     embed_entry_set_good (GTK_ENTRY (edit), FALSE);
   }
+}
+
+
+
+static void
+embed_launch_cmd_changed (GtkEditable *edit, EmbedPlugin *embed)
+{
+  const gchar *text;
+  gint argc;
+  gchar **argv;
+
+  /* Confirm that the command line is okay before saving. */
+  text = gtk_entry_get_text (GTK_ENTRY (edit));
+  if (*text) {
+    if (!g_shell_parse_argv (text, &argc, &argv, NULL)) {
+      embed_entry_set_good (GTK_ENTRY (edit), FALSE);
+      return;
+    }
+    g_strfreev (argv);
+  }
+
+  g_free (embed->launch_cmd);
+  embed->launch_cmd = g_strdup (text);
+  embed->criteria_updated = TRUE;
+  embed_entry_set_good (GTK_ENTRY (edit), TRUE);
 }
 
 
@@ -199,6 +224,9 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     tooltip = tooltiptext; \
     gtk_widget_set_tooltip_text (widgetA, tooltip); \
     gtk_widget_set_tooltip_text (widgetB, tooltip)
+#define LABEL(row, labeltext) \
+    widget = gtk_label_new (labeltext); \
+    gtk_table_attach_defaults (GTK_TABLE (table), widget, 0, 2, row, row+1)
 #define ENTRY(row, labeltext, tooltiptext, value, callback) \
     label = gtk_label_new_with_mnemonic (labeltext); \
     widget = gtk_entry_new (); \
@@ -238,20 +266,36 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     widget = xfce_gtk_frame_box_new_with_content (title, table); \
     gtk_box_pack_start_defaults (GTK_BOX (content), widget)
 
-  START_FRAME(_("Selection Criteria"), 3);
+  START_FRAME(_("Application Launching"), 2);
+  LABEL(0,
+      _("If a window is not found (or there are no criteria), a command can\n"
+        "optionally be launched. The command can either result in a window\n"
+        "that matches the below criteria, or it can use the socket ID passed\n"
+        "to it (" EMBED_LAUNCH_CMD_SOCKET ") to embed itself automatically."));
+  /* launch_cmd */
+  ENTRY(1, _("L_aunch command"),
+           _("Leave blank to not launch anything\n"
+           EMBED_LAUNCH_CMD_SOCKET " expands to the socket ID"),
+        embed->launch_cmd, embed_launch_cmd_changed);
+  embed_entry_set_good (GTK_ENTRY (widget), TRUE);
+
+  START_FRAME(_("Selection Criteria"), 4);
+  LABEL(0,
+      _("The window to embed must match all of the non-blank criteria.\n"
+        "Leave everything blank to rely on a launch command with socket ID."));
   /* proc_name */
-  ENTRY(0, _("_Process name"),
+  ENTRY(1, _("_Process name"),
            _("Match the window's application's process name\n"
              "Leave blank if it is not a criterion"),
         embed->proc_name, embed_proc_name_changed);
 
   /* window_class */
-  ENTRY(1, _("_Window class"), _("Match the window's class\n"
+  ENTRY(2, _("_Window class"), _("Match the window's class\n"
                                  "Leave blank if it is not a criterion"),
         embed->window_class, embed_window_class_changed);
 
   /* window_regex */
-  ENTRY(2, _("Window _title"), _("Match the window's title using a REGEX\n"
+  ENTRY(3, _("Window _title"), _("Match the window's title using a REGEX\n"
                                  "Leave blank if it is not a criterion"),
         embed->window_regex, embed_window_regex_changed);
   embed_entry_set_good (GTK_ENTRY (widget), TRUE);
@@ -289,6 +333,7 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
 #undef ADD
 #undef TOOLTIP2
+#undef LABEL
 #undef ENTRY
 #undef FONTBUTTON
 #undef SPIN

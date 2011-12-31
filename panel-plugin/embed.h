@@ -57,6 +57,7 @@ typedef struct
     gchar           *proc_name;
     gchar           *window_regex;
     gchar           *window_class;
+    gchar           *launch_cmd;
     gchar           *label_fmt;
     gchar           *label_font;
     gint             poll_delay;
@@ -67,6 +68,9 @@ EmbedPlugin;
 
 /* Special values for EmbedPlugin::min_size */
 #define EMBED_MIN_SIZE_MATCH_WINDOW 0
+
+/* Special contents of launch_cmd */
+#define EMBED_LAUNCH_CMD_SOCKET "%s"
 
 /* Special contents of label_fmt */
 #define EMBED_LABEL_FMT_TITLE "%t"

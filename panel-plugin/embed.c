@@ -37,6 +37,7 @@
 #define DEFAULT_PROC_NAME    NULL
 #define DEFAULT_WINDOW_REGEX NULL
 #define DEFAULT_WINDOW_CLASS NULL
+#define DEFAULT_LAUNCH_CMD   NULL
 #define DEFAULT_LABEL_FMT    _("Embed")
 #define DEFAULT_LABEL_FONT   NULL
 #define DEFAULT_POLL_DELAY   0
@@ -90,6 +91,8 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
       xfce_rc_write_entry    (rc, "window_regex", embed->window_regex);
     if (embed->window_class)
       xfce_rc_write_entry    (rc, "window_class", embed->window_class);
+    if (embed->launch_cmd)
+      xfce_rc_write_entry    (rc, "launch_cmd",  embed->launch_cmd);
     if (embed->label_fmt)
       xfce_rc_write_entry    (rc, "label_fmt",   embed->label_fmt);
     if (embed->label_font)
@@ -130,6 +133,8 @@ embed_read (EmbedPlugin *embed)
                               "window_regex", DEFAULT_WINDOW_REGEX));
       embed->window_class = g_strdup (xfce_rc_read_entry (rc,
                               "window_class", DEFAULT_WINDOW_CLASS));
+      embed->launch_cmd = g_strdup (xfce_rc_read_entry (rc,
+                              "launch_cmd", DEFAULT_LAUNCH_CMD));
       embed->label_fmt = g_strdup (xfce_rc_read_entry (rc,
                               "label_fmt", DEFAULT_LABEL_FMT));
       embed->label_font = g_strdup (xfce_rc_read_entry (rc,
@@ -155,6 +160,7 @@ embed_read (EmbedPlugin *embed)
   embed->proc_name   = g_strdup (DEFAULT_PROC_NAME);
   embed->window_regex = g_strdup (DEFAULT_WINDOW_REGEX);
   embed->window_class = g_strdup (DEFAULT_WINDOW_CLASS);
+  embed->launch_cmd  = g_strdup (DEFAULT_LAUNCH_CMD);
   embed->label_fmt   = g_strdup (DEFAULT_LABEL_FMT);
   embed->label_font  = g_strdup (DEFAULT_LABEL_FONT);
   embed->poll_delay  = DEFAULT_POLL_DELAY;
@@ -264,6 +270,7 @@ embed_free (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   g_free (embed->proc_name);
   g_free (embed->window_regex);
   g_free (embed->window_class);
+  g_free (embed->launch_cmd);
   g_free (embed->label_fmt);
   g_free (embed->label_font);
 
@@ -480,6 +487,36 @@ embed_search (EmbedPlugin *embed)
 
 
 
+/* Runs the desired command, if one is provided. */
+static void
+embed_launch_command (EmbedPlugin *embed)
+{
+  gchar *socketpos;
+  g_assert (embed->socket);
+  if (embed->launch_cmd && embed->launch_cmd[0]) {
+    /* See if we need to perform a substitution */
+    if ((socketpos = strstr (embed->launch_cmd, EMBED_LAUNCH_CMD_SOCKET))) {
+      /* Construct the launch command, replacing the EMBED_LAUNCH_CMD_SOCKET
+       * with the actual socket id. */
+      socketpos = g_strdup_printf ("%.*s%lu%s",
+          (gint)(socketpos - embed->launch_cmd), embed->launch_cmd,
+          (intptr_t)gtk_socket_get_id (GTK_SOCKET (embed->socket)),
+          socketpos + strlen (EMBED_LAUNCH_CMD_SOCKET));
+      if (!g_spawn_command_line_async (socketpos, NULL)) {
+        DBG ("launch failed");
+      }
+      g_free (socketpos);
+    } else {
+      /* Othewise just launch directly. */
+      if (!g_spawn_command_line_async (embed->launch_cmd, NULL)) {
+        DBG ("launch failed");
+      }
+    }
+  }
+}
+
+
+
 /* Starts the search for a viable plug. Does one initial search, and then sets
  * up X11 monitoring and possibly polling if no plug is found right away.
  * Does not start a search if there are no criteria, as that would be stupid. */
@@ -498,11 +535,13 @@ embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
         (embed->window_class && embed->window_class[0])
        )) {
     DBG ("no search criteria specified");
+    /* Run the command if it is provided. */
+    embed_launch_command (embed);
     return;
   }
-  /* TODO: handle the case where we want to launch an application that will
-   * generate a plug */
+  /* See if we can't immediately find a window. */
   if (embed_search (embed)) {
+    /* Didn't find one. */
     /* Reset the _NET_CLIENT_LIST detector */
     embed->monitor_saw_net_client_list = FALSE;
     /* Watch for property changes (primarily the window list ones) on the root
@@ -516,6 +555,9 @@ embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
     if (embed->poll_delay > 0)
       embed->search_timer = g_timeout_add (embed->poll_delay,
                                           (GSourceFunc)embed_search, embed);
+
+    /* Run the command if it is provided. */
+    embed_launch_command (embed);
   }
 }
 
@@ -831,7 +873,7 @@ void
 embed_search_again (EmbedPlugin *embed)
 {
   embed_popout (GTK_MENU_ITEM (embed->popout_menu), embed);
-  embed_embed_menu (GTK_MENU_ITEM (embed->embed_menu), embed);
+  embed->disable_search = FALSE;
 }
 
 
