@@ -4,13 +4,17 @@ This file lists all external people that have contributed to this project and
 thereby helped to make the plugin what it is today.
 
 
-Translators (sorted by language):
-----------------------------------
-These people have translated the embed plugin to foreign languages.
+External code:
+--------------
+wmctrl (for the EWMH/NetWM property-getting code):
+    Tomas Styblo <tripie@cpan.org>
 
+
+Translators (sorted by language):
+---------------------------------
+These people have translated the embed plugin to foreign languages.
 
 
 Other contributors (sorted by name):
 ------------------------------------
-
 

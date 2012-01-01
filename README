@@ -18,6 +18,28 @@ detailed information, visit the Embed plugin website at
 http://goodies.xfce.org/projects/panel-plugins/xfce4-embed-plugin
 
 
+Sample Usage
+============
+
+The following are some sample configurations.
+Any selection criteria not mentioned are assumed to be blank.
+Any specified labels are suggested, and can certainly be modified to taste.
+Note that in general, you will have to click the label to get keyboard focus.
+
+Embed Pidgin's buddy list:
+    Launch command (optional): pidgin
+    Process name: pidgin
+    Window title: ^Buddy List$
+
+Embed gvim to edit a notes file:
+    Launch command: gvim --socketid %s ~/path/to/note/file
+    Label format: Notes
+
+Embed a terminal:
+    Launch command: xterm -into %s
+    Label format: %t
+
+
 How to report bugs?
 ===================
 
