@@ -1,5 +1,4 @@
 SUBDIRS =	\
-	icons	\
 	panel-plugin \
 	po
 

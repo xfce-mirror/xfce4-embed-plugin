@@ -235,13 +235,19 @@ embed_new (XfcePanelPlugin *plugin)
 
   /* pop out menu item, not shown by default */
   embed->popout_menu = gtk_image_menu_item_new_with_mnemonic (_("Pop _Out"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->popout_menu),
+    gtk_image_new_from_stock (GTK_STOCK_FULLSCREEN, GTK_ICON_SIZE_MENU));
 
   /* embed menu item, shown by default. */
   embed->embed_menu = gtk_image_menu_item_new_with_mnemonic (_("_Embed"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->embed_menu),
+    gtk_image_new_from_stock (GTK_STOCK_LEAVE_FULLSCREEN, GTK_ICON_SIZE_MENU));
   gtk_widget_show (embed->embed_menu);
 
   /* focus menu item, not shown by default */
   embed->focus_menu = gtk_image_menu_item_new_with_mnemonic (_("_Focus"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->focus_menu),
+    gtk_image_new_from_stock (GTK_STOCK_EDIT, GTK_ICON_SIZE_MENU));
 
   return embed;
 }
