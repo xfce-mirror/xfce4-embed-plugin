@@ -335,10 +335,9 @@ embed_size_changed (XfcePanelPlugin *plugin, gint size, EmbedPlugin *embed)
 
   /* set the socket widget size.
    * For the adjustable dimension, use the minimum size if set, otherwise if it
-   * is set to the window size and we don't have a window embedded, set to
-   * square. */
+   * is set to the window size and we don't have a window embedded, set to -1 */
   if (embed->min_size == EMBED_MIN_SIZE_MATCH_WINDOW)
-    altsize = size;
+    altsize = -1;
   else
     altsize = embed->min_size;
   if (orientation == GTK_ORIENTATION_HORIZONTAL) {
