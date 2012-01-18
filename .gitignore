@@ -1,6 +1,7 @@
 *.o
 *.swp
 .deps
+ChangeLog
 INSTALL
 Makefile
 Makefile.in
