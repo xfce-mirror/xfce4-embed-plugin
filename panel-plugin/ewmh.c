@@ -24,8 +24,9 @@
 #include <string.h>
 #endif
 
-#include <X11/Xatom.h>
 #include <gtk/gtk.h>
+#include <X11/Xlib.h>
+#include <X11/Xatom.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 

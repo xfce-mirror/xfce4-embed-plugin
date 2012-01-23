@@ -23,6 +23,7 @@
 
 #include <string.h>
 #include <gtk/gtk.h>
+#include <X11/Xlib.h>
 
 #include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
@@ -93,15 +94,15 @@ static void
 embed_entry_set_good (GtkEntry *edit, gboolean good)
 {
   if (good) {
-    gtk_entry_set_icon_tooltip_text (edit, GTK_ENTRY_ICON_SECONDARY,
-                                     _("Input is valid"));
     gtk_entry_set_icon_from_stock (edit, GTK_ENTRY_ICON_SECONDARY,
                                    GTK_STOCK_YES);
-  } else {
     gtk_entry_set_icon_tooltip_text (edit, GTK_ENTRY_ICON_SECONDARY,
-                                     _("Input is invalid"));
+                                     _("Input is valid"));
+  } else {
     gtk_entry_set_icon_from_stock (edit, GTK_ENTRY_ICON_SECONDARY,
                                    GTK_STOCK_NO);
+    gtk_entry_set_icon_tooltip_text (edit, GTK_ENTRY_ICON_SECONDARY,
+                                     _("Input is invalid"));
   }
 }
 

@@ -25,6 +25,7 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <X11/Xlib.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-hvbox.h>
@@ -32,6 +33,12 @@
 #include "ewmh.h"
 #include "embed.h"
 #include "embed-dialogs.h"
+
+/* GTK < 2.24 compatibility */
+#if !GTK_CHECK_VERSION(2,24,0)
+#define gdk_x11_window_foreign_new_for_display \
+          gdk_window_foreign_new_for_display
+#endif
 
 /* default settings */
 #define DEFAULT_PROC_NAME    NULL
@@ -506,7 +513,7 @@ embed_launch_command (EmbedPlugin *embed)
        * with the actual socket id. */
       socketpos = g_strdup_printf ("%.*s%lu%s",
           (gint)(socketpos - embed->launch_cmd), embed->launch_cmd,
-          (intptr_t)gtk_socket_get_id (GTK_SOCKET (embed->socket)),
+          (gulong)gtk_socket_get_id (GTK_SOCKET (embed->socket)),
           socketpos + strlen (EMBED_LAUNCH_CMD_SOCKET));
       if (!g_spawn_command_line_async (socketpos, NULL)) {
         DBG ("launch failed");
@@ -658,8 +665,12 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
   } else {
     /* Grab the GtkPlug's window. */
     embed->plug_window = gtk_socket_get_plug_window (GTK_SOCKET (embed->socket));
-    if (embed->plug_window)
+    if (embed->plug_window) {
       embed->plug = gdk_x11_drawable_get_xid (GDK_DRAWABLE (embed->plug_window));
+    } else {
+      DBG ("failed to get plug X11 window");
+      embed->plug = 0;
+    }
   }
   if (embed->plug_window && embed->plug) {
     /* Monitor for unmap/destroy events if it is not a standard GtkPlug. If the
@@ -715,6 +726,11 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
   gtk_widget_hide (embed->focus_menu);
   gtk_widget_show (embed->embed_menu);
   embed->has_plug = FALSE;
+
+  /* If this was a GtkPlug, the plug has been destroyed and embed->plug is
+   * now an invalid window. */
+  if (embed->plug_is_gtkplug)
+    embed->plug = 0;
 
   /* Assume the socket will be destroyed after this returns, so get rid of our
    * reference. */
