@@ -577,6 +577,10 @@ embed_launch_command (EmbedPlugin *embed)
 static void
 embed_start_search (GtkWidget *socket, EmbedPlugin *embed)
 {
+  if (embed->search_timer) {
+    DBG ("search already started");
+    return;
+  }
   if (embed->disable_search) {
     DBG ("search disabled");
     return;
@@ -753,6 +757,16 @@ embed_add_socket_and_resize (EmbedPlugin *embed)
 
 
 
+/* Idle wrapper function for embed_start_search. */
+static gboolean
+embed_start_search_idle (EmbedPlugin *embed)
+{
+  embed_start_search (embed->socket, embed);
+  return FALSE;
+}
+
+
+
 /* Callback for when a plug is removed.  This is either automatically called by
  * the GtkSocket, or manually when a plug is popped out or destroyed.
  * Does everything that should happen when a plug is removed, including all UI
@@ -896,6 +910,18 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
   GtkWidget *socket;
 
   DBG (".");
+
+  /* This function is expected to trigger an asynchronous embed_start_search
+   * (although disable_search may or may not be enabled when it happens), but if
+   * there's no plug to pop out, the requisite events won't happen.
+   * So we shortcut it by triggering the events ourself. */
+  if (!embed->has_plug) {
+    if (!embed->socket)
+      g_idle_add ((GSourceFunc)embed_add_socket_and_resize, embed);
+    else
+      g_idle_add ((GSourceFunc)embed_start_search_idle, embed);
+    return;
+  }
 
   if (!embed->plug_is_gtkplug) {
     /* Since we're not hosting a gtkplug, we should reparent the window so we
