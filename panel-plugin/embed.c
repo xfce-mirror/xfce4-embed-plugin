@@ -453,6 +453,10 @@ embed_search (EmbedPlugin *embed)
       gboolean match;
       match = TRUE;
 
+      /* Windows tend to disappear before we get to them, triggering X errors.
+       * Trap and ignore them. */
+      gdk_error_trap_push ();
+
       /* AND-match each specified criteria, starting with the presumably
        * lightest-weight/most-specific ones first. */
       if (match && embed->proc_name && embed->proc_name[0]) {
@@ -470,6 +474,14 @@ embed_search (EmbedPlugin *embed)
         str = get_window_title (embed->disp, client_list[i]);
         match = g_regex_match (embed->window_regex_comp, str, 0, NULL);
         g_free (str);
+      }
+
+      /* Trigger any pending X errors, then re-enable errors.
+       * If we hit an error, we definitely do NOT want this window. */
+      gdk_flush ();
+      if (gdk_error_trap_pop ()) {
+        DBG ("caught X error for window 0x%X", (GdkNativeWindow)client_list[i]);
+        match = FALSE;
       }
 
       /* If it's a match, make a fake socket and embed the window in it. */
