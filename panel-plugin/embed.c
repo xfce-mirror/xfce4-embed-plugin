@@ -315,17 +315,37 @@ embed_focus_menu (GtkMenuItem *focus_menu, EmbedPlugin *embed)
 
 
 
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+/* Callback when the orientation of the panel is changed. */
+static void
+embed_mode_changed (XfcePanelPlugin     *plugin,
+                    XfcePanelPluginMode  mode,
+                    EmbedPlugin         *embed)
+{
+  GtkOrientation   orientation;
+
+  /* change the orientation of the box */
+  orientation = (mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL) ?
+                GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
+
+  embed_update_label (embed);
+  xfce_hvbox_set_orientation (XFCE_HVBOX (embed->hvbox), orientation);
+  embed_update_separator (embed, orientation);
+}
+
+#else  // libxfce4panel < 4.9.0
+
 /* Callback when the orientation of the panel is changed. */
 static void
 embed_orientation_changed (XfcePanelPlugin *plugin,
                            GtkOrientation   orientation,
                            EmbedPlugin     *embed)
 {
-  /* change the orienation of the box */
+  /* change the orientation of the box */
   xfce_hvbox_set_orientation (XFCE_HVBOX (embed->hvbox), orientation);
   embed_update_separator (embed, orientation);
 }
-
+#endif
 
 
 /* Callback when the size of the panel is changed.
@@ -404,6 +424,11 @@ embed_update_label (EmbedPlugin *embed)
       /* Othewise just display the format string directly. */
       gtk_label_set_text (GTK_LABEL (embed->label), embed->label_fmt);
     }
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+    gtk_label_set_angle (GTK_LABEL (embed->label),
+       (xfce_panel_plugin_get_mode (embed->plugin) != XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+       0 : 270);
+#endif
     gtk_widget_show (embed->label);
   } else {
     gtk_widget_hide (embed->label);
@@ -1026,8 +1051,13 @@ embed_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "size-changed",
                     G_CALLBACK (embed_size_changed), embed);
 
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  g_signal_connect (G_OBJECT (plugin), "mode-changed",
+                    G_CALLBACK (embed_mode_changed), embed);
+#else
   g_signal_connect (G_OBJECT (plugin), "orientation-changed",
                     G_CALLBACK (embed_orientation_changed), embed);
+#endif
 
   g_signal_connect (G_OBJECT (plugin), "unrealize",
                     G_CALLBACK (embed_unrealize), embed);
