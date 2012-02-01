@@ -46,6 +46,7 @@ typedef struct
     Display         *disp;
 
     guint            search_timer;
+    guint            search_idle;
     gboolean         disable_search;
     gboolean         monitor_saw_net_client_list;
     gboolean         monitor_saw_net_wm_name;

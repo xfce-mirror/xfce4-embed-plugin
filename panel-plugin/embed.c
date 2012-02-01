@@ -443,6 +443,10 @@ embed_search (EmbedPlugin *embed)
   gulong i;
 
   DBG (".");
+
+  /* Don't do anything if we already have a plug but were called accidentally */
+  if (embed->has_plug)
+    return FALSE;
   
   /* Grab a list of windows managed by the window manager.
    * They will not necessarily be on the current workspace. */
@@ -599,6 +603,10 @@ embed_stop_search (EmbedPlugin *embed)
   if (embed->search_timer) {
     g_source_remove (embed->search_timer);
     embed->search_timer = 0;
+  }
+  if (embed->search_idle) {
+    g_source_remove (embed->search_idle);
+    embed->search_idle = 0;
   }
 }
 
@@ -951,12 +959,26 @@ embed_search_again (EmbedPlugin *embed)
 
 
 
+/* Wraps embed_search with the intent of being queued by g_idle_add.
+ * This helps avoid unnecessary repeated searches due to a backlog of root
+ * window events. */
+static gboolean
+embed_search_idle (EmbedPlugin *embed)
+{
+  embed->search_idle = 0;
+  embed_search (embed);
+  return FALSE;
+}
+
+
+
 /* X11 event monitor for the root window. Detects when windows become managed by
  * the window manager so that we can scan for matches. */
 static GdkFilterReturn
 embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 {
-  if (!embed->has_plug && xevent->type == PropertyNotify) {
+  if (!embed->has_plug && !embed->search_idle
+      && xevent->type == PropertyNotify) {
     /* To avoid double-handling window list changes, if we see a
      * _NET_CLIENT_LIST we will stop responding to _WIN_CLIENT_LIST events.
      * This is reset every time a new search is started, in case the window
@@ -964,11 +986,11 @@ embed_root_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
     if (xevent->atom == XInternAtom (xevent->display,
                                      "_NET_CLIENT_LIST", False)) {
       embed->monitor_saw_net_client_list = TRUE;
-      embed_search (embed);
+      embed->search_idle = g_idle_add ((GSourceFunc)embed_search_idle, embed);
     } else if (!embed->monitor_saw_net_client_list &&
         xevent->atom == XInternAtom (xevent->display,
                                      "_WIN_CLIENT_LIST", False)) {
-      embed_search (embed);
+      embed->search_idle = g_idle_add ((GSourceFunc)embed_search_idle, embed);
     }
   }
   return GDK_FILTER_REMOVE;
