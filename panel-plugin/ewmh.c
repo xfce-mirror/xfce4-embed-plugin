@@ -70,12 +70,12 @@ static gchar *get_property (Display *disp, Window win, Atom xa_prop_type,
             MAX_PROPERTY_VALUE_LEN / 4, False,
             xa_prop_type, &xa_ret_type, &ret_format,     
             &ret_nitems, &ret_bytes_after, &ret_prop) != Success) {
-        DBG("Cannot get %s property.\n", prop_name);
+        DBG("Cannot get %s property.", prop_name);
         return NULL;
     }
   
     if (xa_ret_type != xa_prop_type) {
-        DBG("Invalid type of %s property.\n", prop_name);
+        DBG("Invalid type of %s property.", prop_name);
         XFree(ret_prop);
         return NULL;
     }
@@ -125,8 +125,8 @@ Window *get_client_list (Display *disp, gulong *size)
                     XA_WINDOW, "_NET_CLIENT_LIST", size)) == NULL) {
         if ((client_list = (Window *)get_property(disp, DefaultRootWindow(disp),
                         XA_CARDINAL, "_WIN_CLIENT_LIST", size)) == NULL) {
-            DBG("Cannot get client list properties. \n"
-                  "(_NET_CLIENT_LIST or _WIN_CLIENT_LIST)\n");
+            DBG("Cannot get client list properties "
+                  "(_NET_CLIENT_LIST nor _WIN_CLIENT_LIST).");
             return NULL;
         }
     }
@@ -261,8 +261,8 @@ void show_window (Display *disp, Window win)
             XA_CARDINAL, "_NET_CURRENT_DESKTOP", NULL))) {
         if (! (cur_desktop = (unsigned long *)get_property(disp, root,
                 XA_CARDINAL, "_WIN_WORKSPACE", NULL))) {
-            DBG("Cannot get current desktop properties. "
-                "(_NET_CURRENT_DESKTOP or _WIN_WORKSPACE property)");
+            DBG("Cannot get current desktop properties "
+                "(_NET_CURRENT_DESKTOP nor _WIN_WORKSPACE).");
             return;
         }
     }
