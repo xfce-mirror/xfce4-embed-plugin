@@ -9,11 +9,11 @@ dnl ***************************
 dnl *** Version information ***
 dnl ***************************
 m4_define([embed_version_major], [0])
-m4_define([embed_version_minor], [8])
+m4_define([embed_version_minor], [9])
 m4_define([embed_version_micro], [0])
 m4_define([embed_version_nano],  []) dnl leave this empty to have no nano version
 m4_define([embed_version_build], [@REVISION@])
-m4_define([embed_version_tag], [])
+m4_define([embed_version_tag], [git])
 m4_define([embed_version], [embed_version_major().embed_version_minor().embed_version_micro()ifelse(embed_version_nano(), [], [], [.embed_version_nano()])ifelse(embed_version_tag(), [git], [embed_version_tag()-embed_version_build()], [embed_version_tag()])])
 
 dnl ***************************
