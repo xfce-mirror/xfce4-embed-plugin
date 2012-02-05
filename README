@@ -43,6 +43,6 @@ Embed a terminal:
 How to report bugs?
 ===================
 
-Bugs should be reported to the Xfce bug tracking system
-(http://bugzilla.xfce.org, product 'Xfce Panel Plugins', Component
-'Embed plugin'). You will need to create an account for yourself.
+Bugs should be reported to the Xfce bug tracking system:
+    http://bugzilla.xfce.org/enter_bug.cgi?product=xfce4-embed-plugin
+You will need to create an account for yourself.
