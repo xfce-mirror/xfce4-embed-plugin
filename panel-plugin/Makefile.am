@@ -7,13 +7,13 @@ INCLUDES = \
 #
 # Embed plugin
 #
-plugin_PROGRAMS = \
-	xfce4-embed-plugin
+plugin_LTLIBRARIES = \
+	libembed.la
 
 plugindir = \
 	$(libdir)/xfce4/panel/plugins
 
-xfce4_embed_plugin_SOURCES = \
+libembed_la_SOURCES = \
 	embed.c \
 	embed.h \
 	embed-dialogs.c \
@@ -21,14 +21,21 @@ xfce4_embed_plugin_SOURCES = \
 	ewmh.c \
 	ewmh.h
 
-xfce4_embed_plugin_CFLAGS = \
+libembed_la_CFLAGS = \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(LIBXFCE4UI_CFLAGS) \
 	$(LIBXFCE4PANEL_CFLAGS) \
 	$(LIBX11_CFLAGS) \
 	$(PLATFORM_CFLAGS)
 
-xfce4_embed_plugin_LDADD = \
+libembed_la_LDFLAGS = \
+	-avoid-version \
+	-module \
+	-no-undefined \
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
+
+libembed_la_LIBADD = \
 	$(LIBXFCE4UTIL_LIBS) \
 	$(LIBXFCE4UI_LIBS) \
 	$(LIBXFCE4PANEL_LIBS) \
@@ -46,7 +53,7 @@ desktop_in_in_files =							\
 desktop_in_files =							\
 	$(desktop_in_in_files:.desktop.in.in=.desktop.in)
 
-%.desktop.in: %.desktop.in.in
+$(desktop_in_files): $(desktop_in_in_files)
 	sed -e "s,\@libdir\@,$(libdir),g" < $< > $@
 
 desktop_DATA =								\

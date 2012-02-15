@@ -67,7 +67,7 @@ embed_add_fake_socket (EmbedPlugin *embed);
 
 
 /* register the plugin */
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (embed_construct);
+XFCE_PANEL_PLUGIN_REGISTER (embed_construct);
 
 
 /* Save the plugin settings. */

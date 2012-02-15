@@ -1,6 +1,8 @@
-*.o
+*.la
+*.lo
 *.swp
 .deps
+.libs
 ChangeLog
 INSTALL
 Makefile
@@ -18,7 +20,7 @@ ltmain.sh
 missing
 mkinstalldirs
 panel-plugin/embed.desktop
-panel-plugin/xfce4-embed-plugin
+panel-plugin/embed.desktop.in
 po/.intltool-merge-cache
 po/POTFILES
 stamp-*

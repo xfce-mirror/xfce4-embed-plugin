@@ -4,4 +4,5 @@ Encoding=UTF-8
 _Name=Embed Plugin
 _Comment=Embeds an arbitrary window into the panel
 Icon=xfce4-panel
-X-XFCE-Exec=@libdir@/xfce4/panel/plugins/xfce4-embed-plugin
+X-XFCE-Module=embed
+X-XFCE-Internal=false
