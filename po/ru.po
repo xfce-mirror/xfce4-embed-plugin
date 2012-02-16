@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-16 05:15+0000\n"
+"POT-Creation-Date: 2012-02-16 11:06+0000\n"
 "PO-Revision-Date: 2012-02-16 17:29+0600\n"
 "Last-Translator: Urmas D. <davian818@gmail.com>\n"
 "Language-Team: none\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -50,50 +50,60 @@ msgstr "Правильное значение"
 msgid "Input is invalid"
 msgstr "Неверное значение"
 
-#: ../panel-plugin/embed-dialogs.c:316
-#: ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
 msgstr "Модуль для внедрения окон"
 
-#: ../panel-plugin/embed-dialogs.c:325
+#: ../panel-plugin/embed-dialogs.c:326
 msgid "Application Launching"
 msgstr "Запуск приложения"
 
-#: ../panel-plugin/embed-dialogs.c:327
+#: ../panel-plugin/embed-dialogs.c:328
+#, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
-"to it ("
+"to it (%s) to embed itself automatically."
 msgstr ""
+"Если окно не будет найдено, или не будут указаны условия отбора, может быть выполнена \n"
+"указанная команда. Команда может либо создать требуемое окно, либо использовать \n"
+"переданный ей номер сокета (%s), чтобы внедрить свое окно самостоятельно."
 
-#: ../panel-plugin/embed-dialogs.c:333
+#: ../panel-plugin/embed-dialogs.c:336
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr ""
+"Оставьте пустым, чтобы ничего не запускать.\n"
+"%s заменяется на номер сокета."
+
+#: ../panel-plugin/embed-dialogs.c:339
 msgid "L_aunch command"
 msgstr "Ко_манда"
-
-#: ../panel-plugin/embed-dialogs.c:334
-msgid "Leave blank to not launch anything\n"
-msgstr ""
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:343
+#: ../panel-plugin/embed-dialogs.c:348
 msgid "Selection Criteria"
 msgstr "Условия поиска"
 
-#: ../panel-plugin/embed-dialogs.c:345
+#: ../panel-plugin/embed-dialogs.c:350
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
+"Внедряемое окно должно удовлетворять всем непустым условиям.\n"
+"Оставьте пустым, чтобы использовать команду запуска и номер сокета."
 
-#: ../panel-plugin/embed-dialogs.c:349
+#: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
 msgstr "_Процесс"
 
-#: ../panel-plugin/embed-dialogs.c:350
+#: ../panel-plugin/embed-dialogs.c:355
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
@@ -101,11 +111,11 @@ msgstr ""
 "Название процесса, создавшего окно\n"
 "Оставьте пустым, чтобы его не учитывать."
 
-#: ../panel-plugin/embed-dialogs.c:356
+#: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
 msgstr "_Класс"
 
-#: ../panel-plugin/embed-dialogs.c:357
+#: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
@@ -113,11 +123,11 @@ msgstr ""
 "Класс окна\n"
 "Оставьте пустым, чтобы его не учитывать."
 
-#: ../panel-plugin/embed-dialogs.c:363
+#: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
 msgstr "_Заголовок"
 
-#: ../panel-plugin/embed-dialogs.c:364
+#: ../panel-plugin/embed-dialogs.c:369
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
@@ -125,31 +135,36 @@ msgstr ""
 "Регулярное выражение для заголовка окна\n"
 "Оставьте пустым, чтобы не учитывать заголовок"
 
-#: ../panel-plugin/embed-dialogs.c:368
+#: ../panel-plugin/embed-dialogs.c:373
 msgid "Display"
 msgstr "Вид"
 
-#: ../panel-plugin/embed-dialogs.c:371
+#: ../panel-plugin/embed-dialogs.c:376
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr ""
+"Оставьте пустым, чтобы удалить подпись.\n"
+"%s заменяется на заголовок окна."
+
+#: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
 msgstr "Формат _названия"
 
-#: ../panel-plugin/embed-dialogs.c:372
-msgid "Leave blank to hide the label\n"
-msgstr "Оставьте поле пустым, чтобы скрыть название\n"
-
-#: ../panel-plugin/embed-dialogs.c:377
+#: ../panel-plugin/embed-dialogs.c:384
 msgid "Label _font"
 msgstr "_Шрифт"
 
-#: ../panel-plugin/embed-dialogs.c:378
+#: ../panel-plugin/embed-dialogs.c:385
 msgid "Choose the label font"
 msgstr "Выберите шрифт названия"
 
-#: ../panel-plugin/embed-dialogs.c:382
+#: ../panel-plugin/embed-dialogs.c:389
 msgid "Minimum _size (px)"
 msgstr "_Минимальный размер"
 
-#: ../panel-plugin/embed-dialogs.c:383
+#: ../panel-plugin/embed-dialogs.c:390
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
@@ -157,11 +172,11 @@ msgstr ""
 "Минимальный размер внедренного окна\n"
 "Если 0, то сохранять исходный размер"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
 msgstr "Рас_ширить"
 
-#: ../panel-plugin/embed-dialogs.c:389
+#: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
 msgstr "Использовать все доступное пространство"
 
@@ -169,3 +184,5 @@ msgstr "Использовать все доступное пространст�
 msgid "Embeds an arbitrary window into the panel"
 msgstr "Размещает на панели окно любой программы"
 
+#~ msgid "Leave blank to hide the label\n"
+#~ msgstr "Оставьте поле пустым, чтобы скрыть название\n"
