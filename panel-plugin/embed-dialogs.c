@@ -304,6 +304,7 @@ void
 embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 {
   GtkWidget *dialog, *content, *table;
+  gchar *text;
 
   /* block the plugin menu */
   xfce_panel_plugin_block_menu (plugin);
@@ -323,16 +324,20 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   content = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
 
   table = add_frame (content, 2, _("Application Launching"));
-  add_label (table, 0, NULL,
+  text = g_strdup_printf (
       _("If a window is not found (or there are no criteria), a command can\n"
         "optionally be launched. The command can either result in a window\n"
         "that matches the below criteria, or it can use the socket ID passed\n"
-        "to it (" EMBED_LAUNCH_CMD_SOCKET ") to embed itself automatically."));
+        "to it (%s) to embed itself automatically."), EMBED_LAUNCH_CMD_SOCKET);
+  add_label (table, 0, NULL, text);
+  g_free (text);
   /* launch_cmd */
+  text = g_strdup_printf (
+      _("Leave blank to not launch anything\n"
+        "%s expands to the socket ID"), EMBED_LAUNCH_CMD_SOCKET);
   add_entry (embed, table, 1, embed->launch_cmd, TRUE, embed_launch_cmd_changed,
-           _("L_aunch command"),
-           _("Leave blank to not launch anything\n"
-             EMBED_LAUNCH_CMD_SOCKET " expands to the socket ID"));
+           _("L_aunch command"), text);
+  g_free (text);
 
   /* poll_delay */
   /* No UI element. Generally polling is unnecessary, unless you have a very
@@ -367,10 +372,12 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
 
   table = add_frame (content, 3, _("Display"));
   /* label_fmt */
+  text = g_strdup_printf (
+      _("Leave blank to hide the label\n"
+        "%s expands to the embedded window's title"), EMBED_LABEL_FMT_TITLE);
   add_entry (embed, table, 0, embed->label_fmt, FALSE, embed_label_fmt_changed,
-           _("_Label format"),
-           _("Leave blank to hide the label\n"
-             EMBED_LABEL_FMT_TITLE " expands to the embedded window's title"));
+           _("_Label format"), text);
+  g_free (text);
 
   /* label font */
   add_fontbutton (embed, table, 1, embed->label_font, embed_label_font_changed,
