@@ -95,8 +95,6 @@ msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
-"要嵌入的窗口必须匹配所有非空的标准。\n"
-""
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
