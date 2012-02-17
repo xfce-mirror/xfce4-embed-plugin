@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr "嵌入的"
+msgstr "嵌入"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:244
@@ -29,7 +29,7 @@ msgstr "弹出(_O)"
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr "嵌入的(_E)"
+msgstr "嵌入(_E)"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
@@ -51,7 +51,7 @@ msgstr "输入无效"
 
 #: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "嵌入式插件"
+msgstr "嵌入插件"
 
 #: ../panel-plugin/embed-dialogs.c:326
 msgid "Application Launching"
