@@ -95,40 +95,48 @@ msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
+"要嵌入的窗口必须与所有非空的标准匹配。\n"
+"留空一切以便依靠带套接字的启动命令。"
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
-msgstr ""
+msgstr "进程名称(_P)"
 
 #: ../panel-plugin/embed-dialogs.c:355
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"匹配此窗口的应用程序的进程名称\n"
+"如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
-msgstr ""
+msgstr "窗口等级(_W)"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"匹配窗口等级\n"
+"如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
-msgstr ""
+msgstr "窗口标题(_T)"
 
 #: ../panel-plugin/embed-dialogs.c:369
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"使用 REGEX 匹配窗口的标题\n"
+"如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "Display"
-msgstr ""
+msgstr "显示"
 
 #: ../panel-plugin/embed-dialogs.c:376
 #, c-format
@@ -136,37 +144,41 @@ msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr ""
+"留空隐藏此标签\n"
+"%s 扩展为已嵌入窗口的标题"
 
 #: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
-msgstr ""
+msgstr "标签格式(_L)"
 
 #: ../panel-plugin/embed-dialogs.c:384
 msgid "Label _font"
-msgstr ""
+msgstr "标签字体(_F)"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Choose the label font"
-msgstr ""
+msgstr "挑选标签字体"
 
 #: ../panel-plugin/embed-dialogs.c:389
 msgid "Minimum _size (px)"
-msgstr ""
+msgstr "最小字体(像素)(_S)"
 
 #: ../panel-plugin/embed-dialogs.c:390
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr ""
+"已嵌入窗口的最小大小\n"
+"设为 0 保持原始窗口大小"
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
-msgstr ""
+msgstr "扩展(_E)"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
-msgstr ""
+msgstr "用完所有可用的面板空间"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr ""
+msgstr "在面板中嵌入任意窗口"
