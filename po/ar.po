@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-19 09:18+0000\n"
+"PO-Revision-Date: 2012-02-19 15:12+0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic Xfce Translation Team\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.0\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "مضمّن"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:244
+msgid "Pop _Out"
+msgstr ""
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+msgid "_Embed"
+msgstr "م_ضمّن"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "البؤ_رة"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "غير قادر على فتح عنوان url التالي: %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "إدخال سليم"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "إدخال غير سليم"
+
+#: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "ملحق التضمّين"
+
+#: ../panel-plugin/embed-dialogs.c:326
+msgid "Application Launching"
+msgstr "غطلاق التطبيق"
+
+#: ../panel-plugin/embed-dialogs.c:328
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:336
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr ""
+"أتركه خاليا لعدم إطلاق أي شيء\n"
+"%s توسيع إلى مقود المعرف"
+
+#: ../panel-plugin/embed-dialogs.c:339
+msgid "L_aunch command"
+msgstr "أطلق الامر"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:348
+msgid "Selection Criteria"
+msgstr "حدد المعايير"
+
+#: ../panel-plugin/embed-dialogs.c:350
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:354
+msgid "_Process name"
+msgstr "إسم الع_ملية"
+
+#: ../panel-plugin/embed-dialogs.c:355
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"تطابق إسم النوافذ تطبيق الإجراء\n"
+"تركه خاليا غن لم يكن معيارا"
+
+#: ../panel-plugin/embed-dialogs.c:361
+msgid "_Window class"
+msgstr "ص_نف النافذة"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"تطابق صنف النوافذ\n"
+"تركه خاليا غن لم يكن معيارا"
+
+#: ../panel-plugin/embed-dialogs.c:368
+msgid "Window _title"
+msgstr "عن_وان النافذة"
+
+#: ../panel-plugin/embed-dialogs.c:369
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"تطابق عنوان النوافذ بإستعمال REGEX\n"
+"تركه خاليا غن لم يكن معيارا"
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "Display"
+msgstr "عرض"
+
+#: ../panel-plugin/embed-dialogs.c:376
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr "اتركه خاليا لإخفاء الوسم\\n%s تتسع لعنوان النوافذ المضمنة"
+
+#: ../panel-plugin/embed-dialogs.c:379
+msgid "_Label format"
+msgstr "صيغة الو_سم"
+
+#: ../panel-plugin/embed-dialogs.c:384
+msgid "Label _font"
+msgstr "خ_ط الوسم"
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Choose the label font"
+msgstr "إختر خط الوسم"
+
+#: ../panel-plugin/embed-dialogs.c:389
+msgid "Minimum _size (px)"
+msgstr "ح_جم الأقصى (px)"
+
+#: ../panel-plugin/embed-dialogs.c:390
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr "الحجم الأصغر لنافذة مضمنة\\nحدد إلى 0 للحفاظ حجم النافذة الأصلي"
+
+#: ../panel-plugin/embed-dialogs.c:395
+msgid "_Expand"
+msgstr "_توسّع"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Use up all available panel space"
+msgstr "إستعمل جل المساحة المتوفرة في اللوحة"
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr "يضمن إطار التعسفي في لوحة"
