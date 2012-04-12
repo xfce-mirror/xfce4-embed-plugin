@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
-msgstr ""
+msgstr "_Розширити"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
