@@ -72,6 +72,8 @@ msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr ""
+"Залишити порожнім щоб нічого не запускати\n"
+"%s розширити до сокета з ID"
 
 #: ../panel-plugin/embed-dialogs.c:339
 msgid "L_aunch command"
@@ -153,6 +155,8 @@ msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr ""
+"Найменший розмір вставленого вікна\n"
+"Встановіть 0 щоб залишити первісний розмір вікна"
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
