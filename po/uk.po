@@ -133,6 +133,8 @@ msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr ""
+"Залишити порожнім щоб приховати мітку\n"
+"%s розширити до заголовка вкладеного вікна"
 
 #: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
@@ -164,7 +166,7 @@ msgstr "_Розширити"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
-msgstr ""
+msgstr "Використати весь доступний простір панелі"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
