@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-18 20:15+0000\n"
+"POT-Creation-Date: 2012-04-20 06:45+0000\n"
 "PO-Revision-Date: 2010-09-30 11:06+0200\n"
 "Last-Translator: Yarema akaKnedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <xfce@xfce.org>\n"
@@ -24,7 +24,7 @@ msgstr "Вставка"
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:244
 msgid "Pop _Out"
-msgstr ""
+msgstr "Пока_зати"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
@@ -65,6 +65,10 @@ msgid ""
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
 msgstr ""
+"Якщо вікно не знайдене (або ж не задано критерії), команда\n"
+"може опціонально запуститися. Команда може бути запущена у вікні,\n"
+"що задовольняє задані критерії, або використати ID сокета, передані \n"
+"до (%s), щоб вставити себе автоматично."
 
 #: ../panel-plugin/embed-dialogs.c:336
 #, c-format
@@ -92,6 +96,8 @@ msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
+"Вікно для вкладення повинне задовольняти всі непорожні критерії.\n"
+"Залишіть все порожнім, якщо сподіваєтесь на запуск команди з сокет ID."
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
@@ -102,6 +108,8 @@ msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"Співпадає з назвою процесу програми вікна\n"
+"Залишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
@@ -112,6 +120,8 @@ msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"Співпадає з класом вікна\n"
+"Залишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
@@ -122,6 +132,8 @@ msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr ""
+"Співпадає з заголовком вікна, використовуючи REGEX\n"
+"Залишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "Display"
