@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-embed-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-19 02:00+0000\n"
+"PO-Revision-Date: 2012-04-19 17:47-0600\n"
+"Last-Translator: Sergio <oigres200@gmail.com>\n"
+"Language-Team: Spanish <xfce-i18n@xfce.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../panel-plugin/embed.c:48
+#, fuzzy
+msgid "Embed"
+msgstr "Incrustar"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:244
+#, fuzzy
+msgid "Pop _Out"
+msgstr ""
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+#, fuzzy
+msgid "_Embed"
+msgstr "_Incrustar"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "En_focar"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "No se pudo abrir la siguiente URL: %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "Entrada correcta"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "Entrada incorrecta"
+
+#: ../panel-plugin/embed-dialogs.c:317
+#: ../panel-plugin/embed.desktop.in.h:1
+#, fuzzy
+msgid "Embed Plugin"
+msgstr "Incrustar complemento"
+
+#: ../panel-plugin/embed-dialogs.c:326
+msgid "Application Launching"
+msgstr "Ejecutando aplicación"
+
+#: ../panel-plugin/embed-dialogs.c:328
+#, fuzzy, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr ""
+"Si una ventana no es encontrada (o no existen criterios), un comando puede \n"
+"ser ejecutado opcionalmente. El comando puede resultar en una ventana\n"
+"que coincida con el criterio inferior o puede utilizar la Socket ID asignado\n"
+"a el (%s) para incrustarse a sí mismo automáticamente."
+
+#: ../panel-plugin/embed-dialogs.c:336
+#, fuzzy, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr ""
+"Dejar en blanco para no ejecutar nada\n"
+"%s expande a Socket ID."
+
+#: ../panel-plugin/embed-dialogs.c:339
+msgid "L_aunch command"
+msgstr "Ejecut_ar comando"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:348
+msgid "Selection Criteria"
+msgstr "Criterio de selección"
+
+#: ../panel-plugin/embed-dialogs.c:350
+#, fuzzy
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr ""
+"La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\n"
+"Dejar todo en blanco para basarse en la ejecución de un comando con Socket ID."
+
+#: ../panel-plugin/embed-dialogs.c:354
+msgid "_Process name"
+msgstr "Nombre de _proceso"
+
+#: ../panel-plugin/embed-dialogs.c:355
+#, fuzzy
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"Coincidir el nombre del proceso de la aplicación de la ventana\n"
+"Dejar en blanco si no es un criterio"
+
+#: ../panel-plugin/embed-dialogs.c:361
+msgid "_Window class"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:362
+#, fuzzy
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"Coincidir la clase de la ventana\n"
+"Dejar en blanco si no es un criterio"
+
+#: ../panel-plugin/embed-dialogs.c:368
+msgid "Window _title"
+msgstr "_Título de ventana"
+
+#: ../panel-plugin/embed-dialogs.c:369
+#, fuzzy
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"Coincidir el título de la ventana utilizando una expresión regular(REGEX)\n"
+"Dejar en blanco si no es un criterio"
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "Display"
+msgstr "Mostrar"
+
+#: ../panel-plugin/embed-dialogs.c:376
+#, fuzzy, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr ""
+"Dejar en blanco para ocultar la etiqueta\n"
+"%s expandir hasta el título incrustado de la ventana"
+
+#: ../panel-plugin/embed-dialogs.c:379
+msgid "_Label format"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:384
+msgid "Label _font"
+msgstr "Tipogra_fía de etiqueta"
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Choose the label font"
+msgstr "Elija la tipografía de la etiqueta"
+
+#: ../panel-plugin/embed-dialogs.c:389
+msgid "Minimum _size (px)"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:390
+#, fuzzy
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr ""
+"Tamaño mínimo de la ventana incrustada\n"
+"Establecer a 0 para mantener el tamaño original de la ventana"
+
+#: ../panel-plugin/embed-dialogs.c:395
+msgid "_Expand"
+msgstr "_Expandir"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Use up all available panel space"
+msgstr "Utilizar todo el espacio disponible del panel"
+
+#: ../panel-plugin/embed.desktop.in.h:2
+#, fuzzy
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Incrusta una ventana arbitraria dentro del panel"
+
