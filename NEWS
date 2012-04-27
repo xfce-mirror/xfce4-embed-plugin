@@ -1,3 +1,8 @@
+1.0.0
+=====
+- Plugin is now compiled as a module
+- Now translated into 15 languages
+
 0.8.0
 =====
 - Initial release, lacking translations
