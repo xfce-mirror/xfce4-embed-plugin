@@ -1,6 +1,9 @@
+*.gmo
 *.la
 *.lo
 *.swp
+*.tar.*
+*.tar.*
 .deps
 .libs
 ChangeLog
