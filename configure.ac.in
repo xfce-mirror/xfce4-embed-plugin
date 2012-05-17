@@ -1,8 +1,7 @@
-dnl $Id$
 dnl
-dnl xfce4-embed-plugin - A window-embedding plugin for the Xfce panel
+dnl xfce4-embed-plugin - Embed arbitrary windows into the Xfce panel
 dnl
-dnl 2011 David Schneider <dnschneid@gmail.com>
+dnl 2012 David Schneider <dnschneid@gmail.com>
 dnl
 
 dnl ***************************
