@@ -70,7 +70,8 @@ msgstr ""
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
+msgstr "قۇرۇق بولسا ھېچ قانداق نەرسىنى ئىجرا قىلمايدۇ\n"
+"%s سوكېت كىملىكىنى(ID) يايىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:339
 msgid "L_aunch command"
@@ -82,13 +83,14 @@ msgstr "بۇيرۇق ئىجرا قىل(_A)"
 #. * identifiable when it is mapped.
 #: ../panel-plugin/embed-dialogs.c:348
 msgid "Selection Criteria"
-msgstr ""
+msgstr "تاللاش ئۆلچىمى"
 
 #: ../panel-plugin/embed-dialogs.c:350
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
+msgstr "سىڭدۈرمەكچى بولغان كۆزنەك قۇرۇق بولمىغان بارلىق ئۆلچەمگە ماس كېلىشى كېرەك.\n"
+"سوكېت كىملىكى(ID) نى ئىشلىتىپ ئىجرا قىلىش ئۈچۈن، ھەممىسى قۇرۇق قالدۇرۇلسا بولىدۇ."
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
@@ -98,7 +100,8 @@ msgstr "ئىجرا ئاتى(_P)"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "كۆزنەكنىڭ پروگراممىسىنىڭ ئىجرا ئاتىغا ماس كېلىدۇ\n"
+"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
@@ -108,28 +111,31 @@ msgstr "كۆزنەك سىنىپى(_W)"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "كۆزنەكنىڭ سىنىپىغا ماس كېلىدۇ\n"
+"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
-msgstr "كۆزنەك ماۋزۇسى"
+msgstr "كۆزنەك ماۋزۇسى(_T)"
 
 #: ../panel-plugin/embed-dialogs.c:369
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "كۆزنەك ماۋزۇسىنى REGEX نى ئىشلىتىپ ماسلاشتۇرىدۇ\n"
+"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "Display"
-msgstr ""
+msgstr "كۆرسىتىش"
 
 #: ../panel-plugin/embed-dialogs.c:376
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
+msgstr "ئەننى يوشۇرۇش ئۈچۈن قۇرۇق قالدۇرسا بولىدۇ\n"
+"%s بولسا سىڭدۈرۈلگەن كۆزنەكنىڭ ئەنىنى يايىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
@@ -151,7 +157,8 @@ msgstr "ئەڭ كىچىك چوڭلۇقى(px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
+msgstr "سىڭدۈرۈلگەن كۆزنەكنىڭ ئەڭ كىچىك چوڭلۇقى\n"
+"ئەگەر 0 قىلىپ بېكىتىلسە ئەسلىدىكى چوڭلۇقى ساقلىنىپ قالىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
@@ -159,8 +166,8 @@ msgstr "ياي(_E)"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
-msgstr ""
+msgstr "كۆزنەكتىكى بارلىق بوشلۇقنى ئىشلىتىدۇ"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr ""
+msgstr "ھەرقانداق بىر كۆزنەكنى كۆزنەك(panel)كە سىڭدۈرىدۇ"
