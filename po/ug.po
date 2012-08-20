@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Gheyret Kenji<gheyret@gmail.com>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-30 05:12+0000\n"
+"POT-Creation-Date: 2012-08-20 00:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Gheyret Kenji<gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -18,17 +18,17 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr ""
+msgstr "سىڭدۈرۈش"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:244
 msgid "Pop _Out"
-msgstr ""
+msgstr "سەكرەپ چىق(_O)"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr ""
+msgstr "سىڭدۈر(_E)"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
@@ -38,23 +38,23 @@ msgstr "فوكۇس(_F)"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "بۇ URL نى ئاچقىلى بولمىدى: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
-msgstr ""
+msgstr "كىرگۈزۈش ئىناۋەتلىك"
 
 #: ../panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
-msgstr ""
+msgstr "كىرگۈزۈش ئىناۋەتسىز"
 
 #: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr ""
+msgstr "سىڭدۈرۈش قىستۇرمىسى"
 
 #: ../panel-plugin/embed-dialogs.c:326
 msgid "Application Launching"
-msgstr ""
+msgstr "پروگرامما ئىجرا قىلىش"
 
 #: ../panel-plugin/embed-dialogs.c:328
 #, c-format
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:339
 msgid "L_aunch command"
-msgstr ""
+msgstr "بۇيرۇق ئىجرا قىل(_A)"
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
@@ -102,7 +102,7 @@ msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
-msgstr ""
+msgstr "كۆزنەك سىنىپى(_W)"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
-msgstr ""
+msgstr "ياي(_E)"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
