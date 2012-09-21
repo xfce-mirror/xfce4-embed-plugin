@@ -831,6 +831,28 @@ embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
 
 
 
+/* Callback for when the gtksocket is realized.
+ * Set the window settings and then start a search.
+ */
+static void
+embed_socket_realize (GtkWidget *socket, EmbedPlugin *embed)
+{
+  /* Ensure the socket gets expose and mouse button events.
+   * It needs EXPOSURE_MASK so that it properly gets repainted.
+   * It needs press/release so that the plugin menu can appear.
+   */
+  GdkWindow *socketwindow = gtk_widget_get_window (socket);
+  g_assert (socketwindow);
+  gdk_window_set_events (socketwindow, gdk_window_get_events (socketwindow)
+                                       | GDK_EXPOSURE_MASK
+                                       | GDK_BUTTON_PRESS_MASK
+                                       | GDK_BUTTON_RELEASE_MASK);
+  /* Start searching. */
+  embed_start_search (socket, embed);
+}
+
+
+
 /* Adds a GtkSocket to the plugin and hooks up the signals, optionally updating
  * the size of the plugin to match. Generally update_size should be true unless
  * the plugin is being initialized.
@@ -851,7 +873,9 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
   g_signal_connect (G_OBJECT (embed->socket), "plug-removed",
                     G_CALLBACK (embed_plug_removed), embed);
   g_signal_connect (G_OBJECT (embed->socket), "realize",
-                    G_CALLBACK (embed_start_search), embed);
+                    G_CALLBACK (embed_socket_realize), embed);
+
+  xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
 
   /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
@@ -879,6 +903,8 @@ embed_add_fake_socket (EmbedPlugin *embed)
   /* We use the size-allocate signal to keep the size of the plug up-to-date. */
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
+
+  xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
 
   /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
