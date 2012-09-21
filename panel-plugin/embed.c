@@ -857,13 +857,15 @@ embed_socket_realize (GtkWidget *socket, EmbedPlugin *embed)
   /* Ensure the socket gets expose and mouse button events.
    * It needs EXPOSURE_MASK so that it properly gets repainted.
    * It needs press/release so that the plugin menu can appear.
+   * It needs GDK_SUBSTRUCTURE_MASK, because otherwise GtkSocket breaks.
    */
   GdkWindow *socketwindow = gtk_widget_get_window (socket);
   g_assert (socketwindow);
   gdk_window_set_events (socketwindow, gdk_window_get_events (socketwindow)
                                        | GDK_EXPOSURE_MASK
                                        | GDK_BUTTON_PRESS_MASK
-                                       | GDK_BUTTON_RELEASE_MASK);
+                                       | GDK_BUTTON_RELEASE_MASK
+                                       | GDK_SUBSTRUCTURE_MASK);
   /* Start searching. */
   embed_start_search (socket, embed);
 }
