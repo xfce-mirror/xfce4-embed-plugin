@@ -849,7 +849,7 @@ embed_expose (GtkWidget *widget, GdkEvent *event, EmbedPlugin *embed)
 
 
 /* Callback for when the gtksocket is realized.
- * Set the window settings and then start a search.
+ * Set the window settings.
  */
 static void
 embed_socket_realize (GtkWidget *socket, EmbedPlugin *embed)
@@ -866,8 +866,6 @@ embed_socket_realize (GtkWidget *socket, EmbedPlugin *embed)
                                        | GDK_BUTTON_PRESS_MASK
                                        | GDK_BUTTON_RELEASE_MASK
                                        | GDK_SUBSTRUCTURE_MASK);
-  /* Start searching. */
-  embed_start_search (socket, embed);
 }
 
 
@@ -895,6 +893,8 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
                     G_CALLBACK (embed_socket_realize), embed);
   g_signal_connect (G_OBJECT (embed->socket), "expose-event",
                     G_CALLBACK (embed_expose), embed);
+  g_signal_connect_after (G_OBJECT (embed->socket), "realize",
+                          G_CALLBACK (embed_start_search), embed);
 
   xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
   gtk_widget_set_app_paintable (embed->socket, TRUE);
@@ -925,6 +925,8 @@ embed_add_fake_socket (EmbedPlugin *embed)
   /* We use the size-allocate signal to keep the size of the plug up-to-date. */
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
+  g_signal_connect (G_OBJECT (embed->socket), "realize",
+                    G_CALLBACK (embed_socket_realize), embed);
   g_signal_connect (G_OBJECT (embed->socket), "expose-event",
                     G_CALLBACK (embed_expose), embed);
 
