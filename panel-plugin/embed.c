@@ -831,6 +831,23 @@ embed_size_allocate (GtkSocket *socket, GdkRectangle *allocation,
 
 
 
+/* Callback used when the socket (or fake socket) needs to be painted.
+ * HACK: Let the parent plugin wrapper do the heavy lifting by convincing it to
+ * draw on our window for us.
+ */
+static gint
+embed_expose (GtkWidget *widget, GdkEvent *event, EmbedPlugin *embed)
+{
+  GtkWidget *plugwidget = gtk_widget_get_parent (GTK_WIDGET (embed->plugin));
+  GdkWindow *plugwindow = plugwidget->window;
+  plugwidget->window = widget->window;
+  gtk_widget_send_expose (plugwidget, event);
+  plugwidget->window = plugwindow;
+  return TRUE;
+}
+
+
+
 /* Callback for when the gtksocket is realized.
  * Set the window settings and then start a search.
  */
@@ -874,8 +891,11 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
                     G_CALLBACK (embed_plug_removed), embed);
   g_signal_connect (G_OBJECT (embed->socket), "realize",
                     G_CALLBACK (embed_socket_realize), embed);
+  g_signal_connect (G_OBJECT (embed->socket), "expose-event",
+                    G_CALLBACK (embed_expose), embed);
 
   xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
+  gtk_widget_set_app_paintable (embed->socket, TRUE);
 
   /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
@@ -903,8 +923,11 @@ embed_add_fake_socket (EmbedPlugin *embed)
   /* We use the size-allocate signal to keep the size of the plug up-to-date. */
   g_signal_connect (G_OBJECT (embed->socket), "size-allocate",
                     G_CALLBACK (embed_size_allocate), embed);
+  g_signal_connect (G_OBJECT (embed->socket), "expose-event",
+                    G_CALLBACK (embed_expose), embed);
 
   xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
+  gtk_widget_set_app_paintable (embed->socket, TRUE);
 
   /* Add it to the plugin hvbox */
   gtk_widget_show (embed->socket);
