@@ -1,20 +1,20 @@
 # Uyghur translation for xfce4-embed-plugin.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Gheyret Kenji<gheyret@gmail.com>, 2012.
-# 
+# Gheyret Kenji <gheyret@gmail.com>, YEAR.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-24 22:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Gheyret Kenji<gheyret@gmail.com>\n"
+"POT-Creation-Date: 2012-10-24 02:51+0000\n"
+"PO-Revision-Date: 2011-11-09 16:10+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -38,7 +38,7 @@ msgstr "فوكۇس(_F)"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "بۇ URL نى ئاچقىلى بولمىدى: %s"
+msgstr "تۆۋەندىكى  URL نى ئاچقىلى بولمىدى: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -63,8 +63,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"ئەگەر كۆزنەك تېپىلمىسا(ياكى بۇ يەردە بىرەر ئۆلچەم يوق بولسا)، بىر بۇيرۇق\n"
+msgstr "ئەگەر كۆزنەك تېپىلمىسا(ياكى بۇ يەردە بىرەر ئۆلچەم يوق بولسا)، بىر بۇيرۇق\n"
 "زۆرۈر بولغاندا ئىجرا بولىدۇ. بۇ بۇيرۇق تۆۋەندىكى ئۆلچەمگە ماس كېلىدىغان\n"
 "بىر كۆزنەكنى پەيدا قىلىدۇ ياكى (%s) غا بېرىلگەن سوكېت كىملىكى(ID) نى ئىشلىتىپ\n"
 "ئۆزىنى ئاپتوماتىك سىڭدۈرىدۇ."
@@ -74,8 +73,7 @@ msgstr ""
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"قۇرۇق بولسا ھېچ قانداق نەرسىنى ئىجرا قىلمايدۇ\n"
+msgstr "قۇرۇق بولسا ھېچ قانداق نەرسىنى ئىجرا قىلمايدۇ\n"
 "%s سوكېت كىملىكىنى(ID) يايىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:339
@@ -94,10 +92,8 @@ msgstr "تاللاش ئۆلچىمى"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"سىڭدۈرمەكچى بولغان كۆزنەك قۇرۇق بولمىغان بارلىق ئۆلچەمگە ماس كېلىشى كېرەك.\n"
-"سوكېت كىملىكى(ID) نى ئىشلىتىپ ئىجرا قىلىش ئۈچۈن، ھەممىسى قۇرۇق قالدۇرۇلسا "
-"بولىدۇ."
+msgstr "سىڭدۈرمەكچى بولغان كۆزنەك قۇرۇق بولمىغان بارلىق ئۆلچەمگە ماس كېلىشى كېرەك.\n"
+"سوكېت كىملىكى(ID) نى ئىشلىتىپ ئىجرا قىلىش ئۈچۈن، ھەممىسى قۇرۇق قالدۇرۇلسا بولىدۇ."
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
@@ -107,8 +103,7 @@ msgstr "ئىجرا ئاتى(_P)"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"كۆزنەكنىڭ پروگراممىسىنىڭ ئىجرا ئاتىغا ماس كېلىدۇ\n"
+msgstr "كۆزنەكنىڭ پروگراممىسىنىڭ ئىجرا ئاتىغا ماس كېلىدۇ\n"
 "ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:361
@@ -119,20 +114,18 @@ msgstr "كۆزنەك سىنىپى(_W)"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"كۆزنەكنىڭ سىنىپىغا ماس كېلىدۇ\n"
+msgstr "كۆزنەكنىڭ سىنىپىغا ماس كېلىدۇ\n"
 "ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
-msgstr "كۆزنەك ماۋزۇسى(_T)"
+msgstr "كۆزنەك ماۋزۇسى"
 
 #: ../panel-plugin/embed-dialogs.c:369
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"كۆزنەك ماۋزۇسىنى REGEX نى ئىشلىتىپ ماسلاشتۇرىدۇ\n"
+msgstr "كۆزنەك ماۋزۇسىنى REGEX نى ئىشلىتىپ ماسلاشتۇرىدۇ\n"
 "ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:373
@@ -144,8 +137,7 @@ msgstr "كۆرسىتىش"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"ئەننى يوشۇرۇش ئۈچۈن قۇرۇق قالدۇرسا بولىدۇ\n"
+msgstr "ئەننى يوشۇرۇش ئۈچۈن قۇرۇق قالدۇرسا بولىدۇ\n"
 "%s بولسا سىڭدۈرۈلگەن كۆزنەكنىڭ ئەنىنى يايىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:379
@@ -168,8 +160,7 @@ msgstr "ئەڭ كىچىك چوڭلۇقى(px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"سىڭدۈرۈلگەن كۆزنەكنىڭ ئەڭ كىچىك چوڭلۇقى\n"
+msgstr "سىڭدۈرۈلگەن كۆزنەكنىڭ ئەڭ كىچىك چوڭلۇقى\n"
 "ئەگەر 0 قىلىپ بېكىتىلسە ئەسلىدىكى چوڭلۇقى ساقلىنىپ قالىدۇ"
 
 #: ../panel-plugin/embed-dialogs.c:395
