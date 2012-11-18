@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012.
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-19 09:18+0000\n"
-"PO-Revision-Date: 2012-02-19 15:12+0000\n"
-"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
-"Language-Team: Arabic Xfce Translation Team\n"
+"POT-Creation-Date: 2012-11-18 18:06+0000\n"
+"PO-Revision-Date: 2012-11-18 23:24+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -25,22 +26,22 @@ msgstr "مضمّن"
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:244
 msgid "Pop _Out"
-msgstr ""
+msgstr "قائمة منبثقة"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr "م_ضمّن"
+msgstr "_مضمّن"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
-msgstr "البؤ_رة"
+msgstr "_التركيز"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "غير قادر على فتح عنوان url التالي: %s"
+msgstr "غير قادر على فتح المسار: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -66,6 +67,10 @@ msgid ""
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
 msgstr ""
+"إذا لم يتم العثور على نافذة (أو لا توجد معايير)، يمكن إطلاق\n"
+"أمرا اختيارياً. الأمر يمكن أن يكون أما نافذة تطابق معايير\n"
+"الدنيا، أو تستخدم مأخذ المعرف الذي تم تمريره إلى (%s) لتضمن\n"
+"نفسها تلقائياً."
 
 #: ../panel-plugin/embed-dialogs.c:336
 #, c-format
@@ -93,10 +98,12 @@ msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
+"يجب تضمين النافذة لتطابق جميع المعايير غير فارغة.\n"
+"ترك كل شيء فارغة يودي إلى الاعتماد على أمر إطلاق مُعرف المقبس."
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
-msgstr "إسم الع_ملية"
+msgstr "_إسم العملية"
 
 #: ../panel-plugin/embed-dialogs.c:355
 msgid ""
@@ -104,11 +111,11 @@ msgid ""
 "Leave blank if it is not a criterion"
 msgstr ""
 "تطابق إسم النوافذ تطبيق الإجراء\n"
-"تركه خاليا غن لم يكن معيارا"
+"اتركه خاليا إذا لم يكن معيارا"
 
 #: ../panel-plugin/embed-dialogs.c:361
 msgid "_Window class"
-msgstr "ص_نف النافذة"
+msgstr "_صنف النافذة"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
@@ -116,7 +123,7 @@ msgid ""
 "Leave blank if it is not a criterion"
 msgstr ""
 "تطابق صنف النوافذ\n"
-"تركه خاليا غن لم يكن معيارا"
+"اتركه خاليا إذا لم يكن معيارا"
 
 #: ../panel-plugin/embed-dialogs.c:368
 msgid "Window _title"
@@ -128,7 +135,7 @@ msgid ""
 "Leave blank if it is not a criterion"
 msgstr ""
 "تطابق عنوان النوافذ بإستعمال REGEX\n"
-"تركه خاليا غن لم يكن معيارا"
+"اتركه خاليا إذا لم يكن معيارا"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "Display"
@@ -139,29 +146,33 @@ msgstr "عرض"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "اتركه خاليا لإخفاء الوسم\\n%s تتسع لعنوان النوافذ المضمنة"
+msgstr ""
+"اتركه خاليا لإخفاء التسمية\n"
+"%s تتسع لعنوان النوافذ المضمنة"
 
 #: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
-msgstr "صيغة الو_سم"
+msgstr "_صيغة التسمية"
 
 #: ../panel-plugin/embed-dialogs.c:384
 msgid "Label _font"
-msgstr "خ_ط الوسم"
+msgstr "خ_ط التسمية"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Choose the label font"
-msgstr "إختر خط الوسم"
+msgstr "إختر خط التسمية"
 
 #: ../panel-plugin/embed-dialogs.c:389
 msgid "Minimum _size (px)"
-msgstr "ح_جم الأقصى (px)"
+msgstr "الح_جم الأقصى (px)"
 
 #: ../panel-plugin/embed-dialogs.c:390
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "الحجم الأصغر لنافذة مضمنة\\nحدد إلى 0 للحفاظ حجم النافذة الأصلي"
+msgstr ""
+"الحجم الأصغر للنافذة المضمنة\n"
+"الرقم 0 للحفاظ حجم النافذة الأصلي"
 
 #: ../panel-plugin/embed-dialogs.c:395
 msgid "_Expand"
@@ -169,8 +180,8 @@ msgstr "_توسّع"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Use up all available panel space"
-msgstr "إستعمل جل المساحة المتوفرة في اللوحة"
+msgstr "إستعمل كل المساحة المتوفرة في اللوحة"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "يضمن إطار التعسفي في لوحة"
+msgstr "يضمن إجبار النافذة في لوحة"
