@@ -1,3 +1,10 @@
+1.2.0
+=====
+- Improved painting of the socket background
+- Made the socket background clickable
+- Translations: Arabic, French, Galician, Portugese, Portugese, Spanish, Uyghur
+- Updated license text
+
 1.0.0
 =====
 - Plugin is now compiled as a module
