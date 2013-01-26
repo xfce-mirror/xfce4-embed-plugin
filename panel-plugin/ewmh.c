@@ -276,3 +276,22 @@ void focus_window (Display *disp, Window win)
     XSetInputFocus (disp, win, RevertToNone, CurrentTime);
     XFlush (disp);
 }
+
+void close_window (Display *disp, Window win)
+{
+    XEvent event;
+    event.xclient.type = ClientMessage;
+    event.xclient.serial = 0;
+    event.xclient.send_event = False;
+    event.xclient.message_type = XInternAtom(disp, "WM_PROTOCOLS", False);
+    event.xclient.window = win;
+    event.xclient.format = 32;
+    event.xclient.data.l[0] = XInternAtom(disp, "WM_DELETE_WINDOW", False);
+    event.xclient.data.l[1] = 0;
+    event.xclient.data.l[2] = 0;
+    event.xclient.data.l[3] = 0;
+    event.xclient.data.l[4] = 0;
+    if (!XSendEvent(disp, win, False, NoEventMask, &event))
+        DBG("Cannot send WM_DELETE_WINDOW event.");
+    XSync (disp, False);
+}

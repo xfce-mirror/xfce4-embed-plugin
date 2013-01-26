@@ -59,6 +59,8 @@ embed_construct (XfcePanelPlugin *plugin);
 static void
 embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed);
 static void
+embed_close (GtkMenuItem *close_menu, EmbedPlugin *embed);
+static void
 embed_destroyed (EmbedPlugin *embed);
 static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size);
@@ -240,11 +242,6 @@ embed_new (XfcePanelPlugin *plugin)
   /* socket */
   embed_add_socket (embed, FALSE);
 
-  /* pop out menu item, not shown by default */
-  embed->popout_menu = gtk_image_menu_item_new_with_mnemonic (_("Pop _Out"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->popout_menu),
-    gtk_image_new_from_stock (GTK_STOCK_FULLSCREEN, GTK_ICON_SIZE_MENU));
-
   /* embed menu item, shown by default. */
   embed->embed_menu = gtk_image_menu_item_new_with_mnemonic (_("_Embed"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->embed_menu),
@@ -255,6 +252,16 @@ embed_new (XfcePanelPlugin *plugin)
   embed->focus_menu = gtk_image_menu_item_new_with_mnemonic (_("_Focus"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->focus_menu),
     gtk_image_new_from_stock (GTK_STOCK_EDIT, GTK_ICON_SIZE_MENU));
+
+  /* pop out menu item, not shown by default */
+  embed->popout_menu = gtk_image_menu_item_new_with_mnemonic (_("Pop _Out"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->popout_menu),
+    gtk_image_new_from_stock (GTK_STOCK_FULLSCREEN, GTK_ICON_SIZE_MENU));
+
+  /* close menu item, not shown by default */
+  embed->close_menu = gtk_image_menu_item_new_with_mnemonic (_("_Close"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (embed->close_menu),
+    gtk_image_new_from_stock (GTK_STOCK_CLOSE, GTK_ICON_SIZE_MENU));
 
   return embed;
 }
@@ -690,8 +697,9 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
 
   /* Flip the menu items */
   gtk_widget_hide (embed->embed_menu);
-  gtk_widget_show (embed->popout_menu);
   gtk_widget_show (embed->focus_menu);
+  gtk_widget_show (embed->popout_menu);
+  gtk_widget_show (embed->close_menu);
   embed->has_plug = TRUE;
 
   /* Stop any searching that is going on */
@@ -781,9 +789,10 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
   g_assert (embed->socket);
 
   /* Flip the menu items */
-  gtk_widget_hide (embed->popout_menu);
-  gtk_widget_hide (embed->focus_menu);
   gtk_widget_show (embed->embed_menu);
+  gtk_widget_hide (embed->focus_menu);
+  gtk_widget_hide (embed->popout_menu);
+  gtk_widget_hide (embed->close_menu);
   embed->has_plug = FALSE;
 
   /* If this was a GtkPlug, the plug has been destroyed and embed->plug is
@@ -998,6 +1007,29 @@ embed_popout (GtkMenuItem *popout_menu, EmbedPlugin *embed)
 
 
 
+/* Gracefully closes any plugs that are embedded. If auto-launch is set, this is
+ * akin to a manual pop-out; it won't launch the program and embed until "embed"
+ * is selected. If auto-launch is not set, then it resumes the search for
+ * windows to embed.
+ */
+static void
+embed_close (GtkMenuItem *close_menu, EmbedPlugin *embed)
+{
+  GtkWidget *socket;
+
+  DBG (".");
+
+  /* Don't enable searching for a new window if autolaunch is enabled. */
+  if (embed->launch_cmd && embed->launch_cmd[0]) {
+    embed->disable_search = TRUE;
+  }
+
+  /* Send a graceful close request. */
+  close_window (embed->disp, embed->plug);
+}
+
+
+
 /* Callback for when the plugin is single/double/triple-clicked.
  * Single-clicks focus the embedded window.
  * Double-clicks and triple-clicks toggle embed/popout. */
@@ -1144,12 +1176,6 @@ embed_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "button-press-event",
                     G_CALLBACK (embed_click), embed);
 
-  /* Add the "pop out" menu item */
-  xfce_panel_plugin_menu_insert_item (plugin,
-                                      GTK_MENU_ITEM (embed->popout_menu));
-  g_signal_connect (G_OBJECT (embed->popout_menu), "activate",
-                    G_CALLBACK (embed_popout), embed);
-
   /* Add the "embed" menu item */
   xfce_panel_plugin_menu_insert_item (plugin,
                                       GTK_MENU_ITEM (embed->embed_menu));
@@ -1161,6 +1187,18 @@ embed_construct (XfcePanelPlugin *plugin)
                                       GTK_MENU_ITEM (embed->focus_menu));
   g_signal_connect (G_OBJECT (embed->focus_menu), "activate",
                     G_CALLBACK (embed_focus_menu), embed);
+
+  /* Add the "pop out" menu item */
+  xfce_panel_plugin_menu_insert_item (plugin,
+                                      GTK_MENU_ITEM (embed->popout_menu));
+  g_signal_connect (G_OBJECT (embed->popout_menu), "activate",
+                    G_CALLBACK (embed_popout), embed);
+
+  /* Add the "close" menu item */
+  xfce_panel_plugin_menu_insert_item (plugin,
+                                      GTK_MENU_ITEM (embed->close_menu));
+  g_signal_connect (G_OBJECT (embed->close_menu), "activate",
+                    G_CALLBACK (embed_close), embed);
 
 
   /* show the configure menu item and connect signal */

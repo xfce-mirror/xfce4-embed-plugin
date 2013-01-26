@@ -31,9 +31,10 @@ typedef struct
     GtkWidget       *hvbox;
     GtkWidget       *label;
     GtkWidget       *socket;
-    GtkWidget       *popout_menu;
     GtkWidget       *embed_menu;
     GtkWidget       *focus_menu;
+    GtkWidget       *popout_menu;
+    GtkWidget       *close_menu;
 
     /* panel data */
     gboolean         has_plug;
