@@ -1,41 +1,46 @@
 # Hungarian translation of xfce4-embed-plugin
 # Copyright (C) 2012. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-embed-plugin package.
-#
+# 
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-21 00:00+0000\n"
+"POT-Creation-Date: 2013-01-27 12:39+0000\n"
 "PO-Revision-Date: 2012-04-21 05:57+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Beágyazás"
 
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "_Kiemelés"
-
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: ../panel-plugin/embed.c:246
 msgid "_Embed"
 msgstr "_Beágyazás"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: ../panel-plugin/embed.c:252
 msgid "_Focus"
 msgstr "_Fókusz"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:257
+msgid "Pop _Out"
+msgstr "_Kiemelés"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:262
+msgid "_Close"
+msgstr "_Bezárás"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
@@ -68,10 +73,9 @@ msgid ""
 msgstr ""
 "Ha nem található ablak (vagy nincs feltétel), akkor egy parancs is "
 "elindítható.\n"
-"A parancs eredményezhet egy, az alábbi feltételnek megfelelő "
-"ablakot, vagy\n"
-"használhatja az átadott foglalatazonosítót (%s) önmagának "
-"beágyazásához automatikusan."
+"A parancs eredményezhet egy, az alábbi feltételnek megfelelő ablakot, vagy\n"
+"használhatja az átadott foglalatazonosítót (%s) önmagának beágyazásához "
+"automatikusan."
 
 #: ../panel-plugin/embed-dialogs.c:336
 #, c-format
@@ -99,8 +103,7 @@ msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
-"A beágyazandó ablaknak meg kell felelnie az összes nem üres "
-"feltételnek.\n"
+"A beágyazandó ablaknak meg kell felelnie az összes nem üres feltételnek.\n"
 "Hagyjon mindent üresen az indítandó parancs újrapróbáláshoz a "
 "foglalatazonosítóval."
 
@@ -188,4 +191,3 @@ msgstr "Az összes elérhető panelhely felhasználása"
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
 msgstr "Tetszőleges ablak beágyazása a panelbe"
-
