@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-20 06:45+0000\n"
+"POT-Creation-Date: 2013-01-27 07:18+0000\n"
 "PO-Revision-Date: 2010-09-30 11:06+0200\n"
 "Last-Translator: Yarema akaKnedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <xfce@xfce.org>\n"
@@ -21,20 +21,25 @@ msgstr ""
 msgid "Embed"
 msgstr "Вставка"
 
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "Пока_зати"
-
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: ../panel-plugin/embed.c:246
 msgid "_Embed"
 msgstr "_Вставка"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: ../panel-plugin/embed.c:252
 msgid "_Focus"
 msgstr "_Фокус"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:257
+msgid "Pop _Out"
+msgstr "Пока_зати"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:262
+msgid "_Close"
+msgstr "_Закрити"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
