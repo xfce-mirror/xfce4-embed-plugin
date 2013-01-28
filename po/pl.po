@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-01-08 13:54+0000\n"
-"PO-Revision-Date: 2013-01-27 10:27+0100\n"
+"PO-Revision-Date: 2013-01-28 10:56+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +23,12 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr ""
+msgstr "Osadzone okno"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:244
 msgid "Pop _Out"
-msgstr ""
+msgstr "_Wyodrębnij"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
@@ -43,17 +43,15 @@ msgstr "_Uaktywnij"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nie udało się otworzyć następującego adresu url: %s"
+msgstr "Nie udało się otworzyć następującego adresu URL: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
-#, fuzzy
 msgid "Input is valid"
-msgstr "Materiał wejściowy jest prawidłowy"
+msgstr "Wprowadzone dane są prawidłowe"
 
 #: ../panel-plugin/embed-dialogs.c:105
-#, fuzzy
 msgid "Input is invalid"
-msgstr "Materiał wejściowy jest nieprawidłowy"
+msgstr "Wprowadzone dane są nieprawidłowe"
 
 #: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
@@ -71,6 +69,11 @@ msgid ""
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
 msgstr ""
+"Jeśli po uruchomieniu apletu okno nie zostanie odnalezione (lub nie\n"
+"wprowadzono kryteriów wyboru), możliwe jest automatyczne uruchomienie\n"
+"określonego polecenia. Polecenie może otwierać okno, które będzie\n"
+"pasować do poniższych kryteriów. Do polecenia można też dołączyć\n"
+"identyfikator gniazda (%s), aby osadzić otwierane okno automatycznie."
 
 #: ../panel-plugin/embed-dialogs.c:336
 #, c-format
@@ -78,10 +81,13 @@ msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr ""
+"Określa polecenie wykonywane po uruchomieniu apletu. Proszę pozostawić puste "
+"pole, aby nie uruchamiać żadnego polecenia. Ciąg %s zostanie zastąpiony "
+"identyfikatorem gniazda apletu."
 
 #: ../panel-plugin/embed-dialogs.c:339
 msgid "L_aunch command"
-msgstr ""
+msgstr "_Polecenie"
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
@@ -92,11 +98,13 @@ msgid "Selection Criteria"
 msgstr "Kryterium wyboru"
 
 #: ../panel-plugin/embed-dialogs.c:350
-#, fuzzy
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Osadzane okno musi spełnić wszystkie wprowadzone kryteria. Aby "
+msgstr ""
+"Osadzane okno musi spełnić wszystkie wprowadzone kryteria. Proszę\n"
+"pozostawić wszystkie pola puste, aby umożliwić osadzanie okien przy\n"
+"użyciu identyfikatora gniazda."
 
 #: ../panel-plugin/embed-dialogs.c:354
 msgid "_Process name"
@@ -145,12 +153,12 @@ msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr ""
-"Określa etykietę apletu. Proszę pozostawić puste pole, aby ukryć etykietę "
-"lub wprowadzić %s, aby wyświetlić tytuł osadzonego okna."
+"Określa etykietę apletu. Proszę pozostawić puste pole, aby ukryć etykietę. "
+"Ciąg %s zostanie zastąpiony tytułem osadzonego okna."
 
 #: ../panel-plugin/embed-dialogs.c:379
 msgid "_Label format"
-msgstr "_Format etykiety"
+msgstr "_Etykieta"
 
 #: ../panel-plugin/embed-dialogs.c:384
 msgid "Label _font"
@@ -158,7 +166,7 @@ msgstr "_Czcionka etykiety"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Choose the label font"
-msgstr "Wybierz czcionkę etykiety"
+msgstr "Wybiera czcionkę etykiety"
 
 #: ../panel-plugin/embed-dialogs.c:389
 msgid "Minimum _size (px)"
