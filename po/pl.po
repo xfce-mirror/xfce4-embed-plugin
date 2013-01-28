@@ -6,17 +6,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1\n"
+"Project-Id-Version: xfce4-embed-plugin 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-08 13:54+0000\n"
-"PO-Revision-Date: 2013-01-28 10:56+0100\n"
+"POT-Creation-Date: 2013-01-28 04:42+0000\n"
+"PO-Revision-Date: 2013-01-28 11:03+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
 "X-Generator: Gtranslator 2.91.5\n"
-"Language: pl\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
 "%100<10 || n%100>=20)) ? 1 : 2));\n"
@@ -25,20 +25,25 @@ msgstr ""
 msgid "Embed"
 msgstr "Osadzone okno"
 
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "_Wyodrębnij"
-
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: ../panel-plugin/embed.c:246
 msgid "_Embed"
 msgstr "_Osadź"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: ../panel-plugin/embed.c:252
 msgid "_Focus"
 msgstr "_Uaktywnij"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:257
+msgid "Pop _Out"
+msgstr "_Wyodrębnij"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:262
+msgid "_Close"
+msgstr "Za_mknij"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
