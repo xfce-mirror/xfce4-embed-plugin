@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-embed-plugin master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-27 23:21+0000\n"
+"PO-Revision-Date: 2013-01-28 12:41+0800\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"Language-Team: chinese-l10n <chinese-l10n@googlegroups.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\\n\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "內嵌"
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:246
+msgid "_Embed"
+msgstr "內嵌(_E)"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:252
+msgid "_Focus"
+msgstr "焦點(_F)"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:257
+msgid "Pop _Out"
+msgstr "彈出(_O)"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:262
+msgid "_Close"
+msgstr "關閉(_C)"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "無法開啟下列網址：%s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "輸入有效"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "輸入無效"
+
+#: ../panel-plugin/embed-dialogs.c:317
+#: ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "內嵌插件"
+
+#: ../panel-plugin/embed-dialogs.c:326
+msgid "Application Launching"
+msgstr "應用程式啟動中"
+
+#: ../panel-plugin/embed-dialogs.c:328
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr ""
+"如果找不到視窗 (或是沒有判斷準則)，則可選擇性啟動指令。\n"
+"指令可以達到符合下列準則的視窗，或是將 socket ID 傳給\n"
+"它 (%s) 以讓它自己自動內嵌。"
+
+#: ../panel-plugin/embed-dialogs.c:336
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr ""
+"留下空白則不啟動任何程式\n"
+"%s 會擴展至 socket ID"
+
+#: ../panel-plugin/embed-dialogs.c:339
+msgid "L_aunch command"
+msgstr "啟動指令(_A)"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:348
+msgid "Selection Criteria"
+msgstr "選取準則"
+
+#: ../panel-plugin/embed-dialogs.c:350
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr ""
+"要內嵌的視窗必須符合所有的非空白準則。\n"
+"每項皆留空白以依賴採 socket ID 的啟動指令。"
+
+#: ../panel-plugin/embed-dialogs.c:354
+msgid "_Process name"
+msgstr "程序名稱(_P)"
+
+#: ../panel-plugin/embed-dialogs.c:355
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"比對視窗的應用程式程序名稱\n"
+"如果不想作為判斷準則，請留下空白"
+
+#: ../panel-plugin/embed-dialogs.c:361
+msgid "_Window class"
+msgstr "視窗類別(_W)"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"比對視窗的類別\n"
+"如果不想作為判斷準則，請留下空白"
+
+#: ../panel-plugin/embed-dialogs.c:368
+msgid "Window _title"
+msgstr "視窗標題(_T)"
+
+#: ../panel-plugin/embed-dialogs.c:369
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+"使用 REGEX 比對視窗的標題\n"
+"如果不想作為判斷準則，請留下空白"
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "Display"
+msgstr "顯示"
+
+#: ../panel-plugin/embed-dialogs.c:376
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr ""
+"留下空白以隱藏標籤\n"
+"%s 會擴展至內嵌的視窗標題"
+
+#: ../panel-plugin/embed-dialogs.c:379
+msgid "_Label format"
+msgstr "標籤格式(_L)"
+
+#: ../panel-plugin/embed-dialogs.c:384
+msgid "Label _font"
+msgstr "標籤字型(_F)"
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Choose the label font"
+msgstr "選擇標籤字型"
+
+#: ../panel-plugin/embed-dialogs.c:389
+msgid "Minimum _size (px)"
+msgstr "最小大小 (px)(_S)"
+
+#: ../panel-plugin/embed-dialogs.c:390
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr ""
+"內嵌視窗的最小大小\n"
+"設定為 0 可維持原始視窗大小"
+
+#: ../panel-plugin/embed-dialogs.c:395
+msgid "_Expand"
+msgstr "擴展(_E)"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Use up all available panel space"
+msgstr "使用所有可用的面板空間"
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr "將任意視窗內嵌至面板中"
+
