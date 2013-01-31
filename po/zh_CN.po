@@ -3,39 +3,44 @@
 # This file is distributed under the same license as
 # the xfce4-embed-plugin package.
 # Chipong Luo <chipong.luo@yahoo.com>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
-"Report-Msgid-Bugs-To: <xfce-i18n@xfce.org>\n"
-"POT-Creation-Date: 2012-04-20 06:45+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-31 07:36+0000\n"
 "PO-Revision-Date: 2012-02-16 17:29+0600\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "嵌入"
 
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "弹出(_O)"
-
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: ../panel-plugin/embed.c:246
 msgid "_Embed"
 msgstr "嵌入(_E)"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: ../panel-plugin/embed.c:252
 msgid "_Focus"
 msgstr "聚焦(_F)"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:257
+msgid "Pop _Out"
+msgstr "弹出(_O)"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:262
+msgid "_Close"
+msgstr "关闭(_C)"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
