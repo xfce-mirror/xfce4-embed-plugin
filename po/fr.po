@@ -190,12 +190,10 @@ msgid "Use up all available panel space"
 msgstr "Utiliser tout l'espace disponible du panneau"
 
 #: ../panel-plugin/embed-dialogs.c:412
-#, fuzzy
 msgid "Show _handle"
 msgstr "Voir la poignée"
 
 #: ../panel-plugin/embed-dialogs.c:413
-#, fuzzy
 msgid "Display a handle at the top of the plugin"
 msgstr "Afficher une poignée au sommet du plugin"
 
