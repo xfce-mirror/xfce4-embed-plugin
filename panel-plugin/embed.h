@@ -29,6 +29,7 @@ typedef struct
 
     /* panel widgets */
     GtkWidget       *hvbox;
+    GtkWidget       *handle;
     GtkWidget       *label;
     GtkWidget       *socket;
     GtkWidget       *embed_menu;
@@ -66,6 +67,7 @@ typedef struct
     gint             poll_delay;
     gint             min_size;
     gboolean         expand;
+    gboolean         show_handle;
 }
 EmbedPlugin;
 

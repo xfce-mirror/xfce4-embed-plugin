@@ -196,6 +196,18 @@ embed_expand_toggled (GtkToggleButton *toggle, EmbedPlugin *embed)
 
 
 static void
+embed_handle_toggled (GtkToggleButton *toggle, EmbedPlugin *embed)
+{
+  embed->show_handle = gtk_toggle_button_get_active (toggle);
+  if (embed->show_handle)
+    gtk_widget_show (embed->handle);
+  else
+    gtk_widget_hide (embed->handle);
+}
+
+
+
+static void
 set_tooltips (GtkWidget *widgetA, GtkWidget *widgetB, const gchar *text)
 {
   gtk_widget_set_tooltip_text (widgetA, text);
@@ -394,6 +406,11 @@ embed_configure (XfcePanelPlugin *plugin, EmbedPlugin *embed)
   add_checkbutton (embed, table, 3, embed->expand, embed_expand_toggled,
                  _("_Expand"),
                  _("Use up all available panel space"));
+
+  /* show_handle */
+  add_checkbutton (embed, table, 4, embed->show_handle, embed_handle_toggled,
+                 _("Show _handle"),
+                 _("Display a handle at the top of the plugin"));
 
 
   /* center dialog on the screen */

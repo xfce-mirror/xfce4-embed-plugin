@@ -50,6 +50,7 @@
 #define DEFAULT_POLL_DELAY   0
 #define DEFAULT_MIN_SIZE     EMBED_MIN_SIZE_MATCH_WINDOW
 #define DEFAULT_EXPAND       TRUE
+#define DEFAULT_SHOW_HANDLE  FALSE
 
 
 
@@ -66,6 +67,8 @@ static void
 embed_add_socket (EmbedPlugin *embed, gboolean update_size);
 static void
 embed_add_fake_socket (EmbedPlugin *embed);
+static gint
+embed_handle_expose (GtkWidget *widget, GdkEvent *event, EmbedPlugin *embed);
 
 
 /* register the plugin */
@@ -109,6 +112,7 @@ embed_save (XfcePanelPlugin *plugin, EmbedPlugin *embed)
     xfce_rc_write_int_entry  (rc, "poll_delay",  embed->poll_delay);
     xfce_rc_write_int_entry  (rc, "min_size",    embed->min_size);
     xfce_rc_write_bool_entry (rc, "expand",      embed->expand);
+    xfce_rc_write_bool_entry (rc, "show_handle", embed->show_handle);
 
     /* close the rc file */
     xfce_rc_close (rc);
@@ -154,6 +158,8 @@ embed_read (EmbedPlugin *embed)
                               "min_size", DEFAULT_MIN_SIZE);
       embed->expand = xfce_rc_read_bool_entry (rc,
                               "expand", DEFAULT_EXPAND);
+      embed->show_handle = xfce_rc_read_bool_entry (rc,
+                              "show_handle", DEFAULT_SHOW_HANDLE);
 
       /* cleanup */
       xfce_rc_close (rc);
@@ -175,19 +181,9 @@ embed_read (EmbedPlugin *embed)
   embed->poll_delay  = DEFAULT_POLL_DELAY;
   embed->min_size    = DEFAULT_MIN_SIZE;
   embed->expand      = DEFAULT_EXPAND;
+  embed->show_handle = DEFAULT_SHOW_HANDLE;
 
   embed_configure (embed->plugin, embed);
-}
-
-
-
-/* Remove any old separator and add a new one, if necessary.
- * This is used to add a separator widget, although currently as there is no
- * separator widget, nothing happens.  The function is still called in the
- * correct places though, so it is trivial to add. */
-static void
-embed_update_separator (EmbedPlugin* embed, GtkOrientation orientation)
-{
 }
 
 
@@ -230,8 +226,15 @@ embed_new (XfcePanelPlugin *plugin)
   embed->hvbox = xfce_hvbox_new (orientation, FALSE, 2);
   gtk_widget_show (embed->hvbox);
 
-  /* separator */
-  embed_update_separator (embed, orientation);
+  /* handle */
+  embed->handle = gtk_alignment_new (0.0f, 0.0f, 0.0f, 0.0f);
+  gtk_box_pack_start (GTK_BOX (embed->hvbox), embed->handle, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (embed->handle), "expose-event",
+                    G_CALLBACK (embed_handle_expose), plugin);
+  gtk_widget_set_size_request (embed->handle, 8, 8);
+  xfce_panel_plugin_add_action_widget (embed->plugin, embed->handle);
+  if (embed->show_handle)
+    gtk_widget_show (embed->handle);
 
   /* label */
   embed->label = gtk_label_new (NULL);
@@ -337,7 +340,6 @@ embed_mode_changed (XfcePanelPlugin     *plugin,
 
   embed_update_label (embed);
   xfce_hvbox_set_orientation (XFCE_HVBOX (embed->hvbox), orientation);
-  embed_update_separator (embed, orientation);
 }
 
 #else  // libxfce4panel < 4.9.0
@@ -350,7 +352,6 @@ embed_orientation_changed (XfcePanelPlugin *plugin,
 {
   /* change the orientation of the box */
   xfce_hvbox_set_orientation (XFCE_HVBOX (embed->hvbox), orientation);
-  embed_update_separator (embed, orientation);
 }
 #endif
 
@@ -852,6 +853,30 @@ embed_expose (GtkWidget *widget, GdkEvent *event, EmbedPlugin *embed)
   plugwidget->window = widget->window;
   gtk_widget_send_expose (plugwidget, event);
   plugwidget->window = plugwindow;
+  return TRUE;
+}
+
+
+
+/* Callback used when the handle needs to be painted.
+ */
+static gint
+embed_handle_expose (GtkWidget *widget, GdkEvent *event, EmbedPlugin *embed)
+{
+  GtkOrientation orientation = GTK_ORIENTATION_HORIZONTAL;
+  if (xfce_panel_plugin_get_orientation (XFCE_PANEL_PLUGIN (embed)) ==
+      GTK_ORIENTATION_HORIZONTAL)
+    orientation = GTK_ORIENTATION_VERTICAL;
+
+  gtk_paint_handle (widget->style, widget->window,
+                    GTK_WIDGET_STATE (widget), GTK_SHADOW_NONE,
+                    &(event->expose.area), widget, "handlebox",
+                    widget->allocation.x,
+                    widget->allocation.y,
+                    widget->allocation.width,
+                    widget->allocation.height,
+                    orientation);
+
   return TRUE;
 }
 
