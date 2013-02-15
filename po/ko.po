@@ -7,40 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-27 07:18+0000\n"
-"PO-Revision-Date: 2013-01-27 20:58+0900\n"
+"POT-Creation-Date: 2013-02-15 06:03+0000\n"
+"PO-Revision-Date: 2013-02-15 20:18+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
+"Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge."
+"net>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Korean\n"
-"X-Poedit-Country: KOREA, REPUBLIC OF\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Embed"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:246
+#: ../panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "내장하기(_E)"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:252
+#: ../panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "맞추기(_F)"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:257
+#: ../panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "뽑아내기(_O)"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:262
+#: ../panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "닫기(_C)"
 
@@ -57,16 +57,15 @@ msgstr "입력이 유효합니다"
 msgid "Input is invalid"
 msgstr "입력이 유효하지 않습니다"
 
-#: ../panel-plugin/embed-dialogs.c:317
-#: ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
 msgstr "Embed 플러그인"
 
-#: ../panel-plugin/embed-dialogs.c:326
+#: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "프로그램 실행"
 
-#: ../panel-plugin/embed-dialogs.c:328
+#: ../panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -79,7 +78,7 @@ msgstr ""
 "명령 자신을 자동으로 내장하기위해 (%s)(으)로 전달하는 소켓 ID를\n"
 "사용할 수 있습니다."
 
-#: ../panel-plugin/embed-dialogs.c:336
+#: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
@@ -88,7 +87,7 @@ msgstr ""
 "아무것도 실행하지 않으려면 비워둡니다\n"
 "%s은(는) 소켓 ID로 확장합니다"
 
-#: ../panel-plugin/embed-dialogs.c:339
+#: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "실행 명령(_A)"
 
@@ -96,11 +95,11 @@ msgstr "실행 명령(_A)"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:348
+#: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "기준 선택"
 
-#: ../panel-plugin/embed-dialogs.c:350
+#: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
@@ -108,11 +107,11 @@ msgstr ""
 "내장할 창은 모든 공백아닌 기준에 맞아야 합니다.\n"
 "소켓 ID로 명령을 실행하려면 모든 항목을 비웁니다."
 
-#: ../panel-plugin/embed-dialogs.c:354
+#: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "프로세스 이름(_P)"
 
-#: ../panel-plugin/embed-dialogs.c:355
+#: ../panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
@@ -120,11 +119,11 @@ msgstr ""
 "창의 프로그램 프로세스 이름을 비교합니다\n"
 "기분을 설정하지 않으려면 비워둡니다"
 
-#: ../panel-plugin/embed-dialogs.c:361
+#: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "창 분류(_W)"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
@@ -132,11 +131,11 @@ msgstr ""
 "창 분류를 비교합니다\n"
 "기준을 설정하지 않으려면 비워둡니다"
 
-#: ../panel-plugin/embed-dialogs.c:368
+#: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "창 제목(_T)"
 
-#: ../panel-plugin/embed-dialogs.c:369
+#: ../panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
@@ -144,11 +143,11 @@ msgstr ""
 "정규표현식을 사용하여 창 제목을 비교합니다\n"
 "기준을 설정하지 않으려면 비워둡니다"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "표시"
 
-#: ../panel-plugin/embed-dialogs.c:376
+#: ../panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
@@ -157,23 +156,23 @@ msgstr ""
 "레이블을 숨기려면 비워둡니다\n"
 "%s은(는) 내장 창 제목을 확장합니다"
 
-#: ../panel-plugin/embed-dialogs.c:379
+#: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "레이블 형식(_L)"
 
-#: ../panel-plugin/embed-dialogs.c:384
+#: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "레이블 글꼴(_F)"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "레이블 글꼴을 선택합니다"
 
-#: ../panel-plugin/embed-dialogs.c:389
+#: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "최소 크기(px)(_S)"
 
-#: ../panel-plugin/embed-dialogs.c:390
+#: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
@@ -181,15 +180,22 @@ msgstr ""
 "내장 창의 최소 크기입나다\n"
 "본래 창 크기를 유지하려면 0으로 설정합니다"
 
-#: ../panel-plugin/embed-dialogs.c:395
+#: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "확장(_E)"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "사용할 수 있는 모든 패널 공간을 사용합니다"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr "손잡이 표시(_H)"
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr "플러그인 상단에 손잡이를 표시합니다"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
 msgstr "임의의 창을 패널에 내장합니다"
-
