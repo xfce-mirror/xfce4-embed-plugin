@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-31 07:36+0000\n"
+"POT-Creation-Date: 2013-04-23 05:21+0000\n"
 "PO-Revision-Date: 2012-02-16 17:29+0600\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
@@ -23,22 +23,22 @@ msgid "Embed"
 msgstr "嵌入"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:246
+#: ../panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "嵌入(_E)"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:252
+#: ../panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "聚焦(_F)"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:257
+#: ../panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "弹出(_O)"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:262
+#: ../panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "关闭(_C)"
 
@@ -55,15 +55,15 @@ msgstr "输入有效"
 msgid "Input is invalid"
 msgstr "输入无效"
 
-#: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
 msgstr "嵌入插件"
 
-#: ../panel-plugin/embed-dialogs.c:326
+#: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "应用程序启动"
 
-#: ../panel-plugin/embed-dialogs.c:328
+#: ../panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -75,7 +75,7 @@ msgstr ""
 "命令要么带来与以下标准匹配的窗口，要么使用传送给\n"
 "它(%s)用来自动嵌入其自身的套接字 ID。"
 
-#: ../panel-plugin/embed-dialogs.c:336
+#: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
@@ -84,7 +84,7 @@ msgstr ""
 "留空不启动任何东西\n"
 "%s 扩展为套接字 ID"
 
-#: ../panel-plugin/embed-dialogs.c:339
+#: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "启动命令(_A)"
 
@@ -92,11 +92,11 @@ msgstr "启动命令(_A)"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:348
+#: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "选择标准"
 
-#: ../panel-plugin/embed-dialogs.c:350
+#: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
@@ -104,11 +104,11 @@ msgstr ""
 "要嵌入的窗口必须与所有非空的标准匹配。\n"
 "留空一切以便依靠带套接字的启动命令。"
 
-#: ../panel-plugin/embed-dialogs.c:354
+#: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "进程名称(_P)"
 
-#: ../panel-plugin/embed-dialogs.c:355
+#: ../panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
@@ -116,11 +116,11 @@ msgstr ""
 "匹配此窗口的应用程序的进程名称\n"
 "如果它不是一个标准则留空"
 
-#: ../panel-plugin/embed-dialogs.c:361
+#: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "窗口等级(_W)"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
@@ -128,11 +128,11 @@ msgstr ""
 "匹配窗口等级\n"
 "如果它不是一个标准则留空"
 
-#: ../panel-plugin/embed-dialogs.c:368
+#: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "窗口标题(_T)"
 
-#: ../panel-plugin/embed-dialogs.c:369
+#: ../panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
@@ -140,11 +140,11 @@ msgstr ""
 "使用 REGEX 匹配窗口的标题\n"
 "如果它不是一个标准则留空"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "显示"
 
-#: ../panel-plugin/embed-dialogs.c:376
+#: ../panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
@@ -153,23 +153,23 @@ msgstr ""
 "留空隐藏此标签\n"
 "%s 扩展为已嵌入窗口的标题"
 
-#: ../panel-plugin/embed-dialogs.c:379
+#: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "标签格式(_L)"
 
-#: ../panel-plugin/embed-dialogs.c:384
+#: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "标签字体(_F)"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "挑选标签字体"
 
-#: ../panel-plugin/embed-dialogs.c:389
+#: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "最小字体(像素)(_S)"
 
-#: ../panel-plugin/embed-dialogs.c:390
+#: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
@@ -177,13 +177,21 @@ msgstr ""
 "已嵌入窗口的最小大小\n"
 "设为 0 保持原始窗口大小"
 
-#: ../panel-plugin/embed-dialogs.c:395
+#: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "扩展(_E)"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "用完所有可用的面板空间"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr "显示手柄"
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr "在插件的顶部显示一个手柄"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
