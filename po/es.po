@@ -2,31 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-embed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-28 05:54+0000\n"
+"POT-Creation-Date: 2013-05-15 01:48+0000\n"
 "PO-Revision-Date: 2012-04-28 00:55-0600\n"
 "Last-Translator: Sergio García <oigres200@gmail.com>\n"
 "Language-Team: Spanish <xfce-i18n@xfce.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: SPAIN\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Incrustar"
-
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "_Saltar"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
@@ -37,6 +32,16 @@ msgstr "_Incrustar"
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "En_focar"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr "_Saltar"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr "_Cerrar"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
@@ -51,16 +56,15 @@ msgstr "Entrada correcta"
 msgid "Input is invalid"
 msgstr "Entrada incorrecta"
 
-#: ../panel-plugin/embed-dialogs.c:317
-#: ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
 msgstr "Incrustar complemento"
 
-#: ../panel-plugin/embed-dialogs.c:326
+#: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Ejecutando aplicación"
 
-#: ../panel-plugin/embed-dialogs.c:328
+#: ../panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -70,10 +74,11 @@ msgid ""
 msgstr ""
 "Si una ventana no es encontrada (o no existen criterios), un comando puede \n"
 "ser ejecutado opcionalmente. El comando puede resultar en una ventana\n"
-"que coincida con el criterio inferior o puede utilizar la Socket ID asignado\n"
+"que coincida con el criterio inferior o puede utilizar la Socket ID "
+"asignado\n"
 "a el (%s) para incrustarse a sí mismo automáticamente."
 
-#: ../panel-plugin/embed-dialogs.c:336
+#: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
@@ -82,7 +87,7 @@ msgstr ""
 "Dejar en blanco para no ejecutar nada\n"
 "%s expande a Socket ID."
 
-#: ../panel-plugin/embed-dialogs.c:339
+#: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "Ejecut_ar comando"
 
@@ -90,23 +95,25 @@ msgstr "Ejecut_ar comando"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:348
+#: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Criterio de selección"
 
-#: ../panel-plugin/embed-dialogs.c:350
+#: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr ""
-"La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\n"
-"Dejar todo en blanco para basarse en la ejecución de un comando con Socket ID."
+"La ventana para incrustar debe coincidir con todos los criterios que no "
+"están en blanco\n"
+"Dejar todo en blanco para basarse en la ejecución de un comando con Socket "
+"ID."
 
-#: ../panel-plugin/embed-dialogs.c:354
+#: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "Nombre de _proceso"
 
-#: ../panel-plugin/embed-dialogs.c:355
+#: ../panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
@@ -114,11 +121,11 @@ msgstr ""
 "Coincidir el nombre del proceso de la aplicación de la ventana\n"
 "Dejar en blanco si no es un criterio"
 
-#: ../panel-plugin/embed-dialogs.c:361
+#: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "Clase de _ventana"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
@@ -126,11 +133,11 @@ msgstr ""
 "Coincidir la clase de la ventana\n"
 "Dejar en blanco si no es un criterio"
 
-#: ../panel-plugin/embed-dialogs.c:368
+#: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "_Título de ventana"
 
-#: ../panel-plugin/embed-dialogs.c:369
+#: ../panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
@@ -138,11 +145,11 @@ msgstr ""
 "Coincidir el título de la ventana utilizando una expresión regular(REGEX)\n"
 "Dejar en blanco si no es un criterio"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Mostrar"
 
-#: ../panel-plugin/embed-dialogs.c:376
+#: ../panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
@@ -151,23 +158,23 @@ msgstr ""
 "Dejar en blanco para ocultar la etiqueta\n"
 "%s expandir hasta el título incrustado de la ventana"
 
-#: ../panel-plugin/embed-dialogs.c:379
+#: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "F_ormato de etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:384
+#: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "Tipogra_fía de etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Elija la tipografía de la etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:389
+#: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "Tamaño _mínimo (px)"
 
-#: ../panel-plugin/embed-dialogs.c:390
+#: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
@@ -175,15 +182,22 @@ msgstr ""
 "Tamaño mínimo de la ventana incrustada\n"
 "Establecer a 0 para mantener el tamaño original de la ventana"
 
-#: ../panel-plugin/embed-dialogs.c:395
+#: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "_Expandir"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Utilizar todo el espacio disponible del panel"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr ""
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
 msgstr "Incrusta una ventana arbitraria dentro del panel"
-
