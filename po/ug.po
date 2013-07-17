@@ -1,29 +1,25 @@
-# Uyghur translation for xfce4-embed-plugin.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Gheyret Kenji <gheyret@gmail.com>, YEAR.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-24 02:51+0000\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2013-07-17 06:45+0000\n"
+"Last-Translator: kawichi\n"
+"Language-Team: Uighur (http://www.transifex.com/projects/p/xfce/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ug\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "سىڭدۈرۈش"
-
-#. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:244
-msgid "Pop _Out"
-msgstr "سەكرەپ چىق(_O)"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
@@ -34,6 +30,16 @@ msgstr "سىڭدۈر(_E)"
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "فوكۇس(_F)"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr "سەكرەپ چىق(_O)"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
@@ -48,35 +54,31 @@ msgstr "كىرگۈزۈش ئىناۋەتلىك"
 msgid "Input is invalid"
 msgstr "كىرگۈزۈش ئىناۋەتسىز"
 
-#: ../panel-plugin/embed-dialogs.c:317 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
 msgstr "سىڭدۈرۈش قىستۇرمىسى"
 
-#: ../panel-plugin/embed-dialogs.c:326
+#: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "پروگرامما ئىجرا قىلىش"
 
-#: ../panel-plugin/embed-dialogs.c:328
+#: ../panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "ئەگەر كۆزنەك تېپىلمىسا(ياكى بۇ يەردە بىرەر ئۆلچەم يوق بولسا)، بىر بۇيرۇق\n"
-"زۆرۈر بولغاندا ئىجرا بولىدۇ. بۇ بۇيرۇق تۆۋەندىكى ئۆلچەمگە ماس كېلىدىغان\n"
-"بىر كۆزنەكنى پەيدا قىلىدۇ ياكى (%s) غا بېرىلگەن سوكېت كىملىكى(ID) نى ئىشلىتىپ\n"
-"ئۆزىنى ئاپتوماتىك سىڭدۈرىدۇ."
+msgstr "ئەگەر كۆزنەك تېپىلمىسا(ياكى بۇ يەردە بىرەر ئۆلچەم يوق بولسا)، بىر بۇيرۇق\nزۆرۈر بولغاندا ئىجرا بولىدۇ. بۇ بۇيرۇق تۆۋەندىكى ئۆلچەمگە ماس كېلىدىغان\nبىر كۆزنەكنى پەيدا قىلىدۇ ياكى (%s) غا بېرىلگەن سوكېت كىملىكى(ID) نى ئىشلىتىپ\nئۆزىنى ئاپتوماتىك سىڭدۈرىدۇ."
 
-#: ../panel-plugin/embed-dialogs.c:336
+#: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "قۇرۇق بولسا ھېچ قانداق نەرسىنى ئىجرا قىلمايدۇ\n"
-"%s سوكېت كىملىكىنى(ID) يايىدۇ"
+msgstr "قۇرۇق بولسا ھېچ قانداق نەرسىنى ئىجرا قىلمايدۇ\n%s سوكېت كىملىكىنى(ID) يايىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:339
+#: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "بۇيرۇق ئىجرا قىل(_A)"
 
@@ -84,92 +86,94 @@ msgstr "بۇيرۇق ئىجرا قىل(_A)"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:348
+#: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "تاللاش ئۆلچىمى"
 
-#: ../panel-plugin/embed-dialogs.c:350
+#: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "سىڭدۈرمەكچى بولغان كۆزنەك قۇرۇق بولمىغان بارلىق ئۆلچەمگە ماس كېلىشى كېرەك.\n"
-"سوكېت كىملىكى(ID) نى ئىشلىتىپ ئىجرا قىلىش ئۈچۈن، ھەممىسى قۇرۇق قالدۇرۇلسا بولىدۇ."
+msgstr "سىڭدۈرمەكچى بولغان كۆزنەك قۇرۇق بولمىغان بارلىق ئۆلچەمگە ماس كېلىشى كېرەك.\nسوكېت كىملىكى(ID) نى ئىشلىتىپ ئىجرا قىلىش ئۈچۈن، ھەممىسى قۇرۇق قالدۇرۇلسا بولىدۇ."
 
-#: ../panel-plugin/embed-dialogs.c:354
+#: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "ئىجرا ئاتى(_P)"
 
-#: ../panel-plugin/embed-dialogs.c:355
+#: ../panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "كۆزنەكنىڭ پروگراممىسىنىڭ ئىجرا ئاتىغا ماس كېلىدۇ\n"
-"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
+msgstr "كۆزنەكنىڭ پروگراممىسىنىڭ ئىجرا ئاتىغا ماس كېلىدۇ\nئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:361
+#: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "كۆزنەك سىنىپى(_W)"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "كۆزنەكنىڭ سىنىپىغا ماس كېلىدۇ\n"
-"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
+msgstr "كۆزنەكنىڭ سىنىپىغا ماس كېلىدۇ\nئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:368
+#: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "كۆزنەك ماۋزۇسى"
 
-#: ../panel-plugin/embed-dialogs.c:369
+#: ../panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "كۆزنەك ماۋزۇسىنى REGEX نى ئىشلىتىپ ماسلاشتۇرىدۇ\n"
-"ئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
+msgstr "كۆزنەك ماۋزۇسىنى REGEX نى ئىشلىتىپ ماسلاشتۇرىدۇ\nئەگەر ئۇ بىر ئۆلچەم بولمىسا قۇرۇق قالدۇرسا بولىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "كۆرسىتىش"
 
-#: ../panel-plugin/embed-dialogs.c:376
+#: ../panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "ئەننى يوشۇرۇش ئۈچۈن قۇرۇق قالدۇرسا بولىدۇ\n"
-"%s بولسا سىڭدۈرۈلگەن كۆزنەكنىڭ ئەنىنى يايىدۇ"
+msgstr "ئەننى يوشۇرۇش ئۈچۈن قۇرۇق قالدۇرسا بولىدۇ\n%s بولسا سىڭدۈرۈلگەن كۆزنەكنىڭ ئەنىنى يايىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:379
+#: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "ئەن پىچىمى(_L)"
 
-#: ../panel-plugin/embed-dialogs.c:384
+#: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "ئەن خەت نۇسخىسى(_F)"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "ئەن خەت نۇسخىسىنى تاللاڭ"
 
-#: ../panel-plugin/embed-dialogs.c:389
+#: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "ئەڭ كىچىك چوڭلۇقى(px)"
 
-#: ../panel-plugin/embed-dialogs.c:390
+#: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "سىڭدۈرۈلگەن كۆزنەكنىڭ ئەڭ كىچىك چوڭلۇقى\n"
-"ئەگەر 0 قىلىپ بېكىتىلسە ئەسلىدىكى چوڭلۇقى ساقلىنىپ قالىدۇ"
+msgstr "سىڭدۈرۈلگەن كۆزنەكنىڭ ئەڭ كىچىك چوڭلۇقى\nئەگەر 0 قىلىپ بېكىتىلسە ئەسلىدىكى چوڭلۇقى ساقلىنىپ قالىدۇ"
 
-#: ../panel-plugin/embed-dialogs.c:395
+#: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "ياي(_E)"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "كۆزنەكتىكى بارلىق بوشلۇقنى ئىشلىتىدۇ"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr ""
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
