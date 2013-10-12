@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# aybuke <aybuke.147@gmail.com>, 2013
 # Necdet Yücel <necdetyucel@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2013-10-10 09:09+0000\n"
-"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"PO-Revision-Date: 2013-10-12 18:03+0000\n"
+"Last-Translator: aybuke <aybuke.147@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -170,12 +171,12 @@ msgstr "Mümkün bütün panel boşluğunu kullan"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
-msgstr ""
+msgstr "_Dosya aracını göster"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr ""
+msgstr "Eklentinin en üstünde bir dosya aracı  görüntüleyin"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr ""
+msgstr "Panelin içine keyfi bir pencere gömer"
