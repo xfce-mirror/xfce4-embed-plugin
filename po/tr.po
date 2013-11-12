@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2013-10-12 18:03+0000\n"
-"Last-Translator: aybuke <aybuke.147@gmail.com>\n"
+"PO-Revision-Date: 2013-11-12 08:30+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr "_Odaklan"
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
 msgid "Pop _Out"
-msgstr ""
+msgstr "Yeniden _Açılır"
 
 #. close menu item, not shown by default
 #: ../panel-plugin/embed.c:265
@@ -71,7 +71,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
+msgstr "Eğer bir pencere bulunamazsa (veya bir kriter yoksa), seçimlik\nolarak bir komut çalıştırılabilir. Komut aşağıdaki kritere göre bir\nbir pencereye yol açabileceği gibi, ona (%s) bir soket ID'si de \ngeçebilir."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -96,7 +96,7 @@ msgstr "Seçim Kriteri"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
+msgstr "Gömülecek pencere aşağıdaki boş olmayan tüm kriterlere uygun olmalıdır.\nSoket ID'si ile komut çalıştırmak için tümünü boş bırakın."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
