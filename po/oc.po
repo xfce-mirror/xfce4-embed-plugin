@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cedric31 <cvalmary@yahoo.fr>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2013-12-04 18:34+0000\n"
+"Last-Translator: Cedric31 <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/xfce/language/oc/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "Embarcat"
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+msgid "_Embed"
+msgstr "_Embarcat"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "_Focus"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr "_Sortir"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr "_Tampar"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Impossible de dobrir l'url seguenta : %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "L'entrada es valida"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "L'entrada es invalida"
+
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "Empeuton embarcat"
+
+#: ../panel-plugin/embed-dialogs.c:338
+msgid "Application Launching"
+msgstr "Aviada d'aplicacion"
+
+#: ../panel-plugin/embed-dialogs.c:340
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr "Se una fenèstra es pas trobada (o sens critèris), una comanda pòt\neventualament èsser aviada. La comanda se pòt tradusir per una fenèstra\nque correspond als critèris çaijós, o pòt utilizar l'ID de la socket passat\nper (%s) s'embarcar automaticament."
+
+#: ../panel-plugin/embed-dialogs.c:348
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr "Daissatz void per aviar pas qué que siá\n%s espandit a l'ID de la socket"
+
+#: ../panel-plugin/embed-dialogs.c:351
+msgid "L_aunch command"
+msgstr "Comanda d'a_viada"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:360
+msgid "Selection Criteria"
+msgstr "Critèris de seleccion"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr "La fenèstra integrada deu correspondre a totes los critèris pas voids.\nDaissar tot void per comptar sus una comanda d'aviada amb l'ID socket."
+
+#: ../panel-plugin/embed-dialogs.c:366
+msgid "_Process name"
+msgstr "Nom _processus"
+
+#: ../panel-plugin/embed-dialogs.c:367
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr "Far correspondre al nom del processus de l'aplicacion de la fenèstra\nDaissar void se es pas un critèri"
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "_Window class"
+msgstr "Classa de la fenèstra"
+
+#: ../panel-plugin/embed-dialogs.c:374
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr "Far correspondent a la classa de la fenèstra\nDaissar void se es pas un critèri"
+
+#: ../panel-plugin/embed-dialogs.c:380
+msgid "Window _title"
+msgstr "Títol de la fenès_tra"
+
+#: ../panel-plugin/embed-dialogs.c:381
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr "Far correspondre al títol de la fenèstra amb l'ajuda d'una REGEX\nDaissar void se es pas un critèri"
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Display"
+msgstr "Ecran"
+
+#: ../panel-plugin/embed-dialogs.c:388
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr "Daissar void per amagar l'etiqueta\n%s elargís al títol de la fenèstra integrada"
+
+#: ../panel-plugin/embed-dialogs.c:391
+msgid "_Label format"
+msgstr "_Format de l'etiqueta"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Label _font"
+msgstr "_Poliça de l'etiqueta"
+
+#: ../panel-plugin/embed-dialogs.c:397
+msgid "Choose the label font"
+msgstr "Causissètz la poliça de l'etiqueta"
+
+#: ../panel-plugin/embed-dialogs.c:401
+msgid "Minimum _size (px)"
+msgstr "_Talha minimala (px)"
+
+#: ../panel-plugin/embed-dialogs.c:402
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr "Talha minimala de la fenèstra embarcada\nMetre a 0 per conservar la talha de la fenèstra d'origina"
+
+#: ../panel-plugin/embed-dialogs.c:407
+msgid "_Expand"
+msgstr "_Espandir"
+
+#: ../panel-plugin/embed-dialogs.c:408
+msgid "Use up all available panel space"
+msgstr "Utilizar tot l'espaci disponible del panèl"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr "Veire la ponhada"
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr "Afichar una ponhada en naut de l'empeuton"
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Integrar una fenèstra arbitrària dins lo panèl"
