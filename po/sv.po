@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2014-02-07 19:31+0000\n"
+"Last-Translator: PavelNicklasson <pavelnicklasson@bahnhof.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/xfce/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "Bädda in"
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+msgid "_Embed"
+msgstr "_Bädda in"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "_Fokus"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr "T_itta fram"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr "_Stäng"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Kunde inte öppna följande url: %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "Inmatning är giltig"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "Inmatning är ogiltig"
+
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "Bädda in insticksmodul"
+
+#: ../panel-plugin/embed-dialogs.c:338
+msgid "Application Launching"
+msgstr "Programstart"
+
+#: ../panel-plugin/embed-dialogs.c:340
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr "Om ett fönster inte hittas (eller det inte finns några kriterier), kan ett kommando\nstartas valfritt. Kommandot kan antingen resultera i ett fönster\nsom matchar nedanstående kriterier, eller det kan använda socket-ID passerat\nför det (%s) att bädda in sig själv automatiskt."
+
+#: ../panel-plugin/embed-dialogs.c:348
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr "Lämna tomt för att inte starta något\n%s expanderar till socket-ID"
+
+#: ../panel-plugin/embed-dialogs.c:351
+msgid "L_aunch command"
+msgstr "St_arta kommando"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:360
+msgid "Selection Criteria"
+msgstr "Urvalskriterier"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr "Fönstret som ska bäddas in måste matcha alla icke-tomma kriterier.\nLämna allt tomt för att lita på ett startkommando med socket-ID."
+
+#: ../panel-plugin/embed-dialogs.c:366
+msgid "_Process name"
+msgstr "_Processnamn"
+
+#: ../panel-plugin/embed-dialogs.c:367
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr "Matcha fönstrets programprocessnamn\nLämna tomt om det inte är ett kriterium."
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "_Window class"
+msgstr "F_önsterklass"
+
+#: ../panel-plugin/embed-dialogs.c:374
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr "Matcha fönstrets klass\nLämna tomt om det inte är ett kriterium"
+
+#: ../panel-plugin/embed-dialogs.c:380
+msgid "Window _title"
+msgstr "Fönster_namn"
+
+#: ../panel-plugin/embed-dialogs.c:381
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr "Matcha fönstrets namn med hjälp av REGEX\nLämna tomt om det inte är ett kriterium."
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Display"
+msgstr "Visa"
+
+#: ../panel-plugin/embed-dialogs.c:388
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr "Lämna tomt för att gömma etiketten\n%s expanderar till det inbäddade fönstrets namn"
+
+#: ../panel-plugin/embed-dialogs.c:391
+msgid "_Label format"
+msgstr "_Etikettformat"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Label _font"
+msgstr "Etikett_ypsnitt"
+
+#: ../panel-plugin/embed-dialogs.c:397
+msgid "Choose the label font"
+msgstr "Välj etikettypsnitt"
+
+#: ../panel-plugin/embed-dialogs.c:401
+msgid "Minimum _size (px)"
+msgstr "Minimal _storlek (px)"
+
+#: ../panel-plugin/embed-dialogs.c:402
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr "Minimal storlek på det inbäddade fönstret\nSätt till 0 fört att bevara ursprunglig fönsterstorlek"
+
+#: ../panel-plugin/embed-dialogs.c:407
+msgid "_Expand"
+msgstr "_Expandera"
+
+#: ../panel-plugin/embed-dialogs.c:408
+msgid "Use up all available panel space"
+msgstr "Använd allt tillgängligt panelutrymme"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr "Visa _handtag"
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr "Visar ett handtag vid insticksmodulens topp"
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Bäddar in ett valfritt fönster i panelen"
