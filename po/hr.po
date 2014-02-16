@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# schizo <eveskovic@gmail.com>, 2014
+# Ivica  Kolić <ikoli@yahoo.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2014-02-16 15:18+0000\n"
+"Last-Translator: schizo <eveskovic@gmail.com>\n"
+"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "Ugradi"
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+msgid "_Embed"
+msgstr "_Ugradi"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "_Fokusiraj"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr ""
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr "_Zatvori"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Nije moguće otvoriti slijedeći url: %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "Ulaz je valjan"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "Ulaz nije valjan"
+
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "Ugradi dodatak"
+
+#: ../panel-plugin/embed-dialogs.c:338
+msgid "Application Launching"
+msgstr "Pokretanje programa"
+
+#: ../panel-plugin/embed-dialogs.c:340
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr "Ako prozor nije pronađen (ili ne postoje kriteriji), može se pokrenuti\nnaredba. Rezultat naredbe može biti prozor koji odgovara\ndoljenavedenim kriterijima ili može koristiti dodijeljeni ID priključka\n(%s) kako bi se ugradio automatski."
+
+#: ../panel-plugin/embed-dialogs.c:348
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr "Za nepokretanje ostavi prazno\n%s se povećava do ID-a priključka"
+
+#: ../panel-plugin/embed-dialogs.c:351
+msgid "L_aunch command"
+msgstr "N_aredba pokretanja"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:360
+msgid "Selection Criteria"
+msgstr "Kriterij odabira"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr "Prozor za ugradnju mora odgovarati svim ne-praznim kriterijima.\nOstavite sve prazno za oslonanje na naredbu pokretanja s ID-om priključka."
+
+#: ../panel-plugin/embed-dialogs.c:366
+msgid "_Process name"
+msgstr "_Ime procesa"
+
+#: ../panel-plugin/embed-dialogs.c:367
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "_Window class"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:374
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:380
+msgid "Window _title"
+msgstr "Naslov _prozora"
+
+#: ../panel-plugin/embed-dialogs.c:381
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Display"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:388
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:391
+msgid "_Label format"
+msgstr "_Format natpisa"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Label _font"
+msgstr "Font _naptisa"
+
+#: ../panel-plugin/embed-dialogs.c:397
+msgid "Choose the label font"
+msgstr "Odaberite font natpisa"
+
+#: ../panel-plugin/embed-dialogs.c:401
+msgid "Minimum _size (px)"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:402
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:407
+msgid "_Expand"
+msgstr "_Proširi"
+
+#: ../panel-plugin/embed-dialogs.c:408
+msgid "Use up all available panel space"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr ""
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr ""
