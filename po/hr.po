@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2014-02-16 15:18+0000\n"
+"PO-Revision-Date: 2014-02-23 22:30+0000\n"
 "Last-Translator: schizo <eveskovic@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "_Fokusiraj"
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
 msgid "Pop _Out"
-msgstr ""
+msgstr "Isk_oči"
 
 #. close menu item, not shown by default
 #: ../panel-plugin/embed.c:265
