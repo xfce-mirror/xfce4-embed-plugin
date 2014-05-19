@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Pablo Lezaeta <prflr88@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-17 07:48+0000\n"
-"PO-Revision-Date: 2013-05-17 05:28-0600\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
-"Language-Team: Spanish <xfce-i18n@xfce.org>\n"
-"Language: es_ES\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2014-05-19 05:25+0000\n"
+"Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -45,7 +45,7 @@ msgstr "_Cerrar"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No se pudo abrir el URL siguiente: %s"
+msgstr "No se pudo abrir la siguiente dirección URL: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -70,21 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Si una ventana no es encontrada (o no existen criterios), puede ejecutar\n"
-"una orden opcionalmente. La orden puede resultar en una ventana\n"
-"que coincida con el criterio inferior o puede utilizar el Socket ID "
-"asignado\n"
-"a él (%s) para incrustarse a sí mismo automáticamente."
+msgstr "Si una ventana no es encontrada (o no existen criterios), puede ejecutar\nuna orden opcionalmente. La orden puede resultar en una ventana\nque coincida con el criterio inferior o puede utilizar el Socket ID asignado\na él (%s) para incrustarse a sí mismo automáticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Dejar en blanco para no ejecutar nada\n"
-"%s expande a Socket ID."
+msgstr "Dejar en blanco para no ejecutar nada\n%s expande a Socket ID."
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -102,11 +95,7 @@ msgstr "Criterio de selección"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"La ventana para incrustar debe coincidir con todos los criterios que no "
-"están en blanco\n"
-"Dejar todo en blanco para basarse en la ejecución de un comando con Socket "
-"ID."
+msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de un comando con Socket ID."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -116,9 +105,7 @@ msgstr "Nombre del _proceso"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincidir el nombre del proceso de la aplicación de la ventana\n"
-"Dejar en blanco si no es un criterio"
+msgstr "Coincidir el nombre del proceso de la aplicación de la ventana\nDejar en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -128,9 +115,7 @@ msgstr "Clase de _ventana"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincidir la clase de la ventana\n"
-"Dejar en blanco si no es un criterio"
+msgstr "Coincidir la clase de la ventana\nDejar en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -140,9 +125,7 @@ msgstr "_Título de ventana"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincidir el título de la ventana utilizando una expresión regular(REGEX)\n"
-"Dejar en blanco si no es un criterio"
+msgstr "Coincidir el título de la ventana utilizando una expresión regular(REGEX)\nDejar en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -153,9 +136,7 @@ msgstr "Mostrar"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Déjelo en blanco para ocultar la etiqueta\n"
-"%s se expande hasta el título de la ventana incrustada"
+msgstr "Déjelo en blanco para ocultar la etiqueta\n%s se expande hasta el título de la ventana incrustada"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -177,9 +158,7 @@ msgstr "Tamaño _mínimo (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Tamaño mínimo de la ventana incrustada\n"
-"Establecer a 0 para mantener el tamaño original de la ventana"
+msgstr "Tamaño mínimo de la ventana incrustada\nEstablecer a 0 para mantener el tamaño original de la ventana"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
