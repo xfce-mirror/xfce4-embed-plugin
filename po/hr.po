@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2014-02-23 22:30+0000\n"
+"PO-Revision-Date: 2014-05-30 22:17+0000\n"
 "Last-Translator: schizo <eveskovic@gmail.com>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
+"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,17 +106,17 @@ msgstr "_Ime procesa"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "Neka se podudara s imenom procesa aplikacije\nOstavite prazno ako nije kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
-msgstr ""
+msgstr "_Klasa prozora"
 
 #: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "Neka se podudara s klasom prozora\nOstavite prazno ako nije kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -126,18 +126,18 @@ msgstr "Naslov _prozora"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "Neka se podudara s nazivom prozora koristeći REGEX\nOstavite prazno ako nije kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
-msgstr ""
+msgstr "Prikaz"
 
 #: ../panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
+msgstr "Ostavite prazno kako bi sakrili natpise\n%s proširi se do naslova ugrađenog prozora"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -153,13 +153,13 @@ msgstr "Odaberite font natpisa"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
-msgstr ""
+msgstr "Minimalna _veličina (px)"
 
 #: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
+msgstr "Minimalna veličina ugrađenog prozora\nPostavite na 0 kako bi zadržali orginalnu vrijednost"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -167,16 +167,16 @@ msgstr "_Proširi"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr ""
+msgstr "Koristi prostor ploče u cijelosti"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
-msgstr ""
+msgstr "Pokazuj _ručku"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr ""
+msgstr "Pokazuj ručku povrh dodatka"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr ""
+msgstr "Ugrađuje proizvoljan prozor u ploču"
