@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012
-# to_ba, 2014
+# Tobias Bannert, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2014-01-02 23:14+0000\n"
-"Last-Translator: to_ba\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
+"PO-Revision-Date: 2014-08-01 16:48+0000\n"
+"Last-Translator: Tobias Bannert\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce-panel-plugins/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +78,7 @@ msgstr "Falls ein Fenster nicht gefunden wird (und keine Kriterien verfügbar\ns
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Leer lassen, um nichts zu starten\n%s wird zur Socket-Kennung expandiert"
+msgstr "Leer lassen, um nichts zu starten.\n%s wird zur Socket-Kennung ausdehnt."
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -96,7 +96,7 @@ msgstr "Auswahlkriterien"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Das Fenster muss alle nicht-leeren Kriterien erfüllen.\nAlles leer lassen, um nur einen Befehl mit der Socket-Kennung auszuführen."
+msgstr "Das Fenster muss alle nicht leeren Kriterien erfüllen.\nAlles leer lassen, um nur einen Befehl mit der Socket-Kennung auszuführen."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -106,7 +106,7 @@ msgstr "_Prozessname"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Anhand des Prozessnamens der Anwendung identifizieren\nLeer lassen, um dies nicht als Kriterium zu verwenden"
+msgstr "Anhand des Prozessnamens der Anwendung identifizieren.\nLeer lassen, um dieses nicht als Kriterium zu verwenden"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -116,7 +116,7 @@ msgstr "Fenster_klasse"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Anhand der Fensterklasse identifizieren\nLeer lassen, um dies nicht als Kriterium zu verwenden"
+msgstr "Anhand der Fensterklasse identifizieren.\nLeer lassen, um dieses nicht als Kriterium zu verwenden."
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -126,7 +126,7 @@ msgstr "Fenster_titel"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Fenstertitel anhand eines regulären Ausdrucks identifizieren\nLeer lassen, um dies nicht als Kriterium zu verwenden"
+msgstr "Fenstertitel anhand eines regulären Ausdrucks identifizieren.\nLeer lassen, um dieses nicht als Kriterium zu verwenden."
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -137,7 +137,7 @@ msgstr "Anzeige"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Leer lassen, um keine Beschriftung anzuzeigen\n%s wird zum Titel des eingebetteten Fensters expandiert"
+msgstr "Leer lassen, um keine Beschriftung anzuzeigen.\n%s wird zum Titel des eingebetteten Fensters ausgedehnt."
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -149,7 +149,7 @@ msgstr "Schri_ftart der Beschriftung"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Wählen Sie die Schriftart für die Beschriftung aus"
+msgstr "Die Schrift für die Beschriftung auswählen"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
@@ -159,7 +159,7 @@ msgstr "Minimale _Größe (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "Minimale Größe des eingebetteten Fensters\nAuf 0 stellen, um die Originalgröße zu behalten"
+msgstr "Minimale Größe des eingebetteten Fensters.\nAuf 0 stellen, um die Originalgröße zu behalten."
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
