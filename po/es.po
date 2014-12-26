@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pablo Lezaeta <prflr88@gmail.com>, 2014
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2014-05-19 05:25+0000\n"
-"Last-Translator: Pablo Lezaeta <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2014-12-25 23:46+0000\n"
+"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,14 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Si una ventana no es encontrada (o no existen criterios), puede ejecutar\nuna orden opcionalmente. La orden puede resultar en una ventana\nque coincida con el criterio inferior o puede utilizar el Socket ID asignado\na él (%s) para incrustarse a sí mismo automáticamente."
+msgstr "Si una ventana no es encontrada (o no existen criterios), puede ejecutar\nuna orden opcionalmente. La orden puede resultar en una ventana\nque coincida con el criterio inferior o puede utilizar el Id. del Socket asignado\na él (%s) para incrustarse a sí mismo automáticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Dejar en blanco para no ejecutar nada\n%s expande a Socket ID."
+msgstr "Dejar en blanco para no ejecutar nada\n%s expande al Id. del Socket."
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -95,7 +95,7 @@ msgstr "Criterio de selección"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de un comando con Socket ID."
+msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de una orden con el Id. del Socket."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -144,11 +144,11 @@ msgstr "F_ormato de etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "Tipogra_fía de etiqueta"
+msgstr "Tipo de letra de eti_queta"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Elija la tipografía de la etiqueta"
+msgstr "Elija el tipo de letra de la etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
