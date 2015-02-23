@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2014
-# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2014
+# enolp <enolp@softastur.org>, 2015
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2014-06-16 22:30+0000\n"
-"Last-Translator: Ḷḷumex03 <l.lumex03.tornes@gmail.com>\n"
+"PO-Revision-Date: 2015-02-22 23:34+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +47,7 @@ msgstr "_Zarrar"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nun pue abrise la siguiente url: %s"
+msgstr "Nun pue abrise la url siguiente: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
