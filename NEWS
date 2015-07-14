@@ -1,3 +1,18 @@
+1.6.0
+=====
+- Add support for drag and drop
+- Now translated into 36 languages. Thanks, translators!
+
+1.4.1
+=====
+- Replace AM_CONFIG_HEADER with AC_CONFIG_HEADERS in configure
+
+1.4.0
+=====
+- Added optional handle
+- Added "close" menu item
+- Updated translations
+
 1.2.0
 =====
 - Improved painting of the socket background
