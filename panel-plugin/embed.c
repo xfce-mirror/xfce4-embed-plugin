@@ -408,6 +408,25 @@ embed_size_changed_simple (EmbedPlugin *embed)
 
 
 
+/* Mirrors the XDND support state of the plug */
+void
+embed_update_xdnd (EmbedPlugin *embed)
+{
+  if (!embed->has_plug) {
+    gtk_drag_dest_unset (embed->socket);
+  } else {
+    GdkDragProtocol protocol;
+    guint32 target = gdk_drag_get_protocol (embed->plug, &protocol);
+    if (target == None) {
+      gtk_drag_dest_unset (embed->socket);
+    } else {
+      gtk_drag_dest_set_proxy (embed->socket, embed->plug_window, protocol, TRUE);
+    }
+  }
+}
+
+
+
 /* Updates the text of the label, using the label_fmt. */
 void
 embed_update_label (EmbedPlugin *embed)
@@ -660,8 +679,8 @@ embed_embed_menu (GtkMenuItem *embed_menu, EmbedPlugin *embed)
 
 
 
-/* X11 event monitor for a plug. Detects window title changes, unmap, and
- * destroy events. */
+/* X11 event monitor for a plug. Detects window title changes, XDND changes,
+ * unmap, and destroy events. */
 static GdkFilterReturn
 embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
 {
@@ -676,6 +695,8 @@ embed_plug_filter (XPropertyEvent *xevent, GdkEvent *_, EmbedPlugin *embed)
     } else if (!embed->monitor_saw_net_wm_name &&
         xevent->atom == XInternAtom (xevent->display, "WM_NAME", False)) {
       embed_update_label (embed);
+    } else if (xevent->atom == XInternAtom (xevent->display, "XdndAware", False)) {
+      embed_update_xdnd (embed);
     }
   } else if (xevent->type == UnmapNotify || xevent->type == DestroyNotify) {
     /* The plug window was destroyed, and not by us! */
@@ -747,6 +768,9 @@ embed_plug_added (GtkWidget *socket, EmbedPlugin *embed)
     XSelectInput (gdk_x11_get_default_xdisplay (), embed->plug, monitor_mask);
   }
 
+  /* Mirror the XdndAware property */
+  embed_update_xdnd (embed);
+
   /* Update the label */
   embed_update_label (embed);
 
@@ -817,6 +841,7 @@ embed_plug_removed (GtkWidget *socket, EmbedPlugin *embed)
   /* Reset info */
   embed->plug = 0;
   embed->plug_is_gtkplug = TRUE;
+  embed_update_xdnd (embed);
   embed_update_label (embed);
   /* Create a new socket once this one is destroyed */
   g_idle_add ((GSourceFunc)embed_add_socket_and_resize, embed);
