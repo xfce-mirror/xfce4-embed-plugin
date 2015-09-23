@@ -955,6 +955,9 @@ embed_add_socket (EmbedPlugin *embed, gboolean update_size)
   g_signal_connect_after (G_OBJECT (embed->socket), "realize",
                           G_CALLBACK (embed_start_search), embed);
 
+  gtk_widget_set_can_focus(G_OBJECT(embed->socket), TRUE);
+  gtk_widget_grab_focus(G_OBJECT(embed->socket));
+
   xfce_panel_plugin_add_action_widget (embed->plugin, embed->socket);
   gtk_widget_set_app_paintable (embed->socket, TRUE);
 
