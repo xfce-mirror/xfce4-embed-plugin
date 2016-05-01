@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2016-05-01 15:22+0000\n"
+"PO-Revision-Date: 2016-05-01 18:47+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -168,7 +168,7 @@ msgstr "_Expandeix"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr "Empra tot l'estai disponible del quadre"
+msgstr "Utilitza tot l'estai disponible del plafó"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
@@ -180,4 +180,4 @@ msgstr "Mostra una nansa al capdamunt del connector"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Encasta una finestra al quadre"
+msgstr "Encasta una finestra al plafó"
