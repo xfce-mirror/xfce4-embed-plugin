@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2016-05-01 18:47+0000\n"
+"PO-Revision-Date: 2016-05-04 11:57+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,12 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr "Encastat"
+msgstr "Incrusta"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr "_Encastat"
+msgstr "_Incrusta"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
@@ -59,7 +59,7 @@ msgstr "La entrada no és vàlida"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Connector per encastar"
+msgstr "Connector d'incrustació"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -72,7 +72,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Si no es troba una finestra (o no hi ha cap criteri), es pot\nexecutar una ordre opcional. L'ordre pot resultar ser una finestra\nque compleixi el següent criteri, o pot ser un ID de sòcol passat\n(%s) per encastar-se automàticament."
+msgstr "Si no es troba una finestra (o no hi ha cap criteri), es pot\nexecutar una ordre opcional. L'ordre pot resultar ser una finestra\nque compleixi el següent criteri, o pot ser un ID de sòcol passat\n(%s) per incrustar-se automàticament."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -138,7 +138,7 @@ msgstr "Mostra"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Deixeu-lo buit per amagar l'etiqueta\n%s s'expandeix al títol de la finestra encastada"
+msgstr "Deixeu-lo buit per ocultar l'etiqueta\n%s expandeix al títol de la finestra incrustada"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -160,7 +160,7 @@ msgstr "Mida _mínima (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "Mida mínima de la finestra encastada\nPoseu 0 per mantenir la mida de la finestra original"
+msgstr "La mida mínima de la finestra incrustada\nEstabliu-ho 0 per mantenir la mida de la finestra original"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -180,4 +180,4 @@ msgstr "Mostra una nansa al capdamunt del connector"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Encasta una finestra al plafó"
+msgstr "Incrusteu una finestra arbitrària al plafó"
