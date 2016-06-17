@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2016-05-04 11:57+0000\n"
+"PO-Revision-Date: 2016-06-17 13:17+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -51,11 +51,11 @@ msgstr "No es pot obrir la següent URL: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
-msgstr "La entrada és vàlida"
+msgstr "L'entrada és vàlida"
 
 #: ../panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
-msgstr "La entrada no és vàlida"
+msgstr "L'entrada no és vàlida"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
@@ -79,7 +79,7 @@ msgstr "Si no es troba una finestra (o no hi ha cap criteri), es pot\nexecutar u
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Deixeu-lo buid si no voleu llançar res\n%s expandeix l'id. del sòcol"
+msgstr "Deixeu-ho en blanc si no voleu llançar res\n%s expandeix l'id. del sòcol"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -107,7 +107,7 @@ msgstr "Nom del _procés"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincideix amb el nom del procés de l'aplicació\nDeixeu-lo buit si no és cap criteri"
+msgstr "Coincideix amb el nom del procés de l'aplicació\nDeixeu-ho en blanc si no és cap criteri"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -117,7 +117,7 @@ msgstr "Classe de _finestra"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincideix amb la classe de finestra\nDeixeu-lo buit si no és cap criteri"
+msgstr "Coincideix amb la classe de la finestra\nDeixeu-ho en blanc si no és cap criteri"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -127,7 +127,7 @@ msgstr "_Títol de la finestra"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincideix amb el títol de la finestra via REGEX\nDeixeu-lo buit si no és cap criteri"
+msgstr "Coincideix amb el títol de la finestra via REGEX\nDeixeu-ho en blanc si no és cap criteri"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
