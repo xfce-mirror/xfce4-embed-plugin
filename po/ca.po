@@ -5,14 +5,15 @@
 # Translators:
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2012
 # Davidmp <medipas@gmail.com>, 2016
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2016-06-17 13:17+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2017-02-16 19:18+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgstr "_Incrusta"
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
-msgstr "En_focament"
+msgstr "_Focus"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
@@ -47,7 +48,7 @@ msgstr "_Tanca"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No es pot obrir la següent URL: %s"
+msgstr "No es pot obrir el següent URL: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -138,7 +139,7 @@ msgstr "Mostra"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Deixeu-lo buit per ocultar l'etiqueta\n%s expandeix al títol de la finestra incrustada"
+msgstr "Deixeu-ho en blanc per ocultar l'etiqueta\n%s expandeix al títol de la finestra incrustada"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -160,7 +161,7 @@ msgstr "Mida _mínima (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "La mida mínima de la finestra incrustada\nEstabliu-ho 0 per mantenir la mida de la finestra original"
+msgstr "La mida mínima de la finestra incrustada\nEstabliu-ho a 0 per mantenir la mida de la finestra original"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
