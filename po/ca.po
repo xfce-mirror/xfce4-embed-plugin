@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-02-16 19:18+0000\n"
+"PO-Revision-Date: 2017-03-17 21:17+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -147,11 +147,11 @@ msgstr "Format de l'_etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "_Tipus de lletra de l'etiqueta"
+msgstr "_Lletra de l'etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Seleccioneu el tipus de lletra de l'etiqueta"
+msgstr "Seleccioneu la lletra de l'etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
