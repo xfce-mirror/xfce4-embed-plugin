@@ -1,21 +1,22 @@
-# Dutch translation of the xfce4-embed-plugin package.
-# Copyright (C) The Xfce development team.
-# This file is distributed under the same license as the 
-# xfce4-embed-plugin package.
-# Pjotr <pjotrvertaalt@gmail.com> , 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Pjotr <pjotrvertaalt@gmail.com>, 2017
+# Pjotr <pjotrvertaalt@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfswitch-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-27 13:26+0100\n"
-"PO-Revision-Date: 2013-04-27 15:18 +0100\n"
-"Last-Translator: Pjotr pjotrvertaalt@gmail.com\n"
-"Language-Team: Dutch (Flemish)\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-06-10 10:52+0000\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/xfce/xfce-panel-plugins/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl (Dutch)\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/embed.c:48
@@ -57,7 +58,7 @@ msgstr "Invoer is ongeldig"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Inbedden-invoegtoepassing"
+msgstr "Inbedden-invoegsel"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -70,21 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Indien een venster niet wordt gevonden (of indien er geen criteria\n"
-"zijn), kan er een opdracht naar keuze worden gestart. De opdracht\n"
-"kan of resulteren in een venster dat overeenkomt aan de onderstaande\n"
-"criteria, of het kan de socket ID gebruiken die het overhandigd\n"
-"heeft gekregen (%s) om zichzelf automatisch in te bedden."
+msgstr "Indien een venster niet wordt gevonden (of indien er geen criteria\nzijn), kan er een opdracht naar keuze worden gestart. De opdracht\nkan of resulteren in een venster dat overeenkomt aan de onderstaande\ncriteria, of het kan de socket ID gebruiken die het overhandigd\nheeft gekregen (%s) om zichzelf automatisch in te bedden."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Laat leeg om niets te starten\n"
-"%s expandeert naar de socket ID"
+msgstr "Laat leeg om niets te starten\n%s expandeert naar de socket ID"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -102,10 +96,7 @@ msgstr "Selectiecriteria"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"Het in te bedden venster moet overeenkomen met alle niet-lege\n"
-"criteria. Laat alles leeg om te vertrouwen op een startopdracht\n"
-"met socket ID."
+msgstr "Het in te bedden venster moet overeenkomen met alle niet-lege\ncriteria. Laat alles leeg om te vertrouwen op een startopdracht\nmet socket ID."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -115,10 +106,7 @@ msgstr "_Procesnaam"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Overeenkomstig de procesnaam van de toepassing\n"
-"in het venster. Laat leeg indien het geen\n"
-"criterium is"
+msgstr "Overeenkomstig de procesnaam van de toepassing\nin het venster. Laat leeg indien het geen criterium is"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -128,9 +116,7 @@ msgstr "Vensterklasse"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Overeenkomstig de vensterklasse\n"
-"Laat leeg indien het geen criterium is"
+msgstr "Overeenkomstig de vensterklasse\nLaat leeg indien het geen criterium is"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -140,10 +126,7 @@ msgstr "Venstertitel"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Overeenkomstig de venstertitel met\n"
-"gebruikmaking van een REGEX\n"
-"Laat leeg indien het geen criterium is"
+msgstr "Overeenkomstig de venstertitel met\ngebruikmaking van een REGEX\nLaat leeg indien het geen criterium is"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -154,10 +137,7 @@ msgstr "Tonen"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Laat leeg om het etiket te verbergen\n"
-"%s expandeert naar de titel van het\n"
-"ingebedde venster"
+msgstr "Laat leeg om het etiket te verbergen\n%s expandeert naar de titel van het\ningebedde venster"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -179,10 +159,7 @@ msgstr "Minimumgrootte (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Minimumgrootte van het ingebedde venster\n"
-"Zet op 0 om de oorspronkelijke grootte\n"
-"van het venster te behouden"
+msgstr "Minimumgrootte van het ingebedde venster\nZet op 0 om de oorspronkelijke grootte\nvan het venster te behouden"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -198,7 +175,7 @@ msgstr "Toon handgreep"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Toon een handgreep bovenin de invoegtoepassing"
+msgstr "Toon een handgreep bovenin het invoegsel"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
