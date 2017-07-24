@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
-# Moo, 2015-2016
+# Moo, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2016-09-16 19:58+0000\n"
+"PO-Revision-Date: 2017-07-24 10:44+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -153,7 +153,7 @@ msgstr "Pasirinkite etiketės šriftą"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
-msgstr "Mažiausias _dydis (px)"
+msgstr "Mažiausias _dydis (piks.)"
 
 #: ../panel-plugin/embed-dialogs.c:402
 msgid ""
