@@ -1,23 +1,23 @@
-# Portuguese Brazilian translation for xfce4-embed-plugin.
-# Copyright (C) 2013 THE xfce4-embed-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-embed-plugin package.
-# Henrique P. Machado <zehrique@xfce.org>, 2012.
-# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Henrique P. Machado <zehrique@xfce.org>, 2012
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embeded-plugin\n"
-"Report-Msgid-Bugs-To: https://bugzilla.xfce.org/buglist.cgi?product=xfce4-"
-"embed-plugin&component=General\n"
-"POT-Creation-Date: 2013-03-02 09:51+0000\n"
-"PO-Revision-Date: 2013-03-02 08:25-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <xfce-i18n-br@xfce.org>\n"
-"Language: pt_BR\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -71,20 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Se uma janela não é encontrada (ou não há critérios), um comando pode\n"
-"opcionalmente ser lançado. O comando pode tanto resultar em uma janela\n"
-"que coincide com o critério abaixo ou ele pode usar a ID do soquete\n"
-"passado (%s) para embutir-se automaticamente."
+msgstr "Se uma janela não é encontrada (ou não há critérios), um comando pode\nopcionalmente ser lançado. O comando pode tanto resultar em uma janela\nque coincide com o critério abaixo ou ele pode usar a ID do soquete\npassado (%s) para embutir-se automaticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Deixe em branco para não lançar nada\n"
-"%s expande para a ID do soquete"
+msgstr "Deixe em branco para não lançar nada\n%s expande para a ID do soquete"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -102,10 +96,7 @@ msgstr "Critérios de seleção"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"A janela a embutir precisa coincidir com todos os critérios preenchidos.\n"
-"Deixe tudo em branco para confiar em um comando de lançamento com a ID do "
-"soquete."
+msgstr "A janela a embutir precisa coincidir com todos os critérios preenchidos.\nDeixe tudo em branco para confiar em um comando de lançamento com a ID do soquete."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -115,9 +106,7 @@ msgstr "Nome do _processo"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincide com o título da janela usando uma Expressão Regular\n"
-"Deixe em branco se não é um critério"
+msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -127,9 +116,7 @@ msgstr "Classe da _janela"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincide com o título da janela usando uma Expressão Regular\n"
-"Deixe em branco se não é um critério"
+msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -139,9 +126,7 @@ msgstr "Tí_tulo da janela"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Coincide com o título da janela usando uma Expressão Regular\n"
-"Deixe em branco se não é um critério"
+msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -152,9 +137,7 @@ msgstr "Exibir"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Deixe em branco para ocultar a etiqueta\n"
-"%s expande para o título da janela embutida"
+msgstr "Deixe em branco para ocultar a etiqueta\n%s expande para o título da janela embutida"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -176,9 +159,7 @@ msgstr "Tamanho mí_nimo (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Tamanho mínimo da janela embutida\n"
-"Defina como 0 para manter o tamanho original da janela"
+msgstr "Tamanho mínimo da janela embutida\nDefina como 0 para manter o tamanho original da janela"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
