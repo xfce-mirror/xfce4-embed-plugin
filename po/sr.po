@@ -1,24 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Саша Петровић <salepetronije@gmail.com>, 2012, 2013.
-#
+# 
+# Translators:
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013
 msgid ""
 msgstr ""
-"Project-Id-Version: master\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-06 10:09+0000\n"
-"PO-Revision-Date: 2013-03-07 16:54+0100\n"
-"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
-"Language-Team: српски <>\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Serbian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2) \n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -72,21 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Ако није пронађен прозор (или нема одредница), наредба може бити\n"
-"покренута заменски. Наредба може или дати излаз у прозору\n"
-"који се поклапа са одредницом испод, или може користити ЛБ прикључнице "
-"пренесен\n"
-"на њега (%s) да самостално угњезди себе."
+msgstr "Ако није пронађен прозор (или нема одредница), наредба може бити\nпокренута заменски. Наредба може или дати излаз у прозору\nкоји се поклапа са одредницом испод, или може користити ЛБ прикључнице пренесен\nна њега (%s) да самостално угњезди себе."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Оставите празно да не покрећете ништа\n"
-"%s се шири на ЛБ прикључнице"
+msgstr "Оставите празно да не покрећете ништа\n%s се шири на ЛБ прикључнице"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -104,10 +95,7 @@ msgstr "одредница означавања"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"Прозор који се треба угњездити мора испуњавати све одреднице које нису\n"
-"остављене празне. Оставите све празно за ослањање на наредбу покретања са ЛБ "
-"прикључнице."
+msgstr "Прозор који се треба угњездити мора испуњавати све одреднице које нису\nостављене празне. Оставите све празно за ослањање на наредбу покретања са ЛБ прикључнице."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -117,9 +105,7 @@ msgstr "Назив _процеса"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Упореди са именом прозора програма\n"
-"Оставите празно ако то није одредница"
+msgstr "Упореди са именом прозора програма\nОставите празно ако то није одредница"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -129,9 +115,7 @@ msgstr "Разред прозора"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Упореди са разредом прозора\n"
-"Оставите празно ако то није одредница"
+msgstr "Упореди са разредом прозора\nОставите празно ако то није одредница"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -141,9 +125,7 @@ msgstr "_Наслов прозора"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Упореди са насловом прозора користећи РЕГЕКС\n"
-"Оставите празно ако то није одредница"
+msgstr "Упореди са насловом прозора користећи РЕГЕКС\nОставите празно ако то није одредница"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -154,9 +136,7 @@ msgstr "Приказ"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Оставите празно за скривање ознаке\n"
-"%s се шири до наслова угњежђеног прозора"
+msgstr "Оставите празно за скривање ознаке\n%s се шири до наслова угњежђеног прозора"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -178,9 +158,7 @@ msgstr "Најмања _величина (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Најмања величина угњежђеног прозора\n"
-"Поставите на 0 за задржавање изворне величине прозора"
+msgstr "Најмања величина угњежђеног прозора\nПоставите на 0 за задржавање изворне величине прозора"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
