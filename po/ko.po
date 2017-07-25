@@ -1,24 +1,21 @@
-# Korean translation for the xfce4-embed-plugin package.
-# Copyright (C) 2006-2012 David Schneider et al.
-# This file is distributed under the same license as the xfce4-embed-plugin package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin.master\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-15 06:03+0000\n"
-"PO-Revision-Date: 2013-02-15 20:18+0900\n"
-"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge."
-"net>\n"
-"Language: ko\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Korean (http://www.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.5\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -72,20 +69,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"창을 못 찾았을 경우(또는 기준이 없을 경우), 명령을 선택적으로\n"
-"실행할 수 있습니다. 명령은 또한 아래 기준에 맞는 창에 결과를 내거나,\n"
-"명령 자신을 자동으로 내장하기위해 (%s)(으)로 전달하는 소켓 ID를\n"
-"사용할 수 있습니다."
+msgstr "창을 못 찾았을 경우(또는 기준이 없을 경우), 명령을 선택적으로\n실행할 수 있습니다. 명령은 또한 아래 기준에 맞는 창에 결과를 내거나,\n명령 자신을 자동으로 내장하기위해 (%s)(으)로 전달하는 소켓 ID를\n사용할 수 있습니다."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"아무것도 실행하지 않으려면 비워둡니다\n"
-"%s은(는) 소켓 ID로 확장합니다"
+msgstr "아무것도 실행하지 않으려면 비워둡니다\n%s은(는) 소켓 ID로 확장합니다"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -103,9 +94,7 @@ msgstr "기준 선택"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"내장할 창은 모든 공백아닌 기준에 맞아야 합니다.\n"
-"소켓 ID로 명령을 실행하려면 모든 항목을 비웁니다."
+msgstr "내장할 창은 모든 공백아닌 기준에 맞아야 합니다.\n소켓 ID로 명령을 실행하려면 모든 항목을 비웁니다."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -115,9 +104,7 @@ msgstr "프로세스 이름(_P)"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"창의 프로그램 프로세스 이름을 비교합니다\n"
-"기분을 설정하지 않으려면 비워둡니다"
+msgstr "창의 프로그램 프로세스 이름을 비교합니다\n기분을 설정하지 않으려면 비워둡니다"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -127,9 +114,7 @@ msgstr "창 분류(_W)"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"창 분류를 비교합니다\n"
-"기준을 설정하지 않으려면 비워둡니다"
+msgstr "창 분류를 비교합니다\n기준을 설정하지 않으려면 비워둡니다"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -139,9 +124,7 @@ msgstr "창 제목(_T)"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"정규표현식을 사용하여 창 제목을 비교합니다\n"
-"기준을 설정하지 않으려면 비워둡니다"
+msgstr "정규표현식을 사용하여 창 제목을 비교합니다\n기준을 설정하지 않으려면 비워둡니다"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -152,9 +135,7 @@ msgstr "표시"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"레이블을 숨기려면 비워둡니다\n"
-"%s은(는) 내장 창 제목을 확장합니다"
+msgstr "레이블을 숨기려면 비워둡니다\n%s은(는) 내장 창 제목을 확장합니다"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -176,9 +157,7 @@ msgstr "최소 크기(px)(_S)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"내장 창의 최소 크기입나다\n"
-"본래 창 크기를 유지하려면 0으로 설정합니다"
+msgstr "내장 창의 최소 크기입나다\n본래 창 크기를 유지하려면 0으로 설정합니다"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
