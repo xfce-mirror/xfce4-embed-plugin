@@ -1,23 +1,22 @@
-# Slovenian translation for xfce4-embed-plugin.
-# Copyright (C) 2013 The Xfce Development Team.
-# This file is distributed under the same license as the xfce4-embed-plugin package.
-#
-# Klemen Košir <klemen913@gmail.com>, 2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Klemen Košir <klemen.kosir@kream.io>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-08 18:36+0000\n"
-"PO-Revision-Date: 2013-05-09 00:24+0100\n"
-"Last-Translator: Klemen Košir <klemen913@gmail.com>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 15:34+0000\n"
+"Last-Translator: Klemen Košir <klemen.kosir@kream.io>\n"
+"Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -71,20 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Če okna ni mogoče najti oziroma ni kriterijev, se lahko zažene ukaz.\n"
-"Ukaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\n"
-"podano številko vtiča (%s), s katero se samodejno vstavi."
+msgstr "Če okna ni mogoče najti oziroma ni kriterijev, se lahko zažene ukaz.\nUkaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\npodano številko vtiča (%s), s katero se samodejno vstavi."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Če želite, da se ne zažene noben program,\n"
-"pustite polje prazno. Argument %s se razširi\n"
-"v številko vtiča"
+msgstr "Če želite, da se ne zažene noben program,\npustite polje prazno. Argument %s se razširi\nv številko vtiča"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -102,10 +95,7 @@ msgstr "Kriterij"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\n"
-"Če želite, da je okno odvisno od ukaza ali številke vtiča, pustite vsa\n"
-"polja prazna."
+msgstr "Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\nČe želite, da je okno odvisno od ukaza ali številke vtiča, pustite vsa\npolja prazna."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -146,10 +136,7 @@ msgstr "Videz"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Če želite skriti oznako, pustite polje\n"
-"prazno. Argument %s se razširi v\n"
-"naziv vstavljenega okna"
+msgstr "Če želite skriti oznako, pustite polje\nprazno. Argument %s se razširi v\nnaziv vstavljenega okna"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -171,14 +158,11 @@ msgstr "Najmanjša _velikost (slik. točke)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Najmanjša velikost vstavljenega okna.\n"
-"Če želite obdržati izvirno velikost okna,\n"
-"nastavite velikost na 0"
+msgstr "Najmanjša velikost vstavljenega okna.\nČe želite obdržati izvirno velikost okna,\nnastavite velikost na 0"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
-msgstr "_Razširi"
+msgstr "Raz_širi"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
