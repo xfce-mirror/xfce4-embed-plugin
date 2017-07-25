@@ -1,17 +1,17 @@
-# Simplified Chinese translations for
-# the xfce4-embed-plugin package.
-# This file is distributed under the same license as
-# the xfce4-embed-plugin package.
-# Chipong Luo <chipong.luo@yahoo.com>, 2012.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Chipong Luo <chipong.luo@yahoo.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-23 05:21+0000\n"
-"PO-Revision-Date: 2012-02-16 17:29+0600\n"
-"Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
-"Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-panel-plugins/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,19 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"如果未发现窗口(或没有标准），可以选择启动的命令。\n"
-"命令要么带来与以下标准匹配的窗口，要么使用传送给\n"
-"它(%s)用来自动嵌入其自身的套接字 ID。"
+msgstr "如果未发现窗口(或没有标准），可以选择启动的命令。\n命令要么带来与以下标准匹配的窗口，要么使用传送给\n它(%s)用来自动嵌入其自身的套接字 ID。"
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"留空不启动任何东西\n"
-"%s 扩展为套接字 ID"
+msgstr "留空不启动任何东西\n%s 扩展为套接字 ID"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -100,9 +95,7 @@ msgstr "选择标准"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"要嵌入的窗口必须与所有非空的标准匹配。\n"
-"留空一切以便依靠带套接字的启动命令。"
+msgstr "要嵌入的窗口必须与所有非空的标准匹配。\n留空一切以便依靠带套接字的启动命令。"
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -112,9 +105,7 @@ msgstr "进程名称(_P)"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"匹配此窗口的应用程序的进程名称\n"
-"如果它不是一个标准则留空"
+msgstr "匹配此窗口的应用程序的进程名称\n如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -124,9 +115,7 @@ msgstr "窗口等级(_W)"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"匹配窗口等级\n"
-"如果它不是一个标准则留空"
+msgstr "匹配窗口等级\n如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -136,9 +125,7 @@ msgstr "窗口标题(_T)"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"使用 REGEX 匹配窗口的标题\n"
-"如果它不是一个标准则留空"
+msgstr "使用 REGEX 匹配窗口的标题\n如果它不是一个标准则留空"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -149,9 +136,7 @@ msgstr "显示"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"留空隐藏此标签\n"
-"%s 扩展为已嵌入窗口的标题"
+msgstr "留空隐藏此标签\n%s 扩展为已嵌入窗口的标题"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -173,9 +158,7 @@ msgstr "最小字体(像素)(_S)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"已嵌入窗口的最小大小\n"
-"设为 0 保持原始窗口大小"
+msgstr "已嵌入窗口的最小大小\n设为 0 保持原始窗口大小"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
