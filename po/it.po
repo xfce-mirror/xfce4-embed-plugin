@@ -1,20 +1,22 @@
-# Italian translations for xfce4-embed-plugin
-# Copyright (C) YEAR THE xfce4-embed-plugin'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Cristian Marchi <cri.panta@gmail.com>, 2009.
 # 
+# Translators:
+# Cristian Marchi <cri.panta@gmail.com>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-06 18:45+0000\n"
-"PO-Revision-Date: 2012-04-14 09:15+0100\n"
-"Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
-"Language-Team: Italian Translation Team <xfce-it-translators@googlegroups.com>\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -68,20 +70,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Se non viene trovata una finestra (o non ci sono criteri), può essere\n"
-"eventualmente avviato un comando. Il comando può generare una\n"
-"finestra che corrisponde ai criteri seguenti, o può usare l'ID socket\n"
-"ad essa passato (%s) per incorporarsi automaticamente."
+msgstr "Se non viene trovata una finestra (o non ci sono criteri), può essere\neventualmente avviato un comando. Il comando può generare una\nfinestra che corrisponde ai criteri seguenti, o può usare l'ID socket\nad essa passato (%s) per incorporarsi automaticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Lasciare vuoto per non lanciare niente\n"
-"%s espande all'ID socket"
+msgstr "Lasciare vuoto per non lanciare niente\n%s espande all'ID socket"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -99,9 +95,7 @@ msgstr "Criterio di selezione"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"La finestra da incorporare deve onorare tutti i criteri non vuoti.\n"
-"Lasciare tutto vuoto per affidarsi a un comando di avvio con un ID socket."
+msgstr "La finestra da incorporare deve onorare tutti i criteri non vuoti.\nLasciare tutto vuoto per affidarsi a un comando di avvio con un ID socket."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -111,9 +105,7 @@ msgstr "Nome _processo"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Corrisponde al nome del processo della finestra dell'applicazione\n"
-"Lasciare vuoto se non è un criterio"
+msgstr "Corrisponde al nome del processo della finestra dell'applicazione\nLasciare vuoto se non è un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -123,9 +115,7 @@ msgstr "Cla_sse finestra"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Corrisponde alla classe della finestra\n"
-"Lasciare vuoto se non è un criterio"
+msgstr "Corrisponde alla classe della finestra\nLasciare vuoto se non è un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -135,9 +125,7 @@ msgstr "Ti_tolo finestra"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Corrisponde al titolo della finestra usando REGEX\n"
-"Lasciare vuoto se non è un criterio"
+msgstr "Corrisponde al titolo della finestra usando REGEX\nLasciare vuoto se non è un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -148,9 +136,7 @@ msgstr "Visualizzazione"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Lasciare vuoto per nascondere l'etichetta\n"
-"%s espande al titolo della finestra incorporata"
+msgstr "Lasciare vuoto per nascondere l'etichetta\n%s espande al titolo della finestra incorporata"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -172,9 +158,7 @@ msgstr "Dimensione _minima (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Dimensione minima della finestra incorporata\n"
-"Impostare a 0 per mantenere la dimensione originale della finestra"
+msgstr "Dimensione minima della finestra incorporata\nImpostare a 0 per mantenere la dimensione originale della finestra"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
