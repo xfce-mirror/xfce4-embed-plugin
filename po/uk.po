@@ -1,21 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-04 18:36+0000\n"
-"PO-Revision-Date: 2010-09-30 11:06+0200\n"
-"Last-Translator: Yarema akaKnedlyk <yupadmin@gmail.com>\n"
-"Language-Team: Ukrainian <xfce@xfce.org>\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -69,20 +69,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Якщо вікно не знайдене (або ж не задано критерії), команда\n"
-"може опціонально запуститися. Команда може бути запущена у вікні,\n"
-"що задовольняє задані критерії, або використати ID сокета, передані \n"
-"до (%s), щоб вставити себе автоматично."
+msgstr "Якщо вікно не знайдене (або ж не задано критерії), команда\nможе опціонально запуститися. Команда може бути запущена у вікні,\nщо задовольняє задані критерії, або використати ID сокета, передані \nдо (%s), щоб вставити себе автоматично."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Залишити порожнім щоб нічого не запускати\n"
-"%s розширити до сокета з ID"
+msgstr "Залишити порожнім щоб нічого не запускати\n%s розширити до сокета з ID"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -100,9 +94,7 @@ msgstr "Критерії вибору"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"Вікно для вкладення повинне задовольняти всі непорожні критерії.\n"
-"Залишіть все порожнім, якщо сподіваєтесь на запуск команди з сокет ID."
+msgstr "Вікно для вкладення повинне задовольняти всі непорожні критерії.\nЗалишіть все порожнім, якщо сподіваєтесь на запуск команди з сокет ID."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -112,9 +104,7 @@ msgstr "_Назва процесу"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Співпадає з назвою процесу програми вікна\n"
-"Залишіть порожнім, якщо це не критерій"
+msgstr "Співпадає з назвою процесу програми вікна\nЗалишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -124,9 +114,7 @@ msgstr "_Клас вікна"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Співпадає з класом вікна\n"
-"Залишіть порожнім, якщо це не критерій"
+msgstr "Співпадає з класом вікна\nЗалишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -136,9 +124,7 @@ msgstr "Назва _вікна"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Співпадає з заголовком вікна, використовуючи REGEX\n"
-"Залишіть порожнім, якщо це не критерій"
+msgstr "Співпадає з заголовком вікна, використовуючи REGEX\nЗалишіть порожнім, якщо це не критерій"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -149,9 +135,7 @@ msgstr "Дисплей"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Залишити порожнім щоб приховати мітку\n"
-"%s розширити до заголовка вкладеного вікна"
+msgstr "Залишити порожнім щоб приховати мітку\n%s розширити до заголовка вкладеного вікна"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -173,9 +157,7 @@ msgstr "Найменший _розмір (пкс)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Найменший розмір вставленого вікна\n"
-"Встановіть 0 щоб залишити первісний розмір вікна"
+msgstr "Найменший розмір вставленого вікна\nВстановіть 0 щоб залишити первісний розмір вікна"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
