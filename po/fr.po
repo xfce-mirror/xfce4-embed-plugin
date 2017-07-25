@@ -1,23 +1,24 @@
-# French translation for xfce4-embed-plugin.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-embed-plugin package.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2012.
-# jc <jc>, 2013.
-#
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# jc1 <jc1.quebecos@gmail.com>, 2013
+# jc <jc>, 2013
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin master\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-01 18:36+0000\n"
-"PO-Revision-Date: 2013-07-01 21:31+0100\n"
-"Last-Translator: \n"
-"Language-Team: français <jc>\n"
-"Language: fr_FR\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/xfce/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -58,7 +59,7 @@ msgstr "L'entrée est invalide"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Extension embarquée"
+msgstr "Greffon embarqué"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -71,21 +72,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Si une fenêtre n'est pas trouvée (ou sans critères), une commande peut\n"
-"éventuellement être lancée. La commande peut se traduire par une fenêtre\n"
-"qui correspond aux critères ci-dessous, ou il peut utiliser l'ID de la "
-"socket passé\n"
-"pour (%s) s'embarquer automatiquement."
+msgstr "Si une fenêtre n'est pas trouvée (ou sans critères), une commande peut\néventuellement être lancée. La commande peut se traduire par une fenêtre\nqui correspond aux critères ci-dessous, ou il peut utiliser l'ID de la socket passé\npour (%s) s'embarquer automatiquement."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Laisser vide pour ne rien lancer\n"
-"%s étendu à l'ID de la socket"
+msgstr "Laissez vide pour ne pas lancer n'importe quoi\n%s étendu à l'ID de la socket"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -103,10 +97,7 @@ msgstr "Critères de sélection"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"La fenêtre intégrée doit correspondre à tous les critères non-vierges.\n"
-"Laisser tout vide pour s'appuyer sur une commande de lancement avec l'ID "
-"socket."
+msgstr "La fenêtre intégrée doit correspondre à tous les critères non vides.\nLaisser tout vide pour compter sur une commande de lancement avec l'ID socket."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -116,9 +107,7 @@ msgstr "Nom _processus"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"faire correspondre au nom du processus de l'application de la fenêtre\n"
-"Laisser vide si ce n'est pas un critère"
+msgstr "Faire correspondre au nom du processus de l'application de la fenêtre\nLaisser vide si ce n'est pas un critère"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -128,9 +117,7 @@ msgstr "Classe de la fenêtre"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Faire correspondent à la classe de la fenêtre\n"
-"Laisser vide si ce n'est pas un critère"
+msgstr "Faire correspondent à la classe de la fenêtre\nLaisser vide si ce n'est pas un critère"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -140,9 +127,7 @@ msgstr "Titre de la fenê_tre"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Faire correspondre au titre de la fenêtre à l'aide d'une REGEX\n"
-"Laisser vide si ce n'est pas un critère"
+msgstr "Faire correspondre au titre de la fenêtre à l'aide d'une REGEX\nLaisser vide si ce n'est pas un critère"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -153,9 +138,7 @@ msgstr "Écran"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Laisser vide pour masquer l'étiquette\n"
-"%s élargit le titre de la fenêtre intégrée"
+msgstr "Laisser vide pour masquer l'étiquette\n%s élargit au le titre de la fenêtre intégrée"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -177,9 +160,7 @@ msgstr "Taille minimum (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Taille minimale de la fenêtre embarquée\n"
-"Mettre à 0 pour conserver la taille de la fenêtre d'origine"
+msgstr "Taille minimale de la fenêtre embarquée\nMettre à 0 pour conserver la taille de la fenêtre d'origine"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -195,8 +176,8 @@ msgstr "Voir la poignée"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Afficher une poignée au sommet du plugin"
+msgstr "Afficher une poignée en haut du greffon"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Intégrer une fenêtre quelconque dans le panneau"
+msgstr "Intégrer une fenêtre arbitraire dans le panneau"
