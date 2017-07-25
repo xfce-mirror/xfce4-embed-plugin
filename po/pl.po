@@ -1,24 +1,23 @@
-# Polish translation for xfce4-embed-plugin
-# Copyright (C) 2013 THE PACKAGE COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-embed-plugin package.
-# Piotr Strębski <strebski@o2.pl>, 2013.
-# Piotr Sokół <psokol@jabster.pl>, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Piotr Sokół <psokol.l10n@gmail.com>, 2013
+# Piotr Strębski <strebski@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-embed-plugin 1.2.0\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-23 21:33+0000\n"
-"PO-Revision-Date: 2013-01-28 11:03+0100\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
-"Language-Team: polski <>\n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Polish (http://www.transifex.com/xfce/xfce-panel-plugins/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2));\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -72,22 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr ""
-"Jeśli po uruchomieniu apletu okno nie zostanie odnalezione (lub nie\n"
-"wprowadzono kryteriów wyboru), możliwe jest automatyczne uruchomienie\n"
-"określonego polecenia. Polecenie może otwierać okno, które będzie\n"
-"pasować do poniższych kryteriów. Do polecenia można też dołączyć\n"
-"identyfikator gniazda (%s), aby osadzić otwierane okno automatycznie."
+msgstr "Jeśli po uruchomieniu apletu okno nie zostanie odnalezione (lub nie\nwprowadzono kryteriów wyboru), możliwe jest automatyczne uruchomienie\nokreślonego polecenia. Polecenie może otwierać okno, które będzie\npasować do poniższych kryteriów. Do polecenia można też dołączyć\nidentyfikator gniazda (%s), aby osadzić otwierane okno automatycznie."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr ""
-"Określa polecenie wykonywane po uruchomieniu apletu. Proszę pozostawić puste "
-"pole, aby nie uruchamiać żadnego polecenia. Ciąg %s zostanie zastąpiony "
-"identyfikatorem gniazda apletu."
+msgstr "Określa polecenie wykonywane po uruchomieniu apletu. Proszę pozostawić puste pole, aby nie uruchamiać żadnego polecenia. Ciąg %s zostanie zastąpiony identyfikatorem gniazda apletu."
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -105,10 +96,7 @@ msgstr "Kryterium wyboru"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
-"Osadzane okno musi spełnić wszystkie wprowadzone kryteria. Proszę\n"
-"pozostawić wszystkie pola puste, aby umożliwić osadzanie okien przy\n"
-"użyciu identyfikatora gniazda."
+msgstr "Osadzane okno musi spełnić wszystkie wprowadzone kryteria. Proszę\npozostawić wszystkie pola puste, aby umożliwić osadzanie okien przy\nużyciu identyfikatora gniazda."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -118,9 +106,7 @@ msgstr "_Nazwa procesu"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Dopasowuje okno na podstawie nazwy procesu. Proszę pozostawić puste pole, "
-"jeśli nazwa procesu nie jest jednym z kryteriów wyboru."
+msgstr "Dopasowuje okno na podstawie nazwy procesu. Proszę pozostawić puste pole, jeśli nazwa procesu nie jest jednym z kryteriów wyboru."
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -130,9 +116,7 @@ msgstr "_Klasa okna"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Dopasowuje okno na podstawie klasy okna. Proszę pozostawić puste pole, jeśli "
-"klasa okna nie jest jednym z kryteriów wyboru. "
+msgstr "Dopasowuje okno na podstawie klasy okna. Proszę pozostawić puste pole, jeśli klasa okna nie jest jednym z kryteriów wyboru. "
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -142,10 +126,7 @@ msgstr "_Tytuł okna"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
-"Dopasowuje okno na podstawie tytułu okna przy użyciu wyrażenia regularnego. "
-"Proszę pozostawić puste pole, jeśli tytuł okna nie jest jednym z kryteriów "
-"wyboru."
+msgstr "Dopasowuje okno na podstawie tytułu okna przy użyciu wyrażenia regularnego. Proszę pozostawić puste pole, jeśli tytuł okna nie jest jednym z kryteriów wyboru."
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -156,9 +137,7 @@ msgstr "Wyświetlanie"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
-"Określa etykietę apletu. Proszę pozostawić puste pole, aby ukryć etykietę. "
-"Ciąg %s zostanie zastąpiony tytułem osadzonego okna."
+msgstr "Określa etykietę apletu. Proszę pozostawić puste pole, aby ukryć etykietę. Ciąg %s zostanie zastąpiony tytułem osadzonego okna."
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -180,9 +159,7 @@ msgstr "Minimalny _rozmiar (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
-"Określa minimalny rozmiar osadzanego okna. Proszę wprowadzić 0, aby zachować "
-"pierwotny rozmiar."
+msgstr "Określa minimalny rozmiar osadzanego okna. Proszę wprowadzić 0, aby zachować pierwotny rozmiar."
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
