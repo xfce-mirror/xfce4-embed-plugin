@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-30 14:21+0000\n"
+"PO-Revision-Date: 2017-11-01 17:08+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +23,12 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr "Indbyg"
+msgstr "Indlejr"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr "_Indbyg"
+msgstr "_Indlejr"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
@@ -60,7 +60,7 @@ msgstr "Indtastning er ugyldig"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Indlejr plugin"
+msgstr "Indlejr-plugin"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -73,14 +73,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Hvis der ikke bliver fundet et vindue (eller der ikke er noget kriterie), så kan en kommando eventuelt blive udført. Kommandoen kan enten resultere i et vindue som passer til kriteriet nedenfor, eller den kan bruge sokkel-ID'et som sendes til det (%s), til at indlejre sig selv automatisk."
+msgstr "Hvis der ikke bliver fundet et vindue (eller der ikke er noget kriterie), så kan en kommando valgfrit blive udført. Kommandoen kan enten resultere i et vindue som passer til kriteriet nedenfor, eller den kan bruge sokkel-ID'et som sendes til det (%s), til at indlejre sig selv automatisk."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Lad stå tom for at undlade at opstarte\nnoget som %s udvider til sokkel-ID'et"
+msgstr "Lad den være tom, for at undlade at starte\nnoget som %s udvider til sokkel-ID'et"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -98,7 +98,7 @@ msgstr "Udvælgeseskriteria"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Vinduet, som skal indlejres, skal matche alle de ikketomme kriterier.\nLad stå tom for at afhænge på kørsel af kommando med sokkel-ID."
+msgstr "Vinduet, som skal indlejres, skal matche alle de kriterier som ikke er tomme.\nLad den være tom, for at afhænge på en startkommando med sokkel-ID."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -118,7 +118,7 @@ msgstr "_Vindueklasse"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Match vinduets klasse\nLad stå tom, hvis det ikke er et kriterie"
+msgstr "Match vinduets klasse\nLad den være tom, hvis det ikke er et kriterie"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -128,7 +128,7 @@ msgstr "Vindues_titel"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Match vinduets titel med brug af REGEX\nLad stå tom, hvis det ikke er et kriterie"
+msgstr "Match vinduets titel med et REGEX\nLad den være tom, hvis det ikke er et kriterie"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -139,29 +139,29 @@ msgstr "Vis"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Lad stå tom for at skjule etiketten\n%s udvider sig til den indlejrede vinduestitel"
+msgstr "Lad den være tom, for at skjule etiketten\n%s udvider sig til det indlejrede vindues titel"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
-msgstr "_Etiketformat"
+msgstr "_Etikettens format"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "Etiket_skrifttype"
+msgstr "Etikettens _skrifttype"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Vælg etiketskrifttypen"
+msgstr "Vælg etikettens skrifttype"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
-msgstr "Minimum_størrelse (piksel)"
+msgstr "Minimum_størrelse (px)"
 
 #: ../panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "Mindststørrelse for det indlejrede vindue\nAngiv til 0 for at bevare den oprindelige vinduesstørrelse"
+msgstr "Minimumstørrelse for det indlejrede vindue\nSæt til 0 for at bevare den oprindelige vinduesstørrelse"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -169,7 +169,7 @@ msgstr "_Udvid"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr "Brug all tilgængelig panelplads"
+msgstr "Brug al tilgængelig panelplads"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
@@ -177,8 +177,8 @@ msgstr "Vis _håndtag"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Vis et håndtag i toppen af pluginet"
+msgstr "Vis et håndtag øverst i pluginet"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Indbygger et vilkårligt vindue i panelet"
+msgstr "Indlejr et vilkårligt vindue i panelet"
