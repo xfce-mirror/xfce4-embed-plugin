@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"PO-Revision-Date: 2017-12-31 14:01+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -43,12 +43,12 @@ msgstr "_Emergeix"
 #. close menu item, not shown by default
 #: ../panel-plugin/embed.c:265
 msgid "_Close"
-msgstr "_Tanca"
+msgstr "Tan_ca"
 
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No es pot obrir el següent URL: %s"
+msgstr "No es pot obrir l'url següent: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
