@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Cristian Marchi <cri.panta@gmail.com>, 2009
+# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2018-07-12 09:37+0000\n"
+"PO-Revision-Date: 2018-07-13 13:00+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +31,7 @@ msgstr "I_ncorpora"
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
-msgstr "_Focus"
+msgstr "Metti a _fuoco"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
@@ -45,7 +46,7 @@ msgstr "_Chiudi"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Impossibile aprire l'url %s"
+msgstr "Impossibile aprire l'URL %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -57,7 +58,7 @@ msgstr "L'input non è valido"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Plugin di incorporazione"
+msgstr "Componente aggiuntivo di incorporazione"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -70,14 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Se non viene trovata una finestra (o non ci sono criteri), può essere\neventualmente avviato un comando. Il comando può generare una\nfinestra che corrisponde ai criteri seguenti, o può usare l'ID socket\nad essa passato (%s) per incorporarsi automaticamente."
+msgstr "Se non viene trovata una finestra (o non ci sono criteri), può essere\neventualmente avviato un comando. Il comando può generare una\nfinestra che corrisponde ai criteri seguenti, o può usare l'ID della socket\nad essa passato (%s) per incorporarsi automaticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Lasciare vuoto per non lanciare niente\n%s espande all'ID socket"
+msgstr "Lasciare vuoto per non avviare niente\n%s espande all'ID socket"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -125,7 +126,7 @@ msgstr "Ti_tolo finestra"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Corrisponde al titolo della finestra usando REGEX\nLasciare vuoto se non è un criterio"
+msgstr "Corrisponde al titolo della finestra usando una espressione regolare\nLasciare vuoto se non è un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -174,7 +175,7 @@ msgstr "Mostra _maniglia"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Mostra una maniglia sopra al plugin"
+msgstr "Mostra una maniglia sopra al componente aggiuntivo"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
