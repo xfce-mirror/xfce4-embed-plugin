@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2018-09-06 06:57+0000\n"
+"PO-Revision-Date: 2018-09-11 07:31+0000\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/xfce/xfce-panel-plugins/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "ウィンドウが見つからない場合 (または基準がない場合) は、オプションでコマンドを起動できます。\nこのコマンドは、以下の基準に一致するウィンドウ、またはそれ自身に自動的に埋め込むために %s に\n渡されたソケット ID を使用することができます。"
+msgstr "ウィンドウが見つからない場合 (または基準がない場合) は、オプションでコマンドを起動できます。\nこのコマンドは、以下の基準に一致するウィンドウ、またはそれ自身に自動的に組み込むために %s に\n渡されたソケット ID を使用することができます。"
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -105,7 +105,7 @@ msgstr "プロセス名(_P)"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "ウィンドウのアプリケーションのプロセス名を一致させる\n標準でない場合、空白のままにする"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -115,7 +115,7 @@ msgstr "ウィンドウクラス(_W)"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "ウィンドウのクラスを一致させる\n標準でない場合、空白のままにする"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -125,7 +125,7 @@ msgstr "ウィンドウタイトル(_T)"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr ""
+msgstr "正規表現を使用して、ウィンドウのタイトルを一致させる\n標準でない場合、空白のままにする"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -136,7 +136,7 @@ msgstr "ディスプレイ"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr ""
+msgstr "空白のままにしてラベルを非表示にする\n%s は組込みウィンドウのタイトルに展開する"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -158,7 +158,7 @@ msgstr "最小サイズ(_S) (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr ""
+msgstr "組み込まれたウィンドウを最小サイズにする\n元のウィンドウサイズを維持するには 0 に設定する"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -174,7 +174,7 @@ msgstr "ハンドルを表示する(_H)"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr ""
+msgstr "プラグインの上にハンドルを表示"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
