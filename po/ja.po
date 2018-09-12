@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2018-09-11 07:31+0000\n"
+"PO-Revision-Date: 2018-09-11 23:07+0000\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/xfce/xfce-panel-plugins/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr "組込む"
+msgstr "埋め込む"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
 msgid "_Embed"
-msgstr "組込む(_E)"
+msgstr "埋め込む(_E)"
 
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
@@ -57,7 +57,7 @@ msgstr "入力は無効です"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "組込みプラグイン"
+msgstr "埋め込みプラグイン"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -70,7 +70,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "ウィンドウが見つからない場合 (または基準がない場合) は、オプションでコマンドを起動できます。\nこのコマンドは、以下の基準に一致するウィンドウ、またはそれ自身に自動的に組み込むために %s に\n渡されたソケット ID を使用することができます。"
+msgstr "ウィンドウが見つからない場合 (または基準がない場合) は、オプションでコマンドを起動できます。\nこのコマンドは、以下の基準に一致するウィンドウ、またはそれ自身に自動的に埋め込むために %s に\n渡されたソケット ID を使用することができます。"
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -95,7 +95,7 @@ msgstr "選択基準"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr ""
+msgstr "埋め込むウィンドウは、空白でないすべての条件と一致する必要があります。\nソケット ID による起動コマンドを使用するため、空白のままにして下さい。"
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -136,7 +136,7 @@ msgstr "ディスプレイ"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "空白のままにしてラベルを非表示にする\n%s は組込みウィンドウのタイトルに展開する"
+msgstr "空白のままにしてラベルを非表示にする\n%s は埋め込みウィンドウのタイトルに展開する"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -158,7 +158,7 @@ msgstr "最小サイズ(_S) (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "組み込まれたウィンドウを最小サイズにする\n元のウィンドウサイズを維持するには 0 に設定する"
+msgstr "埋め込まれたウィンドウを最小サイズにする\n元のウィンドウサイズを維持するには 0 に設定する"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
