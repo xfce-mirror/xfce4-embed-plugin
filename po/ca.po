@@ -5,14 +5,14 @@
 # Translators:
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2012
 # Davidmp <medipas@gmail.com>, 2016
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-12-31 14:01+0000\n"
+"PO-Revision-Date: 2018-10-21 08:15+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,7 @@ msgstr "_Expandeix"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr "Utilitza tot l'estai disponible del plafó"
+msgstr "Utilitza tot l'estai disponible del tauler"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
@@ -181,4 +181,4 @@ msgstr "Mostra una nansa al capdamunt del connector"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Incrusteu una finestra arbitrària al plafó"
+msgstr "Incrusteu una finestra arbitrària al tauler"
