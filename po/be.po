@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aleksandr P <davian818@gmail.com>, 2012
+# Aleksandr P, 2012
+# Zmicer Turok <zmicerturok@gmail.com>, 2019
 # Zmicer Turok <zmicerturok@gmail.com >, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2018-06-23 18:24+0000\n"
+"PO-Revision-Date: 2019-01-15 08:57+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +72,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Калі акно не будзе знойдзена (альбо не будуць зададзены крытэрыі), то можа быць запушчаны \nвызначаны загад. Загад можа альбо стварыць патрэбнае акно, альбо выкарыстаць \nідэнтыфікатар сокета (%s), каб убудаваць акно."
+msgstr "Калі акно не будзе знойдзена (альбо не будуць зададзеныя крытэрыі), то можа быць запушчаны \nвызначаны загад. Загад можа альбо стварыць патрэбнае акно, альбо выкарыстаць \nідэнтыфікатар сокета (%s), каб убудаваць акно."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -96,7 +97,7 @@ msgstr "Крытэрыі выбару"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Убудоўваемае акно мусіць адпавядаць усім непустым крытэрыям.\nПакінце ўсё пустым,каб выкарыстоўваць загад запуску і ідэнтыфікатар сокета."
+msgstr "Убудоўваемае акно мусіць адпавядаць усім непустым крытэрыям.\nПакінце ўсё пустым, каб выкарыстоўваць загад запуску і ідэнтыфікатар сокета."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
