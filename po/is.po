@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2013-2015
+# Sveinn í Felli <sv1@fellsnet.is>, 2013-2015,2019
 # Sveinn í Felli <sv1@fellsnet.is>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"PO-Revision-Date: 2019-05-10 11:26+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "_Ræsiskipun"
 #. * identifiable when it is mapped.
 #: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
-msgstr "Valforsendur"
+msgstr "Forsendur við val"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
