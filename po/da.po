@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-06-05 13:33+0000\n"
+"PO-Revision-Date: 2019-06-17 18:55+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Hvis der ikke bliver fundet et vindue (eller der ikke er noget kriterie), så kan en kommando valgfrit blive udført. Kommandoen kan enten resultere i et vindue som passer til kriteriet nedenfor, eller den kan bruge sokkel-ID'et som sendes til det (%s), til at indlejre sig selv automatisk."
+msgstr "Hvis der ikke bliver fundet et vindue (eller der ikke er noget kriterie), så kan en kommando valgfrit blive startet. Kommandoen kan enten resultere i et vindue som passer til kriteriet nedenfor, eller den kan bruge sokkel-ID'et som sendes til det (%s), til at indlejre sig selv automatisk."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
