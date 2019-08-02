@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2018
+# Daniel Muñiz Fontoira <dani@damufo.com>, 2018-2019
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012
 # Xosé, 2017
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2018-10-02 10:02+0000\n"
+"PO-Revision-Date: 2019-08-02 07:59+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Se non se atopa unha xanela (ou non hai criterios), pode iniciarse\n opc
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Non poñer nada para non iniciar nada\n%s expande para o identificador da toma"
+msgstr "Deixar baleiro para non iniciar nada\n%s expande para o identificador da toma"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -97,7 +97,7 @@ msgstr "Criterios de selección"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "A xanela a inserir debe coincidir con todos os criterios que teñen algo.\n Non poñer nada para confiar o inicio a unha orde co identificador da toma."
+msgstr "A xanela embebida debe coincidir con todos os criterios que teñen algo.\nDeixar baleiro para confiar o inicio a unha orde co identificador da toma."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -107,7 +107,7 @@ msgstr "Nome do _proceso"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincide co nome do proceso do aplicativo da xanela\n Non poñer nada se non é un criterio"
+msgstr "Coincide co nome do proceso do aplicativo da xanela\nDeixar baleiro se non é un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -117,7 +117,7 @@ msgstr "Clase de _xanela"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincide coa clase da xanela\nNon poñer nada se non é un criterio"
+msgstr "Coincide coa clase da xanela\nDeixar baleiro se non é un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -127,7 +127,7 @@ msgstr "_Título da xanela"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincide co título da xanela empregando unha expresión regular\nNon poñer nada se non é un criterio"
+msgstr "Coincide co título da xanela empregando unha expresión regular\nDeixar baleiro se non é un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -138,7 +138,7 @@ msgstr "Visualización"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Non poñer nada para agochar a etiqueta\n%s expande para o título da xanela embebida"
+msgstr "Deixar baleiro para agochar a etiqueta\n%s expande para o título da xanela embebida"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -180,4 +180,4 @@ msgstr "Amosar a asa na parte superior do engadido"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Incorpora unha xanela calquera ao panel"
+msgstr "Embebe unha xanela calquera no panel"
