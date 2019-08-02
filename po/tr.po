@@ -5,13 +5,14 @@
 # Translators:
 # aybuke <aybuke.147@gmail.com>, 2013
 # Necdet Yücel <necdetyucel@gmail.com>, 2013
+# Serdar Sağlam <teknomobil@msn.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"PO-Revision-Date: 2019-08-02 07:01+0000\n"
+"Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,7 +83,7 @@ msgstr "Bir şey başlatmamak için boş bırakın\n%s ID'sini genişletir"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
-msgstr "Komut B_aşlat"
+msgstr "Komut _başlat"
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
