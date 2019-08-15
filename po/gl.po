@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-08-02 07:59+0000\n"
+"PO-Revision-Date: 2019-08-15 09:14+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "_Pechar"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Non foi posíbel abrir o seguinte url: %s"
+msgstr "Non se puido abrir o seguinte url: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -72,7 +72,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Se non se atopa unha xanela (ou non hai criterios), pode iniciarse\n opcionalmente unha orde. A orde pode dar lugar a unha xanela\n que coincida cos criterios a seguir, ou pode usar o identificador\n da toma pasado (%s) para embeberse automaticamente."
+msgstr "Se non se atopa unha xanela (ou non hai criterios), pode iniciarse\nopcionalmente unha orde. A orde pode dar lugar a unha xanela\nque coincida co seguinte criterio, ou pode usar o identificador\nda toma pasado (%s) para embeberse automaticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
