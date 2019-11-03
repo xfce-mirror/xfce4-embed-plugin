@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Arnold Marko <arnold.marko@gmail.com>, 2019
 # Klemen Košir <klemen.kosir@kream.io>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-23 19:02+0000\n"
-"Last-Translator: Klemen Košir <klemen.kosir@kream.io>\n"
+"PO-Revision-Date: 2019-11-03 17:25+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
-msgstr "Vstavek"
+msgstr "Vstavljanje"
 
 #. embed menu item, shown by default.
 #: ../panel-plugin/embed.c:249
@@ -30,7 +31,7 @@ msgstr "_Vstavi"
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
-msgstr "V _žarišče"
+msgstr "_Fokusiraj"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
@@ -57,7 +58,7 @@ msgstr "Vnos je neveljaven"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Vstavek za vstavljanje oken"
+msgstr "Vtičnik za vstvaljenje oken"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -70,14 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Če okna ni mogoče najti oziroma ni kriterijev, se lahko zažene ukaz.\nUkaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\npodano številko vtiča (%s), s katero se samodejno vstavi."
+msgstr "Če okna ni mogoče najti oziroma ni kriterijev, se lahko kot opcija zažene ukaz.\nUkaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\npodano ID številko vtiča (%s), s katero se samodejno vstavi."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Če želite, da se ne zažene noben program,\npustite polje prazno. Argument %s se razširi\nv številko vtiča"
+msgstr "Če želite, da se ne zažene noben program,\npustite polje prazno. Argument %s se razširi\nv ID številko vtiča"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -95,7 +96,7 @@ msgstr "Kriterij"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\nČe želite, da je okno odvisno od ukaza ali številke vtiča, pustite vsa\npolja prazna."
+msgstr "Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\nČe želite, da je okno odvisno od ukaza ali ID številke vtiča, pustite vsa\npolja prazna."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -105,7 +106,7 @@ msgstr "Ime o_pravila"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Kriterij za ime opravila okna programa"
+msgstr "Prevzemi ime opravila okna aplikacije\nPustite prazno, če to ni kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -115,7 +116,7 @@ msgstr "_Razred okna"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Kriterij za razred okna"
+msgstr "Prevzemi ime razreda okna\nPustite prazno, če to ni kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -125,7 +126,7 @@ msgstr "_Naziv okna"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Kriterij za naziv okna (uporabite lahko logične izraze)"
+msgstr "Prevzemi ime okna z uporabo REGEXa\nPustite prazno, če to ni kriterij"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -136,7 +137,7 @@ msgstr "Videz"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Če želite skriti oznako, pustite polje\nprazno. Argument %s se razširi v\nnaziv vstavljenega okna"
+msgstr "Če želite skriti oznako, pustite polje\nprazno. \n%s se razširi v naziv vstavljenega okna"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -174,8 +175,8 @@ msgstr "Pokaži ro_čico"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Prikaži ročico na vrhu vstavka"
+msgstr "Prikaži ročico na vrhu vtičnika"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Vstavi okno na pult"
+msgstr "Vstavi poljubno okno v pult"
