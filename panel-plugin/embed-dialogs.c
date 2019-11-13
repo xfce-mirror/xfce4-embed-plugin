@@ -33,7 +33,7 @@
 
 /* the website url */
 #define PLUGIN_WEBSITE \
-  "http://goodies.xfce.org/projects/panel-plugins/xfce4-embed-plugin"
+  "https://docs.xfce.org/panel-plugins/xfce4-embed-plugin"
 
 
 
