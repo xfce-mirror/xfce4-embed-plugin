@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-23 19:02+0000\n"
+"PO-Revision-Date: 2019-12-23 21:48+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -171,11 +171,11 @@ msgstr "Koristi prostor ploče u cijelosti"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
-msgstr "Pokazuj _ručku"
+msgstr ""
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Pokazuj ručku povrh dodatka"
+msgstr ""
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
