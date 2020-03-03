@@ -4,15 +4,17 @@
 # 
 # Translators:
 # Aleksandr P, 2012
-# Zmicer Turok <zmicerturok@gmail.com>, 2019
+# Aleksandr P, 2012
+# Zmicer Turok <nashtlumach@gmail.com>, 2019
+# Zmicer Turok <nashtlumach@gmail.com>, 2019
 # Zmicer Turok <zmicerturok@gmail.com >, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-01-15 08:57+0000\n"
-"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"PO-Revision-Date: 2020-03-03 10:38+0000\n"
+"Last-Translator: Zmicer Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,14 +74,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Калі акно не будзе знойдзена (альбо не будуць зададзеныя крытэрыі), то можа быць запушчаны \nвызначаны загад. Загад можа альбо стварыць патрэбнае акно, альбо выкарыстаць \nідэнтыфікатар сокета (%s), каб убудаваць акно."
+msgstr "Калі акно не будзе знойдзена (альбо не будзе вызначана крытэрыяў), то можа быць запушчаны \nвызначаны загад. Загад можа альбо стварыць патрэбнае акно, альбо выкарыстаць \nідэнтыфікатар сокета (%s), каб убудаваць акно."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Пакінце пустым, каб нічога не запускаць.\n%s заменіцца на ідэнтыфікатар сокета"
+msgstr "Пакіньце пустым, каб нічога не запускаць.\n%s заменіцца на ідэнтыфікатар сокета"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -97,7 +99,7 @@ msgstr "Крытэрыі выбару"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Убудоўваемае акно мусіць адпавядаць усім непустым крытэрыям.\nПакінце ўсё пустым, каб выкарыстоўваць загад запуску і ідэнтыфікатар сокета."
+msgstr "Акно, што ўбудоўваецца, павінна адпавядаць усім непустым крытэрыям.\nПакіньце ўсё пустым, каб выкарыстоўваць загад запуску і ідэнтыфікатар сокета."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -107,7 +109,7 @@ msgstr "_Працэс"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Назва працэса, што стварыў акно\nПакінце пустым, каб не ўлічваць"
+msgstr "Назва працэсу, што стварыў акно\nПакіньце пустым, каб не ўлічваць"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -117,7 +119,7 @@ msgstr "_Клас акна"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Клас акна\nПакінце пустым, каб не ўлічваць"
+msgstr "Клас акна\nПакіньце пустым, каб не ўлічваць"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -127,7 +129,7 @@ msgstr "_Загаловак"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Рэгулярны выраз для загалоўка акна\nПакінце пустым, каб не ўлічваць"
+msgstr "Рэгулярны выраз для загалоўка акна\nПакіньце пустым, каб не ўлічваць"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -138,7 +140,7 @@ msgstr "Выгляд"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Пакінце пустым, каб прыбраць адмеціну.\n%s заменіцца на загаловак акна"
+msgstr "Пакіньце пустым, каб прыбраць адмеціну.\n%s заменіцца на загаловак акна"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
@@ -150,7 +152,7 @@ msgstr "_Шрыфт адмеціны"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Абярыце шрыфт адмеціны"
+msgstr "Абраць шрыфт адмеціны"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
@@ -160,7 +162,7 @@ msgstr "_Мінімальны памер (у пікселях)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "Мінімальны памер убудаванага акна\nПры значэнні 0 будзе пакідацца арыгінальны памер"
+msgstr "Мінімальны памер убудаванага акна\nПры значэнні 0 будзе арыгінальны памер"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
