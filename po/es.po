@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2020-04-21 01:48+0000\n"
+"PO-Revision-Date: 2020-04-30 15:55+0000\n"
 "Last-Translator: Ignacio Poggi <ignaciop.3@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Si una ventana no es encontrada (o no existen criterios), puede ejecutar
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Dejar en blanco para no ejecutar nada\n%s expande al identificador del zócalo."
+msgstr "Dejar en blanco para no ejecutar nada\n%s expande al identificador del socket."
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -96,7 +96,7 @@ msgstr "Criterio de selección"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de una orden con el Id. del Socket."
+msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de una orden con el id. del socket."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
