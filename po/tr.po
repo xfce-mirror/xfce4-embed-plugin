@@ -4,6 +4,7 @@
 # 
 # Translators:
 # aybuke <aybuke.147@gmail.com>, 2013
+# Emin Tufan <etcetin@gmail.com>, 2020
 # Necdet Yücel <necdetyucel@gmail.com>, 2013
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 msgid ""
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-08-02 07:01+0000\n"
-"Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
+"PO-Revision-Date: 2020-11-16 02:13+0000\n"
+"Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,14 +73,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Eğer bir pencere bulunamazsa (veya bir kriter yoksa), seçimlik\nolarak bir komut çalıştırılabilir. Komut aşağıdaki kritere göre bir\nbir pencereye yol açabileceği gibi, ona (%s) bir soket ID'si de \ngeçebilir."
+msgstr "Eğer pencere bulunamazsa (veya bir koşul yoksa), isteğe bağlı\nolarak çalıştırılabilir. Komut, aşağıdaki kritere göre bir \npencereye yol açabileceği gibi, kendiliğinden kendisini gömmek için\nkendisine geçilen yuva kimliğini de (%s) kullanabilir."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Bir şey başlatmamak için boş bırakın\n%s ID'sini genişletir"
+msgstr "Bir şey başlatmamak için boş bırak\n%s yuva kimliğini genişletir"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -91,23 +92,23 @@ msgstr "Komut _başlat"
 #. * identifiable when it is mapped.
 #: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
-msgstr "Seçim Kriteri"
+msgstr "Seçim Koşulu"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Gömülecek pencere aşağıdaki boş olmayan tüm kriterlere uygun olmalıdır.\nSoket ID'si ile komut çalıştırmak için tümünü boş bırakın."
+msgstr "Gömülecek pencere aşağıdaki boş olmayan tüm koşullara uymalıdır.\nYuva kimliğiyle ile komut çalıştırmak için tümünü boş bırakın."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
-msgstr "_Süreç ismi"
+msgstr "_Süreç adı"
 
 #: ../panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Pencere uygulamasının süreç adını eşleştir\nEğer bu bir kriter değilse boş bırakın"
+msgstr "Pencere uygulamasının süreç adını eşleştir\nEğer bu koşul değilse boş bırakın"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
@@ -117,7 +118,7 @@ msgstr "_Pencere sınıfı"
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Pencerenin sınıfını eşleştir\nEğer bu bir kriter değilse boş bırakın"
+msgstr "Pencerenin sınıfını eşleştir\nEğer bu koşul değilse boş bırakın"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
@@ -127,7 +128,7 @@ msgstr "Pencere _başlığı"
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Pencerenin başlığını REGEX kullanarak eşleştir\nEğer bu bir kriter değilse boş bırakın"
+msgstr "Pencerenin başlığını REGEX kullanarak eşleştir\nEğer bu koşul değilse boş bırakın"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -146,15 +147,15 @@ msgstr "_Etiket biçimi"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "Etiket _yazıtipi"
+msgstr "Etiket _yazı tipi"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Etiket yazıtipini seçin"
+msgstr "Etiket yazı tipini seç"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
-msgstr "En fazla _boyut (px)"
+msgstr "Azami _boyut (pk)"
 
 #: ../panel-plugin/embed-dialogs.c:402
 msgid ""
@@ -168,7 +169,7 @@ msgstr "_Genişlet"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr "Mümkün bütün panel boşluğunu kullan"
+msgstr "Panel boşluğunu olabildiğince kullan"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
@@ -176,8 +177,8 @@ msgstr "_Dosya aracını göster"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
-msgstr "Eklentinin en üstünde bir dosya aracı  görüntüleyin"
+msgstr "Eklentinin en üstünde dosya aracı görüntüle"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Panelin içine keyfi bir pencere gömer"
+msgstr "Panelin içine isteğe bağlı pencere gömer"
