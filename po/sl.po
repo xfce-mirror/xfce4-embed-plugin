@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Arnold Marko <arnold.marko@gmail.com>, 2019
+# Arnold Marko <arnold.marko@gmail.com>, 2019-2020
 # Klemen Košir <klemen.kosir@kream.io>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-11-03 17:25+0000\n"
+"PO-Revision-Date: 2020-12-12 16:52+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -71,14 +71,14 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Če okna ni mogoče najti oziroma ni kriterijev, se lahko kot opcija zažene ukaz.\nUkaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\npodano ID številko vtiča (%s), s katero se samodejno vstavi."
+msgstr "Če okna ni mogoče najti oziroma ni kriterijev, se lahko kot opcija zažene ukaz.\nUkaz lahko ustvari okno, ki ustreza spodnjim kriterijem, ali pa uporabi\npodano ID številko vtičnice (%s), s katero se samodejno vstavi."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Če želite, da se ne zažene noben program,\npustite polje prazno. Argument %s se razširi\nv ID številko vtiča"
+msgstr "Če želite, da se ne zažene noben program,\npustite polje prazno. Argument %s se razširi\nv ID številko vtičnice"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
@@ -96,7 +96,7 @@ msgstr "Kriterij"
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\nČe želite, da je okno odvisno od ukaza ali ID številke vtiča, pustite vsa\npolja prazna."
+msgstr "Okno, ki ga želite vstaviti, mora ustrezati vsem nepraznim kriterijem.\nČe želite, da je okno odvisno od ukaza ali ID številke vtičnice, pustite vsa\npolja prazna."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
