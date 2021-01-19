@@ -4,7 +4,7 @@
 # 
 # Translators:
 # aybuke <aybuke.147@gmail.com>, 2013
-# Emin Tufan <etcetin@gmail.com>, 2020
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Necdet Yücel <necdetyucel@gmail.com>, 2013
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
 "PO-Revision-Date: 2020-11-16 02:13+0000\n"
-"Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
