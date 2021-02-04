@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2014
+# beriain, 2021
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:58+0200\n"
+"PO-Revision-Date: 2021-02-04 16:16+0000\n"
+"Last-Translator: beriain\n"
+"Language-Team: Basque (http://www.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/embed.c:48
+msgid "Embed"
+msgstr "Kapsulatu"
+
+#. embed menu item, shown by default.
+#: ../panel-plugin/embed.c:249
+msgid "_Embed"
+msgstr "Kapsulatu"
+
+#. focus menu item, not shown by default
+#: ../panel-plugin/embed.c:255
+msgid "_Focus"
+msgstr "_Fokua"
+
+#. pop out menu item, not shown by default
+#: ../panel-plugin/embed.c:260
+msgid "Pop _Out"
+msgstr "Irten"
+
+#. close menu item, not shown by default
+#: ../panel-plugin/embed.c:265
+msgid "_Close"
+msgstr "_Itxi"
+
+#: ../panel-plugin/embed-dialogs.c:51
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Ezin da hurrengo urla ireki: %s"
+
+#: ../panel-plugin/embed-dialogs.c:100
+msgid "Input is valid"
+msgstr "Sarrera balioduna da"
+
+#: ../panel-plugin/embed-dialogs.c:105
+msgid "Input is invalid"
+msgstr "Sarrera ez da balioduna"
+
+#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+msgid "Embed Plugin"
+msgstr "Kapsulatze plugina"
+
+#: ../panel-plugin/embed-dialogs.c:338
+msgid "Application Launching"
+msgstr "Aplikazioa abiaraztea"
+
+#: ../panel-plugin/embed-dialogs.c:340
+#, c-format
+msgid ""
+"If a window is not found (or there are no criteria), a command can\n"
+"optionally be launched. The command can either result in a window\n"
+"that matches the below criteria, or it can use the socket ID passed\n"
+"to it (%s) to embed itself automatically."
+msgstr "Leihorik aurkitzen ez bada (edo irizpiderik ez badago), komando bat\nabiarazi daiteke aukeran. Komandoa azpiko irizpidearekin bat datorren\nleiho bat izan dezake emaitza bezala, edo pasatutako socket IDa (%s)\nerabili dezake bere burua kapsulatzeko."
+
+#: ../panel-plugin/embed-dialogs.c:348
+#, c-format
+msgid ""
+"Leave blank to not launch anything\n"
+"%s expands to the socket ID"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:351
+msgid "L_aunch command"
+msgstr "_Abiarazteko komandoa"
+
+#. poll_delay
+#. No UI element. Generally polling is unnecessary, unless you have a very
+#. * strange window that you're trying to match that is not uniquely
+#. * identifiable when it is mapped.
+#: ../panel-plugin/embed-dialogs.c:360
+msgid "Selection Criteria"
+msgstr "Hautapen irizpidea"
+
+#: ../panel-plugin/embed-dialogs.c:362
+msgid ""
+"The window to embed must match all of the non-blank criteria.\n"
+"Leave everything blank to rely on a launch command with socket ID."
+msgstr "Kapsulatu beharreko leihoa irizpide ez huts guztiarekin bat etorri behar da.\nUtzi dena hutsik komando bat abiarazteaz fidatzeko socket ID batekin."
+
+#: ../panel-plugin/embed-dialogs.c:366
+msgid "_Process name"
+msgstr "_Prozesuaren izena"
+
+#: ../panel-plugin/embed-dialogs.c:367
+msgid ""
+"Match the window's application's process name\n"
+"Leave blank if it is not a criterion"
+msgstr "Leihoaren aplikazioaren prozesu izenarekin bat etorri\nUtzi hutsik irizpide bat ez bada"
+
+#: ../panel-plugin/embed-dialogs.c:373
+msgid "_Window class"
+msgstr "_Leihoaren klasea"
+
+#: ../panel-plugin/embed-dialogs.c:374
+msgid ""
+"Match the window's class\n"
+"Leave blank if it is not a criterion"
+msgstr "Leihoaren klasearekin bat etorri\nUtzi hutsik irizpide bat ez bada"
+
+#: ../panel-plugin/embed-dialogs.c:380
+msgid "Window _title"
+msgstr "Leihoaren _izenburua"
+
+#: ../panel-plugin/embed-dialogs.c:381
+msgid ""
+"Match the window's title using a REGEX\n"
+"Leave blank if it is not a criterion"
+msgstr "Leihoaren izenburuarekin bat etorri REGEX erabiliz\nUtzi hutsik irizpide bat ez bada"
+
+#: ../panel-plugin/embed-dialogs.c:385
+msgid "Display"
+msgstr "Bistarazi"
+
+#: ../panel-plugin/embed-dialogs.c:388
+#, c-format
+msgid ""
+"Leave blank to hide the label\n"
+"%s expands to the embedded window's title"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:391
+msgid "_Label format"
+msgstr "_Etiketaren formatua"
+
+#: ../panel-plugin/embed-dialogs.c:396
+msgid "Label _font"
+msgstr "Etiketaren _letra-tipoa"
+
+#: ../panel-plugin/embed-dialogs.c:397
+msgid "Choose the label font"
+msgstr "Aukeratu etiketaren letra-tipoa"
+
+#: ../panel-plugin/embed-dialogs.c:401
+msgid "Minimum _size (px)"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:402
+msgid ""
+"Minimum size of the embedded window\n"
+"Set to 0 to keep the original window size"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:407
+msgid "_Expand"
+msgstr "H_edatu"
+
+#: ../panel-plugin/embed-dialogs.c:408
+msgid "Use up all available panel space"
+msgstr "Panel toki eskuragarri guztia erabili"
+
+#: ../panel-plugin/embed-dialogs.c:412
+msgid "Show _handle"
+msgstr ""
+
+#: ../panel-plugin/embed-dialogs.c:413
+msgid "Display a handle at the top of the plugin"
+msgstr ""
+
+#: ../panel-plugin/embed.desktop.in.h:2
+msgid "Embeds an arbitrary window into the panel"
+msgstr ""
