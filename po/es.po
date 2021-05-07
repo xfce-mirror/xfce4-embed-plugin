@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2021-03-13 10:29+0000\n"
+"PO-Revision-Date: 2021-05-07 17:57+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "_Cerrar"
 #: ../panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No se ha podido abrir la siguiente dirección URL: %s"
+msgstr "No se puede abrir el URL siguiente: %s"
 
 #: ../panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
@@ -59,11 +59,11 @@ msgstr "La entrada no es válida"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Incrustar complemento"
+msgstr "Complemento para incrustar"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
-msgstr "Ejecutando aplicación"
+msgstr "Lanzador de aplicaciones"
 
 #: ../panel-plugin/embed-dialogs.c:340
 #, c-format
@@ -72,18 +72,18 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Si una ventana no es encontrada (o no existen criterios), puede ejecutar\nuna orden opcionalmente. La orden puede resultar en una ventana\nque coincida con el criterio inferior o puede utilizar el Id. del Socket asignado\na él (%s) para incrustarse a sí mismo automáticamente."
+msgstr "Si no se encuentra una ventana (o no hay criterios), opcionalmente se\npuede ejecutar una orden. La orden puede dar lugar a una ventana\nque coincida con los criterios siguientes o puede usar el identificador\nde socket que se le ha pasado (%s) para incrustarse automáticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
-msgstr "Dejar en blanco para no ejecutar nada\n%s expande al identificador del socket."
+msgstr "Déjelo en blanco para no ejecutar nada\n%s se sustituye con el identificador del socket"
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
-msgstr "Ejecut_ar orden"
+msgstr "Ejecut_ar una orden"
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
@@ -91,13 +91,13 @@ msgstr "Ejecut_ar orden"
 #. * identifiable when it is mapped.
 #: ../panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
-msgstr "Criterio de selección"
+msgstr "Criterios de selección"
 
 #: ../panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
-msgstr "La ventana para incrustar debe coincidir con todos los criterios que no están en blanco\nDejar todo en blanco para basarse en la ejecución de una orden con el id. del socket."
+msgstr "La ventana que se va a incrustar debe coincidir con todos los criterios que no estén en blanco.\nDéjelos todos en blanco para ejecutar una orden con el identificador del socket."
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
@@ -107,27 +107,27 @@ msgstr "Nombre del _proceso"
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincidir el nombre del proceso de la aplicación de la ventana\nDejar en blanco si no es un criterio"
+msgstr "Coincidir con el nombre del proceso de la ventana de la aplicación\nDéjelo en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
-msgstr "Clase de _ventana"
+msgstr "Clase de la _ventana"
 
 #: ../panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincidir la clase de la ventana\nDejar en blanco si no es un criterio"
+msgstr "Coincidir con la clase de la ventana\nDéjelo en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
-msgstr "_Título de ventana"
+msgstr "_Título de la ventana"
 
 #: ../panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
-msgstr "Coincidir el título de la ventana utilizando una expresión regular(REGEX)\nDejar en blanco si no es un criterio"
+msgstr "Coincidir con el título de la ventana usando una expresión regular\nDéjelo en blanco si no es un criterio"
 
 #: ../panel-plugin/embed-dialogs.c:385
 msgid "Display"
@@ -138,19 +138,19 @@ msgstr "Mostrar"
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
-msgstr "Déjelo en blanco para ocultar la etiqueta\n%s se expande hasta el título de la ventana incrustada"
+msgstr "Déjelo en blanco para ocultar la etiqueta\n%s se sustituye con el título de la ventana incrustada"
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
-msgstr "F_ormato de etiqueta"
+msgstr "F_ormato de la etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "Tipo de letra de eti_queta"
+msgstr "Tipografía de la eti_queta"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
-msgstr "Elija el tipo de letra de la etiqueta"
+msgstr "Elija la tipografía de la etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
@@ -160,7 +160,7 @@ msgstr "Tamaño _mínimo (px)"
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
-msgstr "Tamaño mínimo de la ventana incrustada\nEstablecer a 0 para mantener el tamaño original de la ventana"
+msgstr "Tamaño mínimo de la ventana incrustada\nAjustar a 0 para mantener el tamaño original de la ventana"
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
@@ -168,11 +168,11 @@ msgstr "_Expandir"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
-msgstr "Utilizar todo el espacio disponible del panel"
+msgstr "Usar todo el espacio disponible del panel"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
-msgstr "Mostrar _tirador"
+msgstr "Mostrar el _tirador"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
@@ -180,4 +180,4 @@ msgstr "Mostrar un tirador en la parte superior del complemento"
 
 #: ../panel-plugin/embed.desktop.in.h:2
 msgid "Embeds an arbitrary window into the panel"
-msgstr "Incrusta una ventana arbitraria dentro del panel"
+msgstr "Incrusta una ventana cualquiera en el panel"
