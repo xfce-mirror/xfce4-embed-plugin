@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2021-05-07 17:57+0000\n"
+"PO-Revision-Date: 2021-05-21 18:43+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -32,12 +32,12 @@ msgstr "_Incrustar"
 #. focus menu item, not shown by default
 #: ../panel-plugin/embed.c:255
 msgid "_Focus"
-msgstr "En_focar"
+msgstr "_Enfocar"
 
 #. pop out menu item, not shown by default
 #: ../panel-plugin/embed.c:260
 msgid "Pop _Out"
-msgstr "_Mostrar"
+msgstr "_Desplegar"
 
 #. close menu item, not shown by default
 #: ../panel-plugin/embed.c:265
@@ -59,7 +59,7 @@ msgstr "La entrada no es válida"
 
 #: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
 msgid "Embed Plugin"
-msgstr "Complemento para incrustar"
+msgstr "Incrustar"
 
 #: ../panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
@@ -72,7 +72,7 @@ msgid ""
 "optionally be launched. The command can either result in a window\n"
 "that matches the below criteria, or it can use the socket ID passed\n"
 "to it (%s) to embed itself automatically."
-msgstr "Si no se encuentra una ventana (o no hay criterios), opcionalmente se\npuede ejecutar una orden. La orden puede dar lugar a una ventana\nque coincida con los criterios siguientes o puede usar el identificador\nde socket que se le ha pasado (%s) para incrustarse automáticamente."
+msgstr "Si no se encuentra una ventana (o no hay criterios), opcionalmente se\npuede ejecutar una orden. La orden puede dar lugar a una ventana\nque coincida con los criterios siguientes o puede usar el identificador\ndel socket que se le ha pasado (%s) para incrustarse automáticamente."
 
 #: ../panel-plugin/embed-dialogs.c:348
 #, c-format
@@ -83,7 +83,7 @@ msgstr "Déjelo en blanco para no ejecutar nada\n%s se sustituye con el identifi
 
 #: ../panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
-msgstr "Ejecut_ar una orden"
+msgstr "Ejecutar una _orden"
 
 #. poll_delay
 #. No UI element. Generally polling is unnecessary, unless you have a very
@@ -101,7 +101,7 @@ msgstr "La ventana que se va a incrustar debe coincidir con todos los criterios 
 
 #: ../panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
-msgstr "Nombre del _proceso"
+msgstr "_Nombre del proceso"
 
 #: ../panel-plugin/embed-dialogs.c:367
 msgid ""
@@ -142,11 +142,11 @@ msgstr "Déjelo en blanco para ocultar la etiqueta\n%s se sustituye con el títu
 
 #: ../panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
-msgstr "F_ormato de la etiqueta"
+msgstr "_Formato de la etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
-msgstr "Tipografía de la eti_queta"
+msgstr "_Tipografía de la etiqueta"
 
 #: ../panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
@@ -164,7 +164,7 @@ msgstr "Tamaño mínimo de la ventana incrustada\nAjustar a 0 para mantener el t
 
 #: ../panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
-msgstr "_Expandir"
+msgstr "E_xpandir"
 
 #: ../panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
@@ -172,7 +172,7 @@ msgstr "Usar todo el espacio disponible del panel"
 
 #: ../panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
-msgstr "Mostrar el _tirador"
+msgstr "Mostrar el tir_ador"
 
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
