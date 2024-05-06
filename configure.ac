@@ -7,22 +7,16 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([embed_version_major], [1])
-m4_define([embed_version_minor], [7])
-m4_define([embed_version_micro], [0])
-m4_define([embed_version_nano],  []) dnl leave this empty to have no nano version
-m4_define([embed_version_build], [@REVISION@])
-m4_define([embed_version_tag], [git])
-m4_define([embed_version], [embed_version_major().embed_version_minor().embed_version_micro()ifelse(embed_version_nano(), [], [], [.embed_version_nano()])ifelse(embed_version_tag(), [git], [embed_version_tag()-embed_version_build()], [embed_version_tag()])])
+XDT_VERSION_INIT([1.7.0], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2015
         The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-embed-plugin], [embed_version], [http://bugzilla.xfce.org/], [xfce4-embed-plugin])
-AC_PREREQ([2.50])
-AC_REVISION([xfce4_panel_version_build])
+AC_INIT([xfce4-embed-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-embed-plugin], [xfce4-embed-plugin])
+AC_PREREQ([2.69])
+AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
 
 dnl ***************************
@@ -79,7 +73,7 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.8.0])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 dnl *********************************
 dnl *** Substitute platform flags ***
