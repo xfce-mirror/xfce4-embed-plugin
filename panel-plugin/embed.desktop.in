@@ -1,8 +1,8 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
-_Name=Embed Plugin
-_Comment=Embeds an arbitrary window into the panel
+Name=Embed Plugin
+Comment=Embeds an arbitrary window into the panel
 Icon=xfce4-panel
 X-XFCE-Module=embed
 X-XFCE-Internal=false
