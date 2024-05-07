@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Andrij Mizyk <andmizyk@gmail.com>, 2021
+# f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2021-01-29 12:12+0000\n"
-"Last-Translator: Andrij Mizyk <andmizyk@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021\n"
+"Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,7 +55,7 @@ msgstr "Ввід правильний"
 msgid "Input is invalid"
 msgstr "Ввід неправильний"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "Вставна втулка"
 
@@ -175,7 +175,3 @@ msgstr "Показати _тримач"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Показати тримач над додатком"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "Вставити довільне вікно у панель"
