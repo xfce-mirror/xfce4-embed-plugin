@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-embed-plugin package.
 # 
 # Translators:
 # Henrique P. Machado <zehrique@xfce.org>, 2012
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 12:58+0200\n"
 "PO-Revision-Date: 2013-07-03 18:58+0000\n"
 "Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2013\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
@@ -19,52 +19,52 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: ../panel-plugin/embed.c:48
+#: panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Embutir"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "_Embutir"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "_Foco"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:260
+#: panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "Encerrar _Sessão"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:265
+#: panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "_Fechar"
 
-#: ../panel-plugin/embed-dialogs.c:51
+#: panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Não é possível abrir a seguinte url: %s"
 
-#: ../panel-plugin/embed-dialogs.c:100
+#: panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
 msgstr "A entrada é válida"
 
-#: ../panel-plugin/embed-dialogs.c:105
+#: panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
 msgstr "A entrada é inválida"
 
-#: ../panel-plugin/embed-dialogs.c:329
+#: panel-plugin/embed-dialogs.c:329 panel-plugin/embed.desktop.in:5
 msgid "Embed Plugin"
 msgstr "Plug-in de embutir"
 
-#: ../panel-plugin/embed-dialogs.c:338
+#: panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Lançando aplicativo"
 
-#: ../panel-plugin/embed-dialogs.c:340
+#: panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -73,14 +73,14 @@ msgid ""
 "to it (%s) to embed itself automatically."
 msgstr "Se uma janela não é encontrada (ou não há critérios), um comando pode\nopcionalmente ser lançado. O comando pode tanto resultar em uma janela\nque coincide com o critério abaixo ou ele pode usar a ID do soquete\npassado (%s) para embutir-se automaticamente."
 
-#: ../panel-plugin/embed-dialogs.c:348
+#: panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr "Deixe em branco para não lançar nada\n%s expande para a ID do soquete"
 
-#: ../panel-plugin/embed-dialogs.c:351
+#: panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "Comando l_ançar"
 
@@ -88,91 +88,95 @@ msgstr "Comando l_ançar"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:360
+#: panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Critérios de seleção"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr "A janela a embutir precisa coincidir com todos os critérios preenchidos.\nDeixe tudo em branco para confiar em um comando de lançamento com a ID do soquete."
 
-#: ../panel-plugin/embed-dialogs.c:366
+#: panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "Nome do _processo"
 
-#: ../panel-plugin/embed-dialogs.c:367
+#: panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "Classe da _janela"
 
-#: ../panel-plugin/embed-dialogs.c:374
+#: panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
-#: ../panel-plugin/embed-dialogs.c:380
+#: panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "Tí_tulo da janela"
 
-#: ../panel-plugin/embed-dialogs.c:381
+#: panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr "Coincide com o título da janela usando uma Expressão Regular\nDeixe em branco se não é um critério"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Exibir"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr "Deixe em branco para ocultar a etiqueta\n%s expande para o título da janela embutida"
 
-#: ../panel-plugin/embed-dialogs.c:391
+#: panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "Formato da _etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "F_onte da etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:397
+#: panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Escolha a fonte da etiqueta"
 
-#: ../panel-plugin/embed-dialogs.c:401
+#: panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "Tamanho mí_nimo (px)"
 
-#: ../panel-plugin/embed-dialogs.c:402
+#: panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr "Tamanho mínimo da janela embutida\nDefina como 0 para manter o tamanho original da janela"
 
-#: ../panel-plugin/embed-dialogs.c:407
+#: panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "_Expandir"
 
-#: ../panel-plugin/embed-dialogs.c:408
+#: panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Usar todo o espaço disponível do painel"
 
-#: ../panel-plugin/embed-dialogs.c:412
+#: panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
 msgstr "Mostrar _alça"
 
-#: ../panel-plugin/embed-dialogs.c:413
+#: panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Exibe uma alça no topo do plug-in"
+
+#: panel-plugin/embed.desktop.in:6
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Embute uma janela arbitrária no painel"
