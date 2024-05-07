@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-embed-plugin package.
 # 
 # Translators:
 # Michal Várady <miko.vaji@gmail.com>, 2013
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 12:58+0200\n"
 "PO-Revision-Date: 2013-07-03 18:58+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2013\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
@@ -19,52 +19,52 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: ../panel-plugin/embed.c:48
+#: panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Vložit"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "_Vložit"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "_Zaměřit"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:260
+#: panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "Otevřít v _novém okně"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:265
+#: panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "_Zavřít"
 
-#: ../panel-plugin/embed-dialogs.c:51
+#: panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nelze otevřít toto umístění URL: %s"
 
-#: ../panel-plugin/embed-dialogs.c:100
+#: panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
 msgstr "Vstup je platný"
 
-#: ../panel-plugin/embed-dialogs.c:105
+#: panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
 msgstr "Vstup je neplatný"
 
-#: ../panel-plugin/embed-dialogs.c:329
+#: panel-plugin/embed-dialogs.c:329 panel-plugin/embed.desktop.in:5
 msgid "Embed Plugin"
 msgstr "Zásuvný modul Vložit"
 
-#: ../panel-plugin/embed-dialogs.c:338
+#: panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Spouštění aplikace"
 
-#: ../panel-plugin/embed-dialogs.c:340
+#: panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -73,14 +73,14 @@ msgid ""
 "to it (%s) to embed itself automatically."
 msgstr "Není-li okno nalezeno (nebo neexistují kritéria), lze volitelně spustit\npříkaz. Příkaz může být výsledek v okně, které splňuje kritéria, nebo\nmůže použít identifikátor socketu jemu předaný (%s), aby se vložil\nautomaticky sám."
 
-#: ../panel-plugin/embed-dialogs.c:348
+#: panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr "Nechcete-li nic spouštět, ponechte prázdné, \n%s se změní na identifikátor socketu"
 
-#: ../panel-plugin/embed-dialogs.c:351
+#: panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "_Spustit příkaz"
 
@@ -88,91 +88,95 @@ msgstr "_Spustit příkaz"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:360
+#: panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Kritérium výběru"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr "Okno k vložení musí splňovat všechna neprázdná kritéria.\nPonecháte-li vše prázdné, spustí se příkaz s identifikátorem socketu."
 
-#: ../panel-plugin/embed-dialogs.c:366
+#: panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "Název _procesu"
 
-#: ../panel-plugin/embed-dialogs.c:367
+#: panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr "Shoda s názvem procesu okna aplikace.\nNení-li to kritérium, ponechte prázdné"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "Třída _okna"
 
-#: ../panel-plugin/embed-dialogs.c:374
+#: panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr "Shoda s třídou okna\nNení-li to kritérium, ponechte prázdné"
 
-#: ../panel-plugin/embed-dialogs.c:380
+#: panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "_Název okna"
 
-#: ../panel-plugin/embed-dialogs.c:381
+#: panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr "Shoda s titulkem okna pomocí regulárního výrazu REGEX\nNení-li to kritérium, ponechte prázdné"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Zobrazit"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr "Pro skrytí popisku ponechte prázdné \n%s se nahradí titulkem vloženého okna"
 
-#: ../panel-plugin/embed-dialogs.c:391
+#: panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "Formát _popisku"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "Pís_mo popisku"
 
-#: ../panel-plugin/embed-dialogs.c:397
+#: panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Vyberte písmo popisku"
 
-#: ../panel-plugin/embed-dialogs.c:401
+#: panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "Nejmenší _velikost (px)"
 
-#: ../panel-plugin/embed-dialogs.c:402
+#: panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr "Nejmenší velikost vloženého okna\nPro zachování původní velikosti okna nastavte hodnotu 0"
 
-#: ../panel-plugin/embed-dialogs.c:407
+#: panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "_Rozbalit"
 
-#: ../panel-plugin/embed-dialogs.c:408
+#: panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Použít veškeré dostupné místo panelu"
 
-#: ../panel-plugin/embed-dialogs.c:412
+#: panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
 msgstr "Zobrazit ú_chytku"
 
-#: ../panel-plugin/embed-dialogs.c:413
+#: panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Zobrazit úchytnu v horní části přídavného modulu"
+
+#: panel-plugin/embed.desktop.in:6
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Vloží libovolné okno do panelu"
