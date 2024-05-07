@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-embed-plugin package.
 # 
 # Translators:
 # Sveinn í Felli <sv1@fellsnet.is>, 2013-2015,2019
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 12:58+0200\n"
 "PO-Revision-Date: 2013-07-03 18:58+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2013-2015,2019\n"
 "Language-Team: Icelandic (http://app.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
@@ -19,52 +19,52 @@ msgstr ""
 "Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: ../panel-plugin/embed.c:48
+#: panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Ívefja"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "Ív_efja"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "_Virkni"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:260
+#: panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "Sprett_gluggi"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:265
+#: panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "_Loka"
 
-#: ../panel-plugin/embed-dialogs.c:51
+#: panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Get ekki opnað eftirfarandi slóð: %s"
 
-#: ../panel-plugin/embed-dialogs.c:100
+#: panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
 msgstr "Inntak er gilt"
 
-#: ../panel-plugin/embed-dialogs.c:105
+#: panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
 msgstr "Inntak er ógilt"
 
-#: ../panel-plugin/embed-dialogs.c:329
+#: panel-plugin/embed-dialogs.c:329 panel-plugin/embed.desktop.in:5
 msgid "Embed Plugin"
 msgstr "Ívefja viðbót"
 
-#: ../panel-plugin/embed-dialogs.c:338
+#: panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Forritaræsing"
 
-#: ../panel-plugin/embed-dialogs.c:340
+#: panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -73,14 +73,14 @@ msgid ""
 "to it (%s) to embed itself automatically."
 msgstr "Ef gluggi finnst ekki (eða að það eru engin skilyrði), er mögulega\nhægt að ræsa skipun. Skipunin getur gefið upp glugga sem samsvarar\nskilyrðum hér fyrir neðan, eða notað auðkenni sökkuls (%s) \ntil að ívefja sig sjálfvirkt."
 
-#: ../panel-plugin/embed-dialogs.c:348
+#: panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr "Skildu þetta eftir autt til að ræsa ekki neitt\n%s nær yfir í auðkenni sökkuls"
 
-#: ../panel-plugin/embed-dialogs.c:351
+#: panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "_Ræsiskipun"
 
@@ -88,91 +88,95 @@ msgstr "_Ræsiskipun"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:360
+#: panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Forsendur við val"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr "Glugginn sem á að ívefja verður að samsvara öllum uppgefnum skilyrðum.\nSkildu allt eftir autt til að styðjast við ræsiskipun með auðkenni sökkuls."
 
-#: ../panel-plugin/embed-dialogs.c:366
+#: panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "Heiti _ferlis"
 
-#: ../panel-plugin/embed-dialogs.c:367
+#: panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr "Samsvara forritsferli glugga\nSkildu eftir autt ef þetta er ekki skilyrði"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "_Gluggaflokkur"
 
-#: ../panel-plugin/embed-dialogs.c:374
+#: panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr "Samsvara flokki glugga\nSkildu eftir autt ef þetta er ekki skilyrði"
 
-#: ../panel-plugin/embed-dialogs.c:380
+#: panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "Glugga_titill"
 
-#: ../panel-plugin/embed-dialogs.c:381
+#: panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr "Samsvara titli glugga með REGEX-segð\nSkildu eftir autt ef þetta er ekki skilyrði"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Birting"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr "Skildu þetta eftir autt til að fela merkinguna\n%s nær yfir í titilslá ívafins glugga"
 
-#: ../panel-plugin/embed-dialogs.c:391
+#: panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "Snið _merkingar"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "_Leturgerð merkingar"
 
-#: ../panel-plugin/embed-dialogs.c:397
+#: panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Veldu letur fyrir merkinguna"
 
-#: ../panel-plugin/embed-dialogs.c:401
+#: panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "Lágmarks_stærð (px)"
 
-#: ../panel-plugin/embed-dialogs.c:402
+#: panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr "Lágmarksstærð fyrir ívafinn glugga\nSettu þetta sem 0 til að halda upprunalegri stærð"
 
-#: ../panel-plugin/embed-dialogs.c:407
+#: panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "Þ_enja"
 
-#: ../panel-plugin/embed-dialogs.c:408
+#: panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Nota allt tiltækt pláss á skjástikunni"
 
-#: ../panel-plugin/embed-dialogs.c:412
+#: panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
 msgstr "Birta haldfang"
 
-#: ../panel-plugin/embed-dialogs.c:413
+#: panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Birta haldfang efst á viðbótinni"
+
+#: panel-plugin/embed.desktop.in:6
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Ívefur hverskonar glugga í skjástikuna"
