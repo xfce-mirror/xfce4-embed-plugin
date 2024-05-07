@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aputsiak Niels Janussen <aj@isit.gl>, 2013
-# Aputsiak Niels Janussen <aj@isit.gl>, 2013
+# Aputsiak Niels Janussen <aputtu@gmail.com>, 2013
+# Aputsiak Niels Janussen <aputtu@gmail.com>, 2013
 # Chris Darnell <chris@cedeel.com>, 2013
 # Per Kongstad <p_kongstad@op.pl>, 2012
 # scootergrisen, 2017
@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2020-11-16 23:32+0000\n"
-"Last-Translator: scootergrisen\n"
-"Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: scootergrisen, 2017,2019-2020\n"
+"Language-Team: Danish (http://app.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,7 +60,7 @@ msgstr "Indtastning er gyldig"
 msgid "Input is invalid"
 msgstr "Indtastning er ugyldig"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "Indlejr-plugin"
 
@@ -180,7 +180,3 @@ msgstr "Vis _håndtag"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Vis et håndtag øverst i pluginet"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "Indlejr et vilkårligt vindue i panelet"
