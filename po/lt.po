@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: Moo, 2015-2017\n"
+"Language-Team: Lithuanian (http://app.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,7 +56,7 @@ msgstr "Įvesta tinkamai"
 msgid "Input is invalid"
 msgstr "Įvesta netinkamai"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "Įterpimo įskiepis"
 
@@ -176,7 +176,3 @@ msgstr "Rodyti _rankenėlę"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Rodyti rankenėlę įskiepio viršuje"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "Į skydelį įterpia savavalį langą"
