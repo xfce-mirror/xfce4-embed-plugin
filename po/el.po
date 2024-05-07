@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2019-01-04 13:46+0000\n"
-"Last-Translator: Christos Arvanitis <arvchristos@gmail.com>\n"
-"Language-Team: Greek (http://www.transifex.com/xfce/xfce-panel-plugins/language/el/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: Christos Arvanitis <arvchristos@gmail.com>, 2019\n"
+"Language-Team: Greek (http://app.transifex.com/xfce/xfce-panel-plugins/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +59,7 @@ msgstr "Η είσοδος είναι έγκυρη"
 msgid "Input is invalid"
 msgstr "Η είσοδος είναι μη έγκυρη"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "Ενσωμάτωση ενός plugin (πρόσθετου)"
 
@@ -179,7 +179,3 @@ msgstr "Εμφάνιση _λαβής"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Εμφάνιση λαβής στην κορυφή του προσθέτου"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "Ενσωματώνει ένα τυχαίο παράθυρο στο πάνελ"
