@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-embed-plugin package.
 # 
 # Translators:
 # Aleksandr P, 2012
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 12:58+0200\n"
 "PO-Revision-Date: 2013-07-03 18:58+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com >, 2018\n"
 "Language-Team: Belarusian (http://app.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
@@ -22,52 +22,52 @@ msgstr ""
 "Language: be\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../panel-plugin/embed.c:48
+#: panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Акно"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "_Убудаваць"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "_Сфакусавацца"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:260
+#: panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "_Адмацаваць"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:265
+#: panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "_Закрыць"
 
-#: ../panel-plugin/embed-dialogs.c:51
+#: panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Не атрымалася адкрыць адрас: %s"
 
-#: ../panel-plugin/embed-dialogs.c:100
+#: panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
 msgstr "Правільны ўвод"
 
-#: ../panel-plugin/embed-dialogs.c:105
+#: panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
 msgstr "Хібны ўвод"
 
-#: ../panel-plugin/embed-dialogs.c:329
+#: panel-plugin/embed-dialogs.c:329 panel-plugin/embed.desktop.in:5
 msgid "Embed Plugin"
 msgstr "Убудова для ўбудавання акон"
 
-#: ../panel-plugin/embed-dialogs.c:338
+#: panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Запуск праграмы"
 
-#: ../panel-plugin/embed-dialogs.c:340
+#: panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -76,14 +76,14 @@ msgid ""
 "to it (%s) to embed itself automatically."
 msgstr "Калі акно не будзе знойдзена (альбо не будзе вызначана крытэрыяў), то можа быць запушчаны \nвызначаны загад. Загад можа альбо стварыць патрэбнае акно, альбо выкарыстаць \nідэнтыфікатар сокета (%s), каб убудаваць акно."
 
-#: ../panel-plugin/embed-dialogs.c:348
+#: panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr "Пакіньце пустым, каб нічога не запускаць.\n%s заменіцца на ідэнтыфікатар сокета"
 
-#: ../panel-plugin/embed-dialogs.c:351
+#: panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "_Загад запуску"
 
@@ -91,91 +91,95 @@ msgstr "_Загад запуску"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:360
+#: panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Крытэрыі выбару"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr "Акно, што ўбудоўваецца, павінна адпавядаць усім непустым крытэрыям.\nПакіньце ўсё пустым, каб выкарыстоўваць загад запуску і ідэнтыфікатар сокета."
 
-#: ../panel-plugin/embed-dialogs.c:366
+#: panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "_Працэс"
 
-#: ../panel-plugin/embed-dialogs.c:367
+#: panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr "Назва працэсу, што стварыў акно\nПакіньце пустым, каб не ўлічваць"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "_Клас акна"
 
-#: ../panel-plugin/embed-dialogs.c:374
+#: panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr "Клас акна\nПакіньце пустым, каб не ўлічваць"
 
-#: ../panel-plugin/embed-dialogs.c:380
+#: panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "_Загаловак"
 
-#: ../panel-plugin/embed-dialogs.c:381
+#: panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr "Рэгулярны выраз для загалоўка акна\nПакіньце пустым, каб не ўлічваць"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Выгляд"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr "Пакіньце пустым, каб прыбраць адмеціну.\n%s заменіцца на загаловак акна"
 
-#: ../panel-plugin/embed-dialogs.c:391
+#: panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "Фармат _адмеціны"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "_Шрыфт адмеціны"
 
-#: ../panel-plugin/embed-dialogs.c:397
+#: panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Абраць шрыфт адмеціны"
 
-#: ../panel-plugin/embed-dialogs.c:401
+#: panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "_Мінімальны памер (у пікселях)"
 
-#: ../panel-plugin/embed-dialogs.c:402
+#: panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr "Мінімальны памер убудаванага акна\nПры значэнні 0 будзе арыгінальны памер"
 
-#: ../panel-plugin/embed-dialogs.c:407
+#: panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "_Пашырыць"
 
-#: ../panel-plugin/embed-dialogs.c:408
+#: panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Выкарыстоўваць усю даступную прастору"
 
-#: ../panel-plugin/embed-dialogs.c:412
+#: panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
 msgstr "Паказваць _ручку"
 
-#: ../panel-plugin/embed-dialogs.c:413
+#: panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Паказваць ручку ўверсе ўбудовы"
+
+#: panel-plugin/embed.desktop.in:6
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Убудоўвае ў панэль акно адвольнай праграмы"
