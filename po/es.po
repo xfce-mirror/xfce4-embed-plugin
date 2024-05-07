@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Ignacio Poggi <ignaciop.3@gmail.com>, 2020
-# prflr88 <prflr88@gmail.com>, 2014
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2014
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2021-05-21 18:43+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
+"Language-Team: Spanish (http://app.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../panel-plugin/embed.c:48
 msgid "Embed"
@@ -57,7 +57,7 @@ msgstr "La entrada es válida"
 msgid "Input is invalid"
 msgstr "La entrada no es válida"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "Incrustar"
 
@@ -177,7 +177,3 @@ msgstr "Mostrar el tir_ador"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Mostrar un tirador en la parte superior del complemento"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "Incrusta una ventana cualquiera en el panel"
