@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-embed-plugin package.
 # 
 # Translators:
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 12:58+0200\n"
 "PO-Revision-Date: 2013-07-03 18:58+0000\n"
 "Last-Translator: Christos Arvanitis <arvchristos@gmail.com>, 2019\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/xfce-panel-plugins/language/el/)\n"
@@ -22,52 +22,52 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/embed.c:48
+#: panel-plugin/embed.c:48
 msgid "Embed"
 msgstr "Ενσωμάτωση"
 
 #. embed menu item, shown by default.
-#: ../panel-plugin/embed.c:249
+#: panel-plugin/embed.c:249
 msgid "_Embed"
 msgstr "_Ενσωμάτωση"
 
 #. focus menu item, not shown by default
-#: ../panel-plugin/embed.c:255
+#: panel-plugin/embed.c:255
 msgid "_Focus"
 msgstr "_Εστίαση"
 
 #. pop out menu item, not shown by default
-#: ../panel-plugin/embed.c:260
+#: panel-plugin/embed.c:260
 msgid "Pop _Out"
 msgstr "Pop _Out"
 
 #. close menu item, not shown by default
-#: ../panel-plugin/embed.c:265
+#: panel-plugin/embed.c:265
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
-#: ../panel-plugin/embed-dialogs.c:51
+#: panel-plugin/embed-dialogs.c:51
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Αδυναμία ανοίγματος της ακόλουθης διεύθυνσης: %s"
 
-#: ../panel-plugin/embed-dialogs.c:100
+#: panel-plugin/embed-dialogs.c:100
 msgid "Input is valid"
 msgstr "Η είσοδος είναι έγκυρη"
 
-#: ../panel-plugin/embed-dialogs.c:105
+#: panel-plugin/embed-dialogs.c:105
 msgid "Input is invalid"
 msgstr "Η είσοδος είναι μη έγκυρη"
 
-#: ../panel-plugin/embed-dialogs.c:329
+#: panel-plugin/embed-dialogs.c:329 panel-plugin/embed.desktop.in:5
 msgid "Embed Plugin"
 msgstr "Ενσωμάτωση ενός plugin (πρόσθετου)"
 
-#: ../panel-plugin/embed-dialogs.c:338
+#: panel-plugin/embed-dialogs.c:338
 msgid "Application Launching"
 msgstr "Εκτέλεση Εφαρμογής"
 
-#: ../panel-plugin/embed-dialogs.c:340
+#: panel-plugin/embed-dialogs.c:340
 #, c-format
 msgid ""
 "If a window is not found (or there are no criteria), a command can\n"
@@ -76,14 +76,14 @@ msgid ""
 "to it (%s) to embed itself automatically."
 msgstr "Αν δε βρεθεί παράθυρο (ή δεν υπάρχουν κριτήρια), μια εντολή δύναται να\nεκτελεστεί προαιρετικά. Η εντολή είτε θα έχει ως αποτέλεσμα ένα παράθυρο\nτο οποίο αντιστοιχεί στα ακόλουθα κριτήρια, είτε μπορεί να χρησιμοποιήσει το δοσμένο αναγνωριστικό socket (%s) ώστε να ενσωματωθεί αυτόματα"
 
-#: ../panel-plugin/embed-dialogs.c:348
+#: panel-plugin/embed-dialogs.c:348
 #, c-format
 msgid ""
 "Leave blank to not launch anything\n"
 "%s expands to the socket ID"
 msgstr "Αφήστε το κενό για να μην ξεκινήσει τίποτα\n%s επεκτείνεται στο αναγνωριστικό υποδοχής"
 
-#: ../panel-plugin/embed-dialogs.c:351
+#: panel-plugin/embed-dialogs.c:351
 msgid "L_aunch command"
 msgstr "Ε_κτέλεση εντολής"
 
@@ -91,91 +91,95 @@ msgstr "Ε_κτέλεση εντολής"
 #. No UI element. Generally polling is unnecessary, unless you have a very
 #. * strange window that you're trying to match that is not uniquely
 #. * identifiable when it is mapped.
-#: ../panel-plugin/embed-dialogs.c:360
+#: panel-plugin/embed-dialogs.c:360
 msgid "Selection Criteria"
 msgstr "Κριτήρια επιλογής"
 
-#: ../panel-plugin/embed-dialogs.c:362
+#: panel-plugin/embed-dialogs.c:362
 msgid ""
 "The window to embed must match all of the non-blank criteria.\n"
 "Leave everything blank to rely on a launch command with socket ID."
 msgstr "Το παράθυρο για ενσωμάτωση πρέπει να ταιριάζει με όλα τα μη κενά κριτήρια.\nΑφήστε τα πάντα κενά για να βασιστείτε σε μια εντολή εκκίνησης με ID υποδοχής."
 
-#: ../panel-plugin/embed-dialogs.c:366
+#: panel-plugin/embed-dialogs.c:366
 msgid "_Process name"
 msgstr "Όνομα _διαδικασίας"
 
-#: ../panel-plugin/embed-dialogs.c:367
+#: panel-plugin/embed-dialogs.c:367
 msgid ""
 "Match the window's application's process name\n"
 "Leave blank if it is not a criterion"
 msgstr "Ταιριάξτε το όνομα της διαδικασίας εφαρμογής του παραθύρου\nΑφήστε κενό, εάν δεν είναι κριτήριο"
 
-#: ../panel-plugin/embed-dialogs.c:373
+#: panel-plugin/embed-dialogs.c:373
 msgid "_Window class"
 msgstr "_Κατηγορία παραθύρων"
 
-#: ../panel-plugin/embed-dialogs.c:374
+#: panel-plugin/embed-dialogs.c:374
 msgid ""
 "Match the window's class\n"
 "Leave blank if it is not a criterion"
 msgstr "Ταιριάξτε με την κατηγορία του παραθύρου\nΑφήστε κενό, εάν δεν είναι κριτήριο"
 
-#: ../panel-plugin/embed-dialogs.c:380
+#: panel-plugin/embed-dialogs.c:380
 msgid "Window _title"
 msgstr "_Τίτλος Παραθύρου"
 
-#: ../panel-plugin/embed-dialogs.c:381
+#: panel-plugin/embed-dialogs.c:381
 msgid ""
 "Match the window's title using a REGEX\n"
 "Leave blank if it is not a criterion"
 msgstr "Ταιριάξτε τον τίτλο του παραθύρου χρησιμοποιώντας μία κανονική έκφραση(REGEX)\nΑφήστε κενό, αν δεν είναι κριτήριο"
 
-#: ../panel-plugin/embed-dialogs.c:385
+#: panel-plugin/embed-dialogs.c:385
 msgid "Display"
 msgstr "Προβολή"
 
-#: ../panel-plugin/embed-dialogs.c:388
+#: panel-plugin/embed-dialogs.c:388
 #, c-format
 msgid ""
 "Leave blank to hide the label\n"
 "%s expands to the embedded window's title"
 msgstr "Αφήστε κενό για απόκρυψη της ετικέτας\n%s επεκτείνεται στον ενσωματωμένο τίτλο παραθύρου"
 
-#: ../panel-plugin/embed-dialogs.c:391
+#: panel-plugin/embed-dialogs.c:391
 msgid "_Label format"
 msgstr "Διαμόρφωση ε_τικέτας"
 
-#: ../panel-plugin/embed-dialogs.c:396
+#: panel-plugin/embed-dialogs.c:396
 msgid "Label _font"
 msgstr "Γραμματοσειρά _ετικέτας"
 
-#: ../panel-plugin/embed-dialogs.c:397
+#: panel-plugin/embed-dialogs.c:397
 msgid "Choose the label font"
 msgstr "Επιλογή γραμματοσειράς για την ετικέτα"
 
-#: ../panel-plugin/embed-dialogs.c:401
+#: panel-plugin/embed-dialogs.c:401
 msgid "Minimum _size (px)"
 msgstr "Ελάχιστο _μέγεθος (px)"
 
-#: ../panel-plugin/embed-dialogs.c:402
+#: panel-plugin/embed-dialogs.c:402
 msgid ""
 "Minimum size of the embedded window\n"
 "Set to 0 to keep the original window size"
 msgstr "Ελάχιστο μέγεθος ενσωματωμένου παραθύρου\nΟρίστε 0 για διατήρηση του αρχικού μεγέθους παραθύρου"
 
-#: ../panel-plugin/embed-dialogs.c:407
+#: panel-plugin/embed-dialogs.c:407
 msgid "_Expand"
 msgstr "Α_νάπτυξη"
 
-#: ../panel-plugin/embed-dialogs.c:408
+#: panel-plugin/embed-dialogs.c:408
 msgid "Use up all available panel space"
 msgstr "Χρήση όλου του διαθέσιμου χώρου στο ταμπλό"
 
-#: ../panel-plugin/embed-dialogs.c:412
+#: panel-plugin/embed-dialogs.c:412
 msgid "Show _handle"
 msgstr "Εμφάνιση _λαβής"
 
-#: ../panel-plugin/embed-dialogs.c:413
+#: panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "Εμφάνιση λαβής στην κορυφή του προσθέτου"
+
+#: panel-plugin/embed.desktop.in:6
+msgid "Embeds an arbitrary window into the panel"
+msgstr "Ενσωματώνει ένα τυχαίο παράθυρο στο πάνελ"
