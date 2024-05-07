@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2017
+# 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:58+0200\n"
-"PO-Revision-Date: 2017-11-14 12:13+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
+"POT-Creation-Date: 2024-05-07 00:58+0200\n"
+"PO-Revision-Date: 2013-07-03 18:58+0000\n"
+"Last-Translator: 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2017\n"
+"Language-Team: Korean (http://app.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,7 +55,7 @@ msgstr "입력이 유효합니다"
 msgid "Input is invalid"
 msgstr "입력이 유효하지 않습니다"
 
-#: ../panel-plugin/embed-dialogs.c:329 ../panel-plugin/embed.desktop.in.h:1
+#: ../panel-plugin/embed-dialogs.c:329
 msgid "Embed Plugin"
 msgstr "임베디드 플러그인"
 
@@ -175,7 +175,3 @@ msgstr "손잡이 표시(_H)"
 #: ../panel-plugin/embed-dialogs.c:413
 msgid "Display a handle at the top of the plugin"
 msgstr "플러그인 상단에 손잡이를 표시합니다"
-
-#: ../panel-plugin/embed.desktop.in.h:2
-msgid "Embeds an arbitrary window into the panel"
-msgstr "임의의 창을 패널에 내장합니다"
